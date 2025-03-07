@@ -1,0 +1,7 @@
+path: /Users/hmrdoll/ece554/ECE554-Capstone-Project/YOLO_harrison/training  # dataset root dir
+train: images/train # train images (relative to path)
+val: images/train # validation images (relative to path)  (simple dataset, we will use the same images for training and validation)
+
+# Classes
+names:
+  0: paper_airplane
