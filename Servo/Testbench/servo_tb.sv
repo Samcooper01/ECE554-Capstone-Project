@@ -20,6 +20,8 @@ module servo_tb();
 
         @(negedge clk) rst_n = 1'b1;
 
+        repeat(500) @(posedge clk);
+
         // verify initial angle of 0 has a duty cycle of 1000us
         $display("Test: initial angle of 0 has a duty cycle of 1000us");
         @(posedge clk) begin 
@@ -31,18 +33,19 @@ module servo_tb();
 
         fork
             begin : to1
-                repeat (150000) @(posedge clk);
-                $dislay("ERR: timeout waiting for counter to go back to zero")
+                repeat (1050000) @(posedge clk);
+                $display("ERR: timeout waiting for counter to go back to zero");
             end :to1
             begin
-                if (DUT.CLOCK_GEN.counter == 0) begin 
+                if (DUT.CLOCK_GEN.counter == 'd19999) begin 
+                    $display("turning off timeout");
                     disable to1;
                 end 
             end
         join
 
         // test known angle values and duty cycles
-        $dislay("Test: angle of 90 has a duty cycle of 1500us");
+        $display("Test: angle of 90 has a duty cycle of 1500us");
         angle = 90;
         @(posedge clk) begin
             if (DUT.pulse_width != 1500) begin 
@@ -53,36 +56,38 @@ module servo_tb();
 
         fork
             begin : to2
-                repeat (150000) @(posedge clk);
-                $dislay("ERR: timeout waiting for counter to go back to zero")
+                repeat (1050000) @(posedge clk);
+                $display("ERR: timeout waiting for counter to go back to zero");
             end :to2
             begin
-                if (DUT.CLOCK_GEN.counter == 0) begin 
+                 if (DUT.CLOCK_GEN.counter == 'd19999 && DUT.CLOCK_GEN.tick == 1'b1) begin 
                     disable to2;
                 end 
             end
         join
 
-        $dislay("Test: angle of 180 has a duty cycle of 2000us");
+        $display("Test: angle of 180 has a duty cycle of 2000us");
         angle = 180;
         @(posedge clk) begin
-            if (DUT.pulse_width != 1500) begin 
-                $display("Test failed: initial angle of 180 has a duty cycle of %d", DUT.pulse_width);
+            if (DUT.pulse_width != 2000) begin 
+                $display("Test failed: angle of 180 has a duty cycle of %d", DUT.pulse_width);
             end
             else $display("PASSED");
         end
 
         fork
             begin : to3
-                repeat (150000) @(posedge clk);
-                $dislay("ERR: timeout waiting for counter to go back to zero")
+                repeat (1050000) @(posedge clk);
+                $display("ERR: timeout waiting for counter to go back to zero");
             end : to3
             begin
-                if (DUT.CLOCK_GEN.counter == 0) begin 
+                 if (DUT.CLOCK_GEN.counter == 'd19999 && DUT.CLOCK_GEN.tick == 1'b1) begin 
                     disable to3;
                 end 
             end
         join
+
+        $stop();
     end
 
     always #5 clk = ~clk;

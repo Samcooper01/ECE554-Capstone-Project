@@ -1,11 +1,11 @@
-module clk_gen
+module counter
 # (
-    parameter TICKS_PER_US = 50,   // 50 FPGA clock cycles for 1us tick
-    paramter PERIOD = 20000,        // units of us, equal to 20ms      
+    parameter TICKS_PER_US = 'd50,   // 50 FPGA clock cycles for 1us tick
+    parameter PERIOD = 'd10000        // units of us, equal to 20ms      
 ) (
     input clk, 
     input rst_n, 
-    output logic [10:0] counter
+    output logic [15:0] counter
 ); 
 
 // signal to indicate a us has passed 
@@ -16,6 +16,7 @@ logic [5:0] tick_counter;
 always_ff @(posedge clk or negedge rst_n) begin
     if (!rst_n) begin 
         tick <= 1'b0;
+        tick_counter <= 6'b0; 
     end else begin
         if (tick_counter == TICKS_PER_US) begin
             tick <= 1'b1;

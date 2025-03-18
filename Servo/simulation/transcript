@@ -1,0 +1,80 @@
+# Compile of counter.sv was successful.
+# Compile of servo.sv was successful.
+# Compile of servo_tb.sv was successful.
+# 3 compiles, 0 failed with no errors.
+vsim work.servo_tb
+# vsim work.servo_tb 
+# Start time: 15:48:39 on Mar 18,2025
+# ** Note: (vsim-3812) Design is being optimized...
+# Loading sv_std.std
+# Loading work.servo_tb(fast)
+quit -sim
+# End time: 15:48:49 on Mar 18,2025, Elapsed time: 0:00:10
+# Errors: 0, Warnings: 3
+vsim work.servo_tb -voptargs=+acc
+# vsim work.servo_tb -voptargs="+acc" 
+# Start time: 15:48:59 on Mar 18,2025
+# ** Note: (vsim-3812) Design is being optimized...
+# ** Warning: (vopt-10587) Some optimizations are turned off because the +acc switch is in effect. This will cause your simulation to run slowly. Please use -access/-debug to maintain needed visibility.
+# ** Note: (vsim-12126) Error and warning message counts have been restored: Errors=0, Warnings=1.
+# Loading sv_std.std
+# Loading work.servo_tb(fast)
+# Loading work.servo(fast)
+# Loading work.counter(fast)
+add wave -position insertpoint  \
+sim:/servo_tb/clk \
+sim:/servo_tb/rst_n \
+sim:/servo_tb/angle \
+sim:/servo_tb/pwm_pin
+# ** Warning: (vsim-WLF-5000) WLF file currently in use: vsim.wlf
+#           File in use by: nwoolf  Hostname: WIN-8114  ProcessID: 12920
+#           Attempting to use alternate WLF file "./wlftcvw16c".
+# ** Warning: (vsim-WLF-5001) Could not open WLF file: vsim.wlf
+#           Using alternate file: ./wlftcvw16c
+add wave -position insertpoint  \
+sim:/servo_tb/DUT/MIN_PULSE \
+sim:/servo_tb/DUT/clk \
+sim:/servo_tb/DUT/rst_n \
+sim:/servo_tb/DUT/angle \
+sim:/servo_tb/DUT/pwm_pin \
+sim:/servo_tb/DUT/counter \
+sim:/servo_tb/DUT/pulse_width \
+sim:/servo_tb/DUT/logical_angle
+run -all
+# Test: initial angle of 0 has a duty cycle of 1000us
+# PASSED
+# ERR: timeout waiting for counter to go back to zero
+# Test: angle of 90 has a duty cycle of 1500us
+# PASSED
+# ERR: timeout waiting for counter to go back to zero
+# Test: angle of 180 has a duty cycle of 2000us
+# PASSED
+# ERR: timeout waiting for counter to go back to zero
+# ** Note: $stop    : I:/ece554/ECE554-Capstone-Project/Servo/Testbench/servo_tb.sv(90)
+#    Time: 31505035 ns  Iteration: 1  Instance: /servo_tb
+# Break in Module servo_tb at I:/ece554/ECE554-Capstone-Project/Servo/Testbench/servo_tb.sv line 90
+# Compile of counter.sv was successful.
+# Compile of servo.sv was successful.
+# 2 compiles, 0 failed with no errors.
+restart
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
+# ** Warning: (vopt-10587) Some optimizations are turned off because the +acc switch is in effect. This will cause your simulation to run slowly. Please use -access/-debug to maintain needed visibility.
+# ** Note: (vsim-12126) Error and warning message counts have been restored: Errors=0, Warnings=1.
+# Loading sv_std.std
+# Loading work.servo_tb(fast)
+# Loading work.servo(fast)
+# Loading work.counter(fast)
+run -all
+# Test: initial angle of 0 has a duty cycle of 1000us
+# PASSED
+# ERR: timeout waiting for counter to go back to zero
+# Test: angle of 90 has a duty cycle of 1500us
+# PASSED
+# ERR: timeout waiting for counter to go back to zero
+# Test: angle of 180 has a duty cycle of 2000us
+# PASSED
+# ERR: timeout waiting for counter to go back to zero
+# ** Note: $stop    : I:/ece554/ECE554-Capstone-Project/Servo/Testbench/servo_tb.sv(90)
+#    Time: 31505035 ns  Iteration: 1  Instance: /servo_tb
+# Break in Module servo_tb at I:/ece554/ECE554-Capstone-Project/Servo/Testbench/servo_tb.sv line 90
