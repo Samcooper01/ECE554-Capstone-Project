@@ -1,0 +1,214 @@
+m255
+K4
+z2
+Z0 !s12c _opt2
+Z1 !s99 nomlopt
+R0
+R1
+!s12c _opt1
+R1
+Z2 !s12c _opt
+R1
+R2
+R1
+R2
+R1
+R2
+R1
+R2
+R1
+R2
+R1
+R2
+R1
+R2
+R1
+R2
+R1
+R2
+R1
+R2
+R1
+R2
+R1
+R2
+R1
+R2
+R1
+R2
+R1
+R2
+R1
+R2
+R1
+!s11f vlog 2023.3 2023.07, Jul 17 2023
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z3 dC:/intelFPGA_lite/23.1std
+T_opt
+!s110 1742329882
+VPCQQkKZfJU;J>>UlN@=Z41
+Z4 04 8 4 work servo_tb fast 0
+=19-4cd7179dc9b6-67d9d81a-88-3278
+R1
+Z5 !s12b OEM100
+Z6 !s124 OEM10U3 
+Z7 o-quiet -auto_acc_if_foreign -work work +acc
+Z8 tCvgOpt 0
+n@_opt
+Z9 OL;O;2023.3;77
+R3
+T_opt1
+!s110 1742330922
+VmVmCK=fM_iCo]jZDL5H[Y3
+R4
+=1-4cd71793ba5f-67d9dc29-ae-111c
+R1
+R5
+R6
+o-quiet -auto_acc_if_foreign -work work
+R8
+n@_opt1
+R9
+R3
+T_opt2
+!s110 1742335369
+VTb6:Ggo4@=f5A9YYZc82>2
+R4
+=2-4cd71793ba5f-67d9ed86-3bb-658
+R1
+R5
+R6
+R7
+R8
+n@_opt2
+R9
+vclk_gen
+Z10 2I:/ece554/ECE554-Capstone-Project/Servo/Driver/counter.sv
+Z11 DXx6 sv_std 3 std 0 22 9oUSJO;AeEaW`l:M@^WG92
+!s110 1742326787
+!i10b 1
+!s100 O^81h7;ZjK8:^5hC8Pe1V2
+IORFm<n^1Nch7?R6;mB]b<2
+S1
+Z12 dI:/ece554/ECE554-Capstone-Project/Servo/simulation
+w1742326784
+Z13 8I:/ece554/ECE554-Capstone-Project/Servo/Driver/counter.sv
+Z14 FI:/ece554/ECE554-Capstone-Project/Servo/Driver/counter.sv
+!i122 1
+Z15 L0 1 43
+Z16 VDg1SIo80bB@j0V0VzS_@n1
+Z17 OL;L;2023.3;77
+r1
+!s85 0
+31
+!s108 1742326786.000000
+Z18 !s107 I:/ece554/ECE554-Capstone-Project/Servo/Driver/counter.sv|
+Z19 !s90 -reportprogress|300|-work|work|-vopt|-sv|-stats=none|I:/ece554/ECE554-Capstone-Project/Servo/Driver/counter.sv|
+!i113 0
+Z20 o-work work -sv -L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
+R8
+vcounter
+R10
+R11
+Z21 !s110 1742335362
+!i10b 1
+!s100 6XXkFbgJLC<^?T2P<9U=>3
+IDQJ_F0ce8hj2IMO4`MzVC2
+S1
+R12
+w1742335354
+R13
+R14
+!i122 29
+L0 1 44
+R16
+R17
+r1
+!s85 0
+31
+!s108 1742335361.000000
+R18
+R19
+!i113 0
+R20
+R8
+vcoutner
+R10
+R11
+!s110 1742326897
+!i10b 1
+!s100 Mj9<Y]26LCfDamVM<SNlk2
+I:4;[J`_[]71Rh6YDGkaIO0
+S1
+R12
+w1742326894
+R13
+R14
+!i122 3
+R15
+R16
+R17
+r1
+!s85 0
+31
+!s108 1742326896.000000
+R18
+R19
+!i113 0
+R20
+R8
+vservo
+2I:/ece554/ECE554-Capstone-Project/Servo/Driver/servo.sv
+R11
+R21
+!i10b 1
+!s100 ElX1<Y=W>>[MGh]n]a_lE1
+IZl_9dFJA:QlB^f^B[zD>o2
+S1
+R12
+w1742332781
+8I:/ece554/ECE554-Capstone-Project/Servo/Driver/servo.sv
+FI:/ece554/ECE554-Capstone-Project/Servo/Driver/servo.sv
+!i122 30
+L0 1 59
+R16
+R17
+r1
+!s85 0
+31
+!s108 1742335362.000000
+!s107 I:/ece554/ECE554-Capstone-Project/Servo/Driver/servo.sv|
+!s90 -reportprogress|300|-work|work|-vopt|-sv|-stats=none|I:/ece554/ECE554-Capstone-Project/Servo/Driver/servo.sv|
+!i113 0
+R20
+R8
+vservo_tb
+2I:/ece554/ECE554-Capstone-Project/Servo/Testbench/servo_tb.sv
+R11
+!s110 1742330737
+!i10b 1
+!s100 J<ZfgNgWn88R?eN6@CoAD2
+IQ=WNoT?ciU8O4U=E=VU>^1
+S1
+R12
+w1742329873
+8I:/ece554/ECE554-Capstone-Project/Servo/Testbench/servo_tb.sv
+FI:/ece554/ECE554-Capstone-Project/Servo/Testbench/servo_tb.sv
+!i122 28
+L0 1 95
+R16
+R17
+r1
+!s85 0
+31
+!s108 1742330737.000000
+!s107 I:/ece554/ECE554-Capstone-Project/Servo/Testbench/servo_tb.sv|
+!s90 -reportprogress|300|-work|work|-vopt|-sv|-stats=none|I:/ece554/ECE554-Capstone-Project/Servo/Testbench/servo_tb.sv|
+!i113 0
+R20
+R8
