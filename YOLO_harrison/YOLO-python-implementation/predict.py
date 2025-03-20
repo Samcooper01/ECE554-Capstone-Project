@@ -1,21 +1,9 @@
-import os
-import time
-
-from ultralytics import YOLO
-import cv2
+import supervision as sv
 import numpy as np
+from ultralytics import YOLO
 
-VIDEOS_DIR = os.path.join('.', 'videos')
+# Load model
+model = YOLO("./models/paper_airplane_detector.pt")
 
-video_path = os.path.join(VIDEOS_DIR, 'paper_airplane.mp4')
-video_path_out = '{}_out.mp4'.format(video_path)
-
-cap = cv2.VideoCapture(video_path)
-ret, frame = cap.read()
-H, W, _ = frame.shape
-out = cv2.VideoWriter(video_path_out, cv2.VideoWriter_fourcc(*'MP4V'), int(cap.get(cv2.CAP_PROP_FPS)), (W, H))
-
-model_path = os.path.join('.', 'models', 'paper_airplane_detector.pt')
-
-model = YOLO(model_path)
-threshold = 0.5
+# results
+results = model('./videos/paper_airplane.mp4', save=True)  # or .from_images() or .from_webcam()
