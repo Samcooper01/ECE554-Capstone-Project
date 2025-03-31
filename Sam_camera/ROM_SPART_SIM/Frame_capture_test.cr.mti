@@ -1,0 +1,50 @@
+I:/ECE554/FinalProject/ECE554-Capstone-Project/Camera_FPGA/ROM_SPART_SIM/Frame_capture.sv {1 {vlog -work work -vopt -sv -stats=none I:/ECE554/FinalProject/ECE554-Capstone-Project/Camera_FPGA/ROM_SPART_SIM/Frame_capture.sv
+Questa Intel Starter FPGA Edition-64 vlog 2023.3 Compiler 2023.07 Jul 17 2023
+-- Compiling module Frame_capture
+
+Top level modules:
+	Frame_capture
+
+} {} {}} I:/ECE554/FinalProject/ECE554-Capstone-Project/Camera_FPGA/ROM_SPART_SIM/HalfFrame_FIFO.v {1 {vlog -work work -vopt -stats=none I:/ECE554/FinalProject/ECE554-Capstone-Project/Camera_FPGA/ROM_SPART_SIM/HalfFrame_FIFO.v
+Questa Intel Starter FPGA Edition-64 vlog 2023.3 Compiler 2023.07 Jul 17 2023
+-- Compiling module HalfFrame_FIFO
+
+Top level modules:
+	HalfFrame_FIFO
+
+} {} {}} I:/ECE554/FinalProject/ECE554-Capstone-Project/Camera_FPGA/ROM_SPART_SIM/spart.sv {1 {vlog -work work -vopt -sv -stats=none I:/ECE554/FinalProject/ECE554-Capstone-Project/Camera_FPGA/ROM_SPART_SIM/spart.sv
+Questa Intel Starter FPGA Edition-64 vlog 2023.3 Compiler 2023.07 Jul 17 2023
+-- Compiling module spart
+
+Top level modules:
+	spart
+
+} {} {}} I:/ECE554/FinalProject/ECE554-Capstone-Project/Camera_FPGA/ROM_SPART_SIM/lab1_spart.v {1 {vlog -work work -vopt -stats=none I:/ECE554/FinalProject/ECE554-Capstone-Project/Camera_FPGA/ROM_SPART_SIM/lab1_spart.v
+Questa Intel Starter FPGA Edition-64 vlog 2023.3 Compiler 2023.07 Jul 17 2023
+-- Compiling module lab1_spart
+
+Top level modules:
+	lab1_spart
+
+} {} {}} I:/ECE554/FinalProject/ECE554-Capstone-Project/Camera_FPGA/ROM_SPART_SIM/Frame_FIFO.v {1 {vlog -work work -vopt -stats=none I:/ECE554/FinalProject/ECE554-Capstone-Project/Camera_FPGA/ROM_SPART_SIM/Frame_FIFO.v
+Questa Intel Starter FPGA Edition-64 vlog 2023.3 Compiler 2023.07 Jul 17 2023
+-- Compiling module Frame_FIFO
+
+Top level modules:
+	Frame_FIFO
+
+} {} {}} I:/ECE554/FinalProject/ECE554-Capstone-Project/Camera_FPGA/ROM_SPART_SIM/driver.sv {1 {vlog -work work -vopt -sv -stats=none I:/ECE554/FinalProject/ECE554-Capstone-Project/Camera_FPGA/ROM_SPART_SIM/driver.sv
+Questa Intel Starter FPGA Edition-64 vlog 2023.3 Compiler 2023.07 Jul 17 2023
+-- Compiling module driver
+
+Top level modules:
+	driver
+
+} {} {}} I:/ECE554/FinalProject/ECE554-Capstone-Project/Camera_FPGA/ROM_SPART_SIM/Frame_FIFO2.v {1 {vlog -work work -vopt -stats=none I:/ECE554/FinalProject/ECE554-Capstone-Project/Camera_FPGA/ROM_SPART_SIM/Frame_FIFO2.v
+Questa Intel Starter FPGA Edition-64 vlog 2023.3 Compiler 2023.07 Jul 17 2023
+-- Compiling module Frame_FIFO2
+
+Top level modules:
+	Frame_FIFO2
+
+} {} {}}

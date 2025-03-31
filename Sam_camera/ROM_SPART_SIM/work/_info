@@ -1,0 +1,385 @@
+m255
+K4
+z2
+Z0 !s12c _opt2
+Z1 !s99 nomlopt
+R0
+R1
+R0
+R1
+R0
+R1
+R0
+R1
+R0
+R1
+R0
+R1
+R0
+R1
+R0
+R1
+R0
+R1
+R0
+R1
+R0
+R1
+R0
+R1
+R0
+R1
+R0
+R1
+R0
+R1
+Z2 !s12c _opt1
+R1
+R2
+R1
+R2
+R1
+R2
+R1
+R2
+R1
+R2
+R1
+R2
+R1
+R2
+R1
+R2
+R1
+R2
+R1
+R2
+R1
+R2
+R1
+R2
+R1
+R2
+R1
+R2
+R1
+R2
+R1
+R2
+R1
+R2
+R1
+R2
+R1
+Z3 !s12c _opt
+R1
+R3
+R1
+R3
+R1
+R3
+R1
+R3
+R1
+R3
+R1
+R3
+R1
+R3
+R1
+R3
+R1
+R3
+R1
+R3
+R1
+R3
+R1
+R3
+R1
+R3
+R1
+R3
+R1
+R3
+R1
+R3
+R1
+R3
+R1
+R3
+R1
+R3
+R1
+R3
+R1
+!s11f vlog 2023.3 2023.07, Jul 17 2023
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z4 dI:/ECE554/FinalProject/ECE554-Capstone-Project/Camera_FPGA/Camera_sample_proj/Questa_SIM
+T_opt
+!s110 1743312465
+Vz=:VOzRBggF@i2o?HiZ8M3
+Z5 04 12 4 work ROM_SPART_TB fast 0
+=23-4cd7179dc9b6-67e8d650-19f-5b20
+R1
+Z6 !s12b OEM100
+Z7 !s124 OEM10U4 
+Z8 o-quiet -auto_acc_if_foreign -work work -L C:/intelFPGA_lite/23.1std/questa_fse/intel/verilog/altera_mf -L C:/intelFPGA_lite/23.1std/questa_fse/intel/verilog/220model +acc
+Z9 tCvgOpt 0
+n@_opt
+Z10 OL;O;2023.3;77
+R4
+T_opt1
+!s110 1743375235
+VHO9MiBc0Z=N8:C<37U58^0
+R5
+=4-4cd7179dc9b6-67e9cb82-69-53bc
+R1
+R6
+R7
+R8
+R9
+n@_opt1
+R10
+R4
+T_opt2
+!s110 1743458731
+VXKEY2X01jIj0j[N5za6?]3
+R5
+=21-4cd71793b85b-67eb11a9-311-b00
+R1
+R6
+R7
+R8
+R9
+n@_opt2
+R10
+vdriver
+2I:/ECE554/FinalProject/ECE554-Capstone-Project/Camera_FPGA/ROM_SPART_SIM/driver.sv
+Z11 DXx6 sv_std 3 std 0 22 9oUSJO;AeEaW`l:M@^WG92
+!s110 1743458721
+!i10b 1
+!s100 TlU?G<Oh:7zJV:7]=[Le31
+IljW]`WkHbh;^YF<8ni1H80
+S1
+Z12 dI:/ECE554/FinalProject/ECE554-Capstone-Project/Camera_FPGA/ROM_SPART_SIM
+w1740013671
+8I:/ECE554/FinalProject/ECE554-Capstone-Project/Camera_FPGA/ROM_SPART_SIM/driver.sv
+FI:/ECE554/FinalProject/ECE554-Capstone-Project/Camera_FPGA/ROM_SPART_SIM/driver.sv
+!i122 459
+L0 20 133
+Z13 VDg1SIo80bB@j0V0VzS_@n1
+Z14 OL;L;2023.3;77
+r1
+!s85 0
+31
+!s108 1743458720.000000
+!s107 I:/ECE554/FinalProject/ECE554-Capstone-Project/Camera_FPGA/ROM_SPART_SIM/driver.sv|
+!s90 -reportprogress|300|-work|work|-vopt|-sv|-stats=none|I:/ECE554/FinalProject/ECE554-Capstone-Project/Camera_FPGA/ROM_SPART_SIM/driver.sv|
+!i113 0
+Z15 o-work work -sv -L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
+R9
+vFrame_capture
+Z16 2I:/ECE554/FinalProject/ECE554-Capstone-Project/Camera_FPGA/ROM_SPART_SIM/Frame_capture.sv
+R11
+Z17 !s110 1743458722
+!i10b 1
+!s100 HT6>gi0F6]IR=z5o_eb8e0
+I0^0d653Y=IMgPCN5KDl>j3
+S1
+R12
+w1743458655
+Z18 8I:/ECE554/FinalProject/ECE554-Capstone-Project/Camera_FPGA/ROM_SPART_SIM/Frame_capture.sv
+Z19 FI:/ECE554/FinalProject/ECE554-Capstone-Project/Camera_FPGA/ROM_SPART_SIM/Frame_capture.sv
+!i122 460
+L0 1 324
+R13
+R14
+r1
+!s85 0
+31
+!s108 1743458721.000000
+Z20 !s107 I:/ECE554/FinalProject/ECE554-Capstone-Project/Camera_FPGA/ROM_SPART_SIM/Frame_capture.sv|
+Z21 !s90 -reportprogress|300|-work|work|-vopt|-sv|-stats=none|I:/ECE554/FinalProject/ECE554-Capstone-Project/Camera_FPGA/ROM_SPART_SIM/Frame_capture.sv|
+!i113 0
+R15
+R9
+n@frame_capture
+XFrame_capture_sv_unit
+R16
+R11
+!s110 1743303297
+VC7XYo[>;DojV5F]0_Nnh=2
+r1
+!s85 0
+!i10b 1
+!s100 oQVI@dNUdK8MWRocETzGi0
+IC7XYo[>;DojV5F]0_Nnh=2
+!i103 1
+S1
+R12
+w1743303293
+R18
+R19
+!i122 6
+L0 67 0
+R14
+31
+!s108 1743303297.000000
+R20
+R21
+!i113 0
+R15
+R9
+n@frame_capture_sv_unit
+vFrame_FIFO
+2I:/ECE554/FinalProject/ECE554-Capstone-Project/Camera_FPGA/ROM_SPART_SIM/Frame_FIFO.v
+R17
+!i10b 1
+!s100 l>T<PGReFeE5azcddban>0
+IoYjVY52]o:PWeB=9Jobhb0
+R12
+w1743300673
+8I:/ECE554/FinalProject/ECE554-Capstone-Project/Camera_FPGA/ROM_SPART_SIM/Frame_FIFO.v
+FI:/ECE554/FinalProject/ECE554-Capstone-Project/Camera_FPGA/ROM_SPART_SIM/Frame_FIFO.v
+!i122 461
+L0 40 48
+R13
+R14
+r1
+!s85 0
+31
+!s108 1743458722.000000
+!s107 I:/ECE554/FinalProject/ECE554-Capstone-Project/Camera_FPGA/ROM_SPART_SIM/Frame_FIFO.v|
+!s90 -reportprogress|300|-work|work|-vopt|-stats=none|I:/ECE554/FinalProject/ECE554-Capstone-Project/Camera_FPGA/ROM_SPART_SIM/Frame_FIFO.v|
+!i113 0
+Z22 o-work work -L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
+R9
+n@frame_@f@i@f@o
+vFrame_FIFO2
+2I:/ECE554/FinalProject/ECE554-Capstone-Project/Camera_FPGA/ROM_SPART_SIM/Frame_FIFO2.v
+!s110 1743458725
+!i10b 1
+!s100 bGZL:mN=TU@EkeM1G@D:j0
+IWlnbU1ho2I2:c[mB5V2B;2
+R12
+w1743370294
+8I:/ECE554/FinalProject/ECE554-Capstone-Project/Camera_FPGA/ROM_SPART_SIM/Frame_FIFO2.v
+FI:/ECE554/FinalProject/ECE554-Capstone-Project/Camera_FPGA/ROM_SPART_SIM/Frame_FIFO2.v
+!i122 465
+Z23 L0 40 52
+R13
+R14
+r1
+!s85 0
+31
+Z24 !s108 1743458725.000000
+!s107 I:/ECE554/FinalProject/ECE554-Capstone-Project/Camera_FPGA/ROM_SPART_SIM/Frame_FIFO2.v|
+!s90 -reportprogress|300|-work|work|-vopt|-stats=none|I:/ECE554/FinalProject/ECE554-Capstone-Project/Camera_FPGA/ROM_SPART_SIM/Frame_FIFO2.v|
+!i113 0
+R22
+R9
+n@frame_@f@i@f@o2
+vHalfFrame_FIFO
+2I:/ECE554/FinalProject/ECE554-Capstone-Project/Camera_FPGA/ROM_SPART_SIM/HalfFrame_FIFO.v
+!s110 1743458726
+!i10b 1
+!s100 nP>6AGzo3P<G5U=7AjKUn2
+IXP2mHlE_[e>z?XDKeAb@h1
+R12
+w1743447351
+8I:/ECE554/FinalProject/ECE554-Capstone-Project/Camera_FPGA/ROM_SPART_SIM/HalfFrame_FIFO.v
+FI:/ECE554/FinalProject/ECE554-Capstone-Project/Camera_FPGA/ROM_SPART_SIM/HalfFrame_FIFO.v
+!i122 466
+R23
+R13
+R14
+r1
+!s85 0
+31
+R24
+!s107 I:/ECE554/FinalProject/ECE554-Capstone-Project/Camera_FPGA/ROM_SPART_SIM/HalfFrame_FIFO.v|
+!s90 -reportprogress|300|-work|work|-vopt|-stats=none|I:/ECE554/FinalProject/ECE554-Capstone-Project/Camera_FPGA/ROM_SPART_SIM/HalfFrame_FIFO.v|
+!i113 0
+R22
+R9
+n@half@frame_@f@i@f@o
+vlab1_spart
+2I:/ECE554/FinalProject/ECE554-Capstone-Project/Camera_FPGA/ROM_SPART_SIM/lab1_spart.v
+!s110 1743458723
+!i10b 1
+!s100 LAiT>zeOY;<No7zEh^93?3
+IenKgYgg>7af0XYJhj>lAB2
+R12
+w1740019491
+8I:/ECE554/FinalProject/ECE554-Capstone-Project/Camera_FPGA/ROM_SPART_SIM/lab1_spart.v
+FI:/ECE554/FinalProject/ECE554-Capstone-Project/Camera_FPGA/ROM_SPART_SIM/lab1_spart.v
+!i122 462
+L0 6 133
+R13
+R14
+r1
+!s85 0
+31
+Z25 !s108 1743458723.000000
+!s107 I:/ECE554/FinalProject/ECE554-Capstone-Project/Camera_FPGA/ROM_SPART_SIM/lab1_spart.v|
+!s90 -reportprogress|300|-work|work|-vopt|-stats=none|I:/ECE554/FinalProject/ECE554-Capstone-Project/Camera_FPGA/ROM_SPART_SIM/lab1_spart.v|
+!i113 0
+R22
+R9
+vROM_SPART_TB
+2I:/ECE554/FinalProject/ECE554-Capstone-Project/Camera_FPGA/ROM_SPART_SIM/ROM_SPART_TB.sv
+R11
+Z26 !s110 1743458724
+!i10b 1
+!s100 L`c:dL^_Wk2fSd6zaQ;V92
+Io;iA;lz<^kcUfd>?e]4md1
+S1
+R12
+w1743458716
+8I:/ECE554/FinalProject/ECE554-Capstone-Project/Camera_FPGA/ROM_SPART_SIM/ROM_SPART_TB.sv
+FI:/ECE554/FinalProject/ECE554-Capstone-Project/Camera_FPGA/ROM_SPART_SIM/ROM_SPART_TB.sv
+!i122 463
+L0 2 58
+R13
+R14
+r1
+!s85 0
+31
+R25
+!s107 I:/ECE554/FinalProject/ECE554-Capstone-Project/Camera_FPGA/ROM_SPART_SIM/ROM_SPART_TB.sv|
+!s90 -reportprogress|300|-work|work|-vopt|-sv|-stats=none|I:/ECE554/FinalProject/ECE554-Capstone-Project/Camera_FPGA/ROM_SPART_SIM/ROM_SPART_TB.sv|
+!i113 0
+R15
+R9
+n@r@o@m_@s@p@a@r@t_@t@b
+vspart
+2I:/ECE554/FinalProject/ECE554-Capstone-Project/Camera_FPGA/ROM_SPART_SIM/spart.sv
+R11
+R26
+!i10b 1
+!s100 lOhU]hM:U:UC=0kFQ3gLd2
+IN?hBMgJg7kf^=_RQ2ECE[0
+S1
+R12
+w1740019642
+8I:/ECE554/FinalProject/ECE554-Capstone-Project/Camera_FPGA/ROM_SPART_SIM/spart.sv
+FI:/ECE554/FinalProject/ECE554-Capstone-Project/Camera_FPGA/ROM_SPART_SIM/spart.sv
+!i122 464
+L0 20 213
+R13
+R14
+r1
+!s85 0
+31
+!s108 1743458724.000000
+!s107 I:/ECE554/FinalProject/ECE554-Capstone-Project/Camera_FPGA/ROM_SPART_SIM/spart.sv|
+!s90 -reportprogress|300|-work|work|-vopt|-sv|-stats=none|I:/ECE554/FinalProject/ECE554-Capstone-Project/Camera_FPGA/ROM_SPART_SIM/spart.sv|
+!i113 0
+R15
+R9

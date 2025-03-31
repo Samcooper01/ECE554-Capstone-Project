@@ -1,0 +1,900 @@
+# Compile of driver.sv was successful.
+# Compile of Frame_capture.sv was successful.
+# Compile of Frame_FIFO.v was successful.
+# Compile of lab1_spart.v was successful.
+# Compile of ROM_SPART_TB.sv was successful.
+# Compile of spart.sv was successful.
+# Compile of Frame_FIFO2.v was successful.
+# 7 compiles, 0 failed with no errors.
+vsim work.ROM_SPART_TB -voptargs=+acc
+# vsim work.ROM_SPART_TB -voptargs="+acc" 
+# Start time: 13:04:20 on Mar 31,2025
+# ** Note: (vsim-3812) Design is being optimized...
+# ** Warning: (vopt-10587) Some optimizations are turned off because the +acc switch is in effect. This will cause your simulation to run slowly. Please use -access/-debug to maintain needed visibility.
+# ** Error: I:/ECE554/FinalProject/ECE554-Capstone-Project/Camera_FPGA/ROM_SPART_SIM/Frame_FIFO2.v(62): Module 'dcfifo' is not defined.
+#  For instance 'dcfifo_component' at path 'ROM_SPART_TB.iDUT.iFIFO'
+# Optimization failed
+# ** Note: (vsim-12126) Error and warning message counts have been restored: Errors=1, Warnings=1.
+# Error loading design
+# End time: 13:04:24 on Mar 31,2025, Elapsed time: 0:00:04
+# Errors: 1, Warnings: 3
+vsim -L C:/intelFPGA_lite/23.1std/questa_fse/intel/verilog/altera_mf -L C:/intelFPGA_lite/23.1std/questa_fse/intel/verilog/220model -vopt work.ROM_SPART_TB -voptargs=+acc
+# vsim -L C:/intelFPGA_lite/23.1std/questa_fse/intel/verilog/altera_mf -L C:/intelFPGA_lite/23.1std/questa_fse/intel/verilog/220model -vopt work.ROM_SPART_TB -voptargs="+acc" 
+# Start time: 13:08:04 on Mar 31,2025
+# ** Note: (vsim-3812) Design is being optimized...
+# ** Warning: (vopt-10587) Some optimizations are turned off because the +acc switch is in effect. This will cause your simulation to run slowly. Please use -access/-debug to maintain needed visibility.
+# ** Note: (vopt-143) Recognized 2 FSMs in module "spart(fast)".
+# ** Note: (vopt-143) Recognized 1 FSM in module "Frame_capture(fast)".
+# ** Warning: $MODEL_TECH/../intel/verilog/src/altera_mf.v(31792): (vopt-2685) [TFMPC] - Too few port connections for 'DCFIFO_MW'.  Expected 14, found 13.
+# ** Warning: $MODEL_TECH/../intel/verilog/src/altera_mf.v(31792): (vopt-2718) [TFMPC] - Missing connection for port 'eccstatus'.
+# ** Note: (vsim-12126) Error and warning message counts have been restored: Errors=0, Warnings=3.
+# Loading sv_std.std
+# Loading work.ROM_SPART_TB(fast)
+# Loading work.Frame_capture(fast)
+# Loading work.Frame_FIFO2(fast)
+# Loading C:/intelFPGA_lite/23.1std/questa_fse/intel/verilog/altera_mf.dcfifo(fast)
+# Loading C:/intelFPGA_lite/23.1std/questa_fse/intel/verilog/altera_mf.dcfifo_mixed_widths(fast)
+# Loading C:/intelFPGA_lite/23.1std/questa_fse/intel/verilog/altera_mf.ALTERA_DEVICE_FAMILIES(fast)
+# Loading C:/intelFPGA_lite/23.1std/questa_fse/intel/verilog/altera_mf.dcfifo_async(fast)
+# Loading C:/intelFPGA_lite/23.1std/questa_fse/intel/verilog/altera_mf.ALTERA_DEVICE_FAMILIES(fast__1)
+# Loading C:/intelFPGA_lite/23.1std/questa_fse/intel/verilog/altera_mf.dcfifo_dffpipe(fast)
+# Loading C:/intelFPGA_lite/23.1std/questa_fse/intel/verilog/altera_mf.dcfifo_dffpipe(fast__1)
+# Loading C:/intelFPGA_lite/23.1std/questa_fse/intel/verilog/altera_mf.dcfifo_dffpipe(fast__2)
+# Loading C:/intelFPGA_lite/23.1std/questa_fse/intel/verilog/altera_mf.dcfifo_fefifo(fast)
+# Loading C:/intelFPGA_lite/23.1std/questa_fse/intel/verilog/altera_mf.dcfifo_fefifo(fast__1)
+# Loading C:/intelFPGA_lite/23.1std/questa_fse/intel/verilog/altera_mf.dcfifo_low_latency(fast)
+# Loading C:/intelFPGA_lite/23.1std/questa_fse/intel/verilog/altera_mf.ALTERA_DEVICE_FAMILIES(fast__2)
+# Loading C:/intelFPGA_lite/23.1std/questa_fse/intel/verilog/altera_mf.ALTERA_MF_HINT_EVALUATION(fast)
+# Loading C:/intelFPGA_lite/23.1std/questa_fse/intel/verilog/altera_mf.dcfifo_dffpipe(fast__3)
+# Loading work.spart(fast)
+add wave -position insertpoint  \
+sim:/ROM_SPART_TB/iDUT/CLK \
+sim:/ROM_SPART_TB/iDUT/D5M_PIXLCLK \
+sim:/ROM_SPART_TB/iDUT/RST_N \
+sim:/ROM_SPART_TB/iDUT/iDATA \
+sim:/ROM_SPART_TB/iDUT/iDATA_VAL \
+sim:/ROM_SPART_TB/iDUT/rdempty \
+sim:/ROM_SPART_TB/iDUT/fill_fifo \
+sim:/ROM_SPART_TB/iDUT/empty_fifo \
+sim:/ROM_SPART_TB/iDUT/FIFO_word \
+sim:/ROM_SPART_TB/iDUT/word_index \
+sim:/ROM_SPART_TB/iDUT/word_ready \
+sim:/ROM_SPART_TB/iDUT/wrreq \
+sim:/ROM_SPART_TB/iDUT/word_counter \
+sim:/ROM_SPART_TB/iDUT/rdreq \
+sim:/ROM_SPART_TB/iDUT/FIFO_data \
+sim:/ROM_SPART_TB/iDUT/spart_rdy \
+sim:/ROM_SPART_TB/iDUT/iocs \
+sim:/ROM_SPART_TB/iDUT/iorw \
+sim:/ROM_SPART_TB/iDUT/rda \
+sim:/ROM_SPART_TB/iDUT/tbr \
+sim:/ROM_SPART_TB/iDUT/txd \
+sim:/ROM_SPART_TB/iDUT/rxd \
+sim:/ROM_SPART_TB/iDUT/ioaddr \
+sim:/ROM_SPART_TB/iDUT/databus \
+sim:/ROM_SPART_TB/iDUT/config_data_low \
+sim:/ROM_SPART_TB/iDUT/config_data_high \
+sim:/ROM_SPART_TB/iDUT/next_data \
+sim:/ROM_SPART_TB/iDUT/next_state \
+sim:/ROM_SPART_TB/iDUT/state \
+sim:/ROM_SPART_TB/iDUT/rst_done \
+sim:/ROM_SPART_TB/iDUT/db_select_low \
+sim:/ROM_SPART_TB/iDUT/db_select_high \
+sim:/ROM_SPART_TB/iDUT/transmit_select
+# ** Warning: (vsim-WLF-5000) WLF file currently in use: vsim.wlf
+#           File in use by: sccooper  Hostname: WIN-8114  ProcessID: 23328
+#           Attempting to use alternate WLF file "./wlftribgb9".
+# ** Warning: (vsim-WLF-5001) Could not open WLF file: vsim.wlf
+#           Using alternate file: ./wlftribgb9
+run -all
+# BEGIN SIM
+# Causality operation skipped due to absence of debug database file
+restart -f
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# ** Note: (vsim-8009) Loading existing optimized design _opt2
+# ** Note: (vsim-12126) Error and warning message counts have been restored: Errors=0, Warnings=3.
+# Loading work.ROM_SPART_TB(fast)
+# Loading work.Frame_capture(fast)
+# Loading work.Frame_FIFO2(fast)
+# Loading C:/intelFPGA_lite/23.1std/questa_fse/intel/verilog/altera_mf.dcfifo(fast)
+# Loading C:/intelFPGA_lite/23.1std/questa_fse/intel/verilog/altera_mf.dcfifo_mixed_widths(fast)
+# Loading C:/intelFPGA_lite/23.1std/questa_fse/intel/verilog/altera_mf.ALTERA_DEVICE_FAMILIES(fast)
+# Loading C:/intelFPGA_lite/23.1std/questa_fse/intel/verilog/altera_mf.dcfifo_async(fast)
+# Loading C:/intelFPGA_lite/23.1std/questa_fse/intel/verilog/altera_mf.ALTERA_DEVICE_FAMILIES(fast__1)
+# Loading C:/intelFPGA_lite/23.1std/questa_fse/intel/verilog/altera_mf.dcfifo_dffpipe(fast)
+# Loading C:/intelFPGA_lite/23.1std/questa_fse/intel/verilog/altera_mf.dcfifo_dffpipe(fast__1)
+# Loading C:/intelFPGA_lite/23.1std/questa_fse/intel/verilog/altera_mf.dcfifo_dffpipe(fast__2)
+# Loading C:/intelFPGA_lite/23.1std/questa_fse/intel/verilog/altera_mf.dcfifo_fefifo(fast)
+# Loading C:/intelFPGA_lite/23.1std/questa_fse/intel/verilog/altera_mf.dcfifo_fefifo(fast__1)
+# Loading C:/intelFPGA_lite/23.1std/questa_fse/intel/verilog/altera_mf.dcfifo_low_latency(fast)
+# Loading C:/intelFPGA_lite/23.1std/questa_fse/intel/verilog/altera_mf.ALTERA_DEVICE_FAMILIES(fast__2)
+# Loading C:/intelFPGA_lite/23.1std/questa_fse/intel/verilog/altera_mf.ALTERA_MF_HINT_EVALUATION(fast)
+# Loading C:/intelFPGA_lite/23.1std/questa_fse/intel/verilog/altera_mf.dcfifo_dffpipe(fast__3)
+# Loading work.spart(fast)
+run -continue
+# BEGIN SIM
+# Compile of driver.sv was successful.
+# Compile of Frame_capture.sv was successful.
+# Compile of Frame_FIFO.v was successful.
+# Compile of lab1_spart.v was successful.
+# Compile of ROM_SPART_TB.sv was successful.
+# Compile of spart.sv was successful.
+# Compile of Frame_FIFO2.v was successful.
+# 7 compiles, 0 failed with no errors.
+restart -f
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
+# ** Warning: (vopt-10587) Some optimizations are turned off because the +acc switch is in effect. This will cause your simulation to run slowly. Please use -access/-debug to maintain needed visibility.
+# ** Note: (vopt-143) Recognized 1 FSM in module "Frame_capture(fast)".
+# ** Note: (vsim-12126) Error and warning message counts have been restored: Errors=0, Warnings=1.
+# Loading sv_std.std
+# Loading work.ROM_SPART_TB(fast)
+# Loading work.Frame_capture(fast)
+# Loading work.Frame_FIFO2(fast)
+# Loading C:/intelFPGA_lite/23.1std/questa_fse/intel/verilog/altera_mf.dcfifo(fast)
+# Loading C:/intelFPGA_lite/23.1std/questa_fse/intel/verilog/altera_mf.dcfifo_mixed_widths(fast)
+# Loading C:/intelFPGA_lite/23.1std/questa_fse/intel/verilog/altera_mf.ALTERA_DEVICE_FAMILIES(fast)
+# Loading C:/intelFPGA_lite/23.1std/questa_fse/intel/verilog/altera_mf.dcfifo_async(fast)
+# Loading C:/intelFPGA_lite/23.1std/questa_fse/intel/verilog/altera_mf.ALTERA_DEVICE_FAMILIES(fast__1)
+# Loading C:/intelFPGA_lite/23.1std/questa_fse/intel/verilog/altera_mf.dcfifo_dffpipe(fast)
+# Loading C:/intelFPGA_lite/23.1std/questa_fse/intel/verilog/altera_mf.dcfifo_dffpipe(fast__1)
+# Loading C:/intelFPGA_lite/23.1std/questa_fse/intel/verilog/altera_mf.dcfifo_dffpipe(fast__2)
+# Loading C:/intelFPGA_lite/23.1std/questa_fse/intel/verilog/altera_mf.dcfifo_fefifo(fast)
+# Loading C:/intelFPGA_lite/23.1std/questa_fse/intel/verilog/altera_mf.dcfifo_fefifo(fast__1)
+# Loading C:/intelFPGA_lite/23.1std/questa_fse/intel/verilog/altera_mf.dcfifo_low_latency(fast)
+# Loading C:/intelFPGA_lite/23.1std/questa_fse/intel/verilog/altera_mf.ALTERA_DEVICE_FAMILIES(fast__2)
+# Loading C:/intelFPGA_lite/23.1std/questa_fse/intel/verilog/altera_mf.ALTERA_MF_HINT_EVALUATION(fast)
+# Loading C:/intelFPGA_lite/23.1std/questa_fse/intel/verilog/altera_mf.dcfifo_dffpipe(fast__3)
+# Loading work.spart(fast)
+run -all
+# BEGIN SIM
+# Compile of driver.sv was successful.
+# Compile of Frame_capture.sv was successful.
+# Compile of Frame_FIFO.v was successful.
+# Compile of lab1_spart.v was successful.
+# Compile of ROM_SPART_TB.sv was successful.
+# Compile of spart.sv was successful.
+# Compile of Frame_FIFO2.v was successful.
+# 7 compiles, 0 failed with no errors.
+restart -f
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
+# ** Warning: (vopt-10587) Some optimizations are turned off because the +acc switch is in effect. This will cause your simulation to run slowly. Please use -access/-debug to maintain needed visibility.
+# ** Note: (vsim-12126) Error and warning message counts have been restored: Errors=0, Warnings=1.
+# Loading sv_std.std
+# Loading work.ROM_SPART_TB(fast)
+# Loading work.Frame_capture(fast)
+# Loading work.Frame_FIFO2(fast)
+# Loading C:/intelFPGA_lite/23.1std/questa_fse/intel/verilog/altera_mf.dcfifo(fast)
+# Loading C:/intelFPGA_lite/23.1std/questa_fse/intel/verilog/altera_mf.dcfifo_mixed_widths(fast)
+# Loading C:/intelFPGA_lite/23.1std/questa_fse/intel/verilog/altera_mf.ALTERA_DEVICE_FAMILIES(fast)
+# Loading C:/intelFPGA_lite/23.1std/questa_fse/intel/verilog/altera_mf.dcfifo_async(fast)
+# Loading C:/intelFPGA_lite/23.1std/questa_fse/intel/verilog/altera_mf.ALTERA_DEVICE_FAMILIES(fast__1)
+# Loading C:/intelFPGA_lite/23.1std/questa_fse/intel/verilog/altera_mf.dcfifo_dffpipe(fast)
+# Loading C:/intelFPGA_lite/23.1std/questa_fse/intel/verilog/altera_mf.dcfifo_dffpipe(fast__1)
+# Loading C:/intelFPGA_lite/23.1std/questa_fse/intel/verilog/altera_mf.dcfifo_dffpipe(fast__2)
+# Loading C:/intelFPGA_lite/23.1std/questa_fse/intel/verilog/altera_mf.dcfifo_fefifo(fast)
+# Loading C:/intelFPGA_lite/23.1std/questa_fse/intel/verilog/altera_mf.dcfifo_fefifo(fast__1)
+# Loading C:/intelFPGA_lite/23.1std/questa_fse/intel/verilog/altera_mf.dcfifo_low_latency(fast)
+# Loading C:/intelFPGA_lite/23.1std/questa_fse/intel/verilog/altera_mf.ALTERA_DEVICE_FAMILIES(fast__2)
+# Loading C:/intelFPGA_lite/23.1std/questa_fse/intel/verilog/altera_mf.ALTERA_MF_HINT_EVALUATION(fast)
+# Loading C:/intelFPGA_lite/23.1std/questa_fse/intel/verilog/altera_mf.dcfifo_dffpipe(fast__3)
+# Loading work.spart(fast)
+run -all
+# BEGIN SIM
+# ** Note: $stop    : I:/ECE554/FinalProject/ECE554-Capstone-Project/Camera_FPGA/ROM_SPART_SIM/ROM_SPART_TB.sv(42)
+#    Time: 10003980 ps  Iteration: 0  Instance: /ROM_SPART_TB
+# Break in Module ROM_SPART_TB at I:/ECE554/FinalProject/ECE554-Capstone-Project/Camera_FPGA/ROM_SPART_SIM/ROM_SPART_TB.sv line 42
+# Compile of driver.sv was successful.
+# Compile of Frame_capture.sv was successful.
+# Compile of Frame_FIFO.v was successful.
+# Compile of lab1_spart.v was successful.
+# Compile of ROM_SPART_TB.sv was successful.
+# Compile of spart.sv was successful.
+# Compile of Frame_FIFO2.v was successful.
+# 7 compiles, 0 failed with no errors.
+restart -f
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
+# ** Warning: (vopt-10587) Some optimizations are turned off because the +acc switch is in effect. This will cause your simulation to run slowly. Please use -access/-debug to maintain needed visibility.
+# ** Note: (vsim-12126) Error and warning message counts have been restored: Errors=0, Warnings=1.
+# Loading sv_std.std
+# Loading work.ROM_SPART_TB(fast)
+# Loading work.Frame_capture(fast)
+# Loading work.Frame_FIFO2(fast)
+# Loading C:/intelFPGA_lite/23.1std/questa_fse/intel/verilog/altera_mf.dcfifo(fast)
+# Loading C:/intelFPGA_lite/23.1std/questa_fse/intel/verilog/altera_mf.dcfifo_mixed_widths(fast)
+# Loading C:/intelFPGA_lite/23.1std/questa_fse/intel/verilog/altera_mf.ALTERA_DEVICE_FAMILIES(fast)
+# Loading C:/intelFPGA_lite/23.1std/questa_fse/intel/verilog/altera_mf.dcfifo_async(fast)
+# Loading C:/intelFPGA_lite/23.1std/questa_fse/intel/verilog/altera_mf.ALTERA_DEVICE_FAMILIES(fast__1)
+# Loading C:/intelFPGA_lite/23.1std/questa_fse/intel/verilog/altera_mf.dcfifo_dffpipe(fast)
+# Loading C:/intelFPGA_lite/23.1std/questa_fse/intel/verilog/altera_mf.dcfifo_dffpipe(fast__1)
+# Loading C:/intelFPGA_lite/23.1std/questa_fse/intel/verilog/altera_mf.dcfifo_dffpipe(fast__2)
+# Loading C:/intelFPGA_lite/23.1std/questa_fse/intel/verilog/altera_mf.dcfifo_fefifo(fast)
+# Loading C:/intelFPGA_lite/23.1std/questa_fse/intel/verilog/altera_mf.dcfifo_fefifo(fast__1)
+# Loading C:/intelFPGA_lite/23.1std/questa_fse/intel/verilog/altera_mf.dcfifo_low_latency(fast)
+# Loading C:/intelFPGA_lite/23.1std/questa_fse/intel/verilog/altera_mf.ALTERA_DEVICE_FAMILIES(fast__2)
+# Loading C:/intelFPGA_lite/23.1std/questa_fse/intel/verilog/altera_mf.ALTERA_MF_HINT_EVALUATION(fast)
+# Loading C:/intelFPGA_lite/23.1std/questa_fse/intel/verilog/altera_mf.dcfifo_dffpipe(fast__3)
+# Loading work.spart(fast)
+run -all
+# BEGIN SIM
+# ** Note: $stop    : I:/ECE554/FinalProject/ECE554-Capstone-Project/Camera_FPGA/ROM_SPART_SIM/ROM_SPART_TB.sv(42)
+#    Time: 15003980 ps  Iteration: 0  Instance: /ROM_SPART_TB
+# Break in Module ROM_SPART_TB at I:/ECE554/FinalProject/ECE554-Capstone-Project/Camera_FPGA/ROM_SPART_SIM/ROM_SPART_TB.sv line 42
+# Compile of driver.sv was successful.
+# Compile of Frame_capture.sv was successful.
+# Compile of Frame_FIFO.v was successful.
+# Compile of lab1_spart.v was successful.
+# Compile of ROM_SPART_TB.sv was successful.
+# Compile of spart.sv was successful.
+# Compile of Frame_FIFO2.v was successful.
+# 7 compiles, 0 failed with no errors.
+restart -f
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
+# ** Warning: (vopt-10587) Some optimizations are turned off because the +acc switch is in effect. This will cause your simulation to run slowly. Please use -access/-debug to maintain needed visibility.
+# ** Note: (vsim-12126) Error and warning message counts have been restored: Errors=0, Warnings=1.
+# Loading sv_std.std
+# Loading work.ROM_SPART_TB(fast)
+# Loading work.Frame_capture(fast)
+# Loading work.Frame_FIFO2(fast)
+# Loading C:/intelFPGA_lite/23.1std/questa_fse/intel/verilog/altera_mf.dcfifo(fast)
+# Loading C:/intelFPGA_lite/23.1std/questa_fse/intel/verilog/altera_mf.dcfifo_mixed_widths(fast)
+# Loading C:/intelFPGA_lite/23.1std/questa_fse/intel/verilog/altera_mf.ALTERA_DEVICE_FAMILIES(fast)
+# Loading C:/intelFPGA_lite/23.1std/questa_fse/intel/verilog/altera_mf.dcfifo_async(fast)
+# Loading C:/intelFPGA_lite/23.1std/questa_fse/intel/verilog/altera_mf.ALTERA_DEVICE_FAMILIES(fast__1)
+# Loading C:/intelFPGA_lite/23.1std/questa_fse/intel/verilog/altera_mf.dcfifo_dffpipe(fast)
+# Loading C:/intelFPGA_lite/23.1std/questa_fse/intel/verilog/altera_mf.dcfifo_dffpipe(fast__1)
+# Loading C:/intelFPGA_lite/23.1std/questa_fse/intel/verilog/altera_mf.dcfifo_dffpipe(fast__2)
+# Loading C:/intelFPGA_lite/23.1std/questa_fse/intel/verilog/altera_mf.dcfifo_fefifo(fast)
+# Loading C:/intelFPGA_lite/23.1std/questa_fse/intel/verilog/altera_mf.dcfifo_fefifo(fast__1)
+# Loading C:/intelFPGA_lite/23.1std/questa_fse/intel/verilog/altera_mf.dcfifo_low_latency(fast)
+# Loading C:/intelFPGA_lite/23.1std/questa_fse/intel/verilog/altera_mf.ALTERA_DEVICE_FAMILIES(fast__2)
+# Loading C:/intelFPGA_lite/23.1std/questa_fse/intel/verilog/altera_mf.ALTERA_MF_HINT_EVALUATION(fast)
+# Loading C:/intelFPGA_lite/23.1std/questa_fse/intel/verilog/altera_mf.dcfifo_dffpipe(fast__3)
+# Loading work.spart(fast)
+run -all
+# BEGIN SIM
+# ** Note: $stop    : I:/ECE554/FinalProject/ECE554-Capstone-Project/Camera_FPGA/ROM_SPART_SIM/ROM_SPART_TB.sv(42)
+#    Time: 20003980 ps  Iteration: 0  Instance: /ROM_SPART_TB
+# Break in Module ROM_SPART_TB at I:/ECE554/FinalProject/ECE554-Capstone-Project/Camera_FPGA/ROM_SPART_SIM/ROM_SPART_TB.sv line 42
+# Compile of driver.sv was successful.
+# Compile of Frame_capture.sv was successful.
+# Compile of Frame_FIFO.v was successful.
+# Compile of lab1_spart.v was successful.
+# Compile of ROM_SPART_TB.sv was successful.
+# Compile of spart.sv was successful.
+# Compile of Frame_FIFO2.v was successful.
+# 7 compiles, 0 failed with no errors.
+restart -f
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
+# ** Warning: (vopt-10587) Some optimizations are turned off because the +acc switch is in effect. This will cause your simulation to run slowly. Please use -access/-debug to maintain needed visibility.
+# ** Note: (vsim-12126) Error and warning message counts have been restored: Errors=0, Warnings=1.
+# Loading sv_std.std
+# Loading work.ROM_SPART_TB(fast)
+# Loading work.Frame_capture(fast)
+# Loading work.Frame_FIFO2(fast)
+# Loading C:/intelFPGA_lite/23.1std/questa_fse/intel/verilog/altera_mf.dcfifo(fast)
+# Loading C:/intelFPGA_lite/23.1std/questa_fse/intel/verilog/altera_mf.dcfifo_mixed_widths(fast)
+# Loading C:/intelFPGA_lite/23.1std/questa_fse/intel/verilog/altera_mf.ALTERA_DEVICE_FAMILIES(fast)
+# Loading C:/intelFPGA_lite/23.1std/questa_fse/intel/verilog/altera_mf.dcfifo_async(fast)
+# Loading C:/intelFPGA_lite/23.1std/questa_fse/intel/verilog/altera_mf.ALTERA_DEVICE_FAMILIES(fast__1)
+# Loading C:/intelFPGA_lite/23.1std/questa_fse/intel/verilog/altera_mf.dcfifo_dffpipe(fast)
+# Loading C:/intelFPGA_lite/23.1std/questa_fse/intel/verilog/altera_mf.dcfifo_dffpipe(fast__1)
+# Loading C:/intelFPGA_lite/23.1std/questa_fse/intel/verilog/altera_mf.dcfifo_dffpipe(fast__2)
+# Loading C:/intelFPGA_lite/23.1std/questa_fse/intel/verilog/altera_mf.dcfifo_fefifo(fast)
+# Loading C:/intelFPGA_lite/23.1std/questa_fse/intel/verilog/altera_mf.dcfifo_fefifo(fast__1)
+# Loading C:/intelFPGA_lite/23.1std/questa_fse/intel/verilog/altera_mf.dcfifo_low_latency(fast)
+# Loading C:/intelFPGA_lite/23.1std/questa_fse/intel/verilog/altera_mf.ALTERA_DEVICE_FAMILIES(fast__2)
+# Loading C:/intelFPGA_lite/23.1std/questa_fse/intel/verilog/altera_mf.ALTERA_MF_HINT_EVALUATION(fast)
+# Loading C:/intelFPGA_lite/23.1std/questa_fse/intel/verilog/altera_mf.dcfifo_dffpipe(fast__3)
+# Loading work.spart(fast)
+run -all
+# BEGIN SIM
+# ** Note: $stop    : I:/ECE554/FinalProject/ECE554-Capstone-Project/Camera_FPGA/ROM_SPART_SIM/ROM_SPART_TB.sv(42)
+#    Time: 25003980 ps  Iteration: 0  Instance: /ROM_SPART_TB
+# Break in Module ROM_SPART_TB at I:/ECE554/FinalProject/ECE554-Capstone-Project/Camera_FPGA/ROM_SPART_SIM/ROM_SPART_TB.sv line 42
+# Compile of driver.sv was successful.
+# Compile of Frame_capture.sv was successful.
+# Compile of Frame_FIFO.v was successful.
+# Compile of lab1_spart.v was successful.
+# Compile of ROM_SPART_TB.sv was successful.
+# Compile of spart.sv was successful.
+# Compile of Frame_FIFO2.v was successful.
+# 7 compiles, 0 failed with no errors.
+restart -f
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
+# ** Warning: (vopt-10587) Some optimizations are turned off because the +acc switch is in effect. This will cause your simulation to run slowly. Please use -access/-debug to maintain needed visibility.
+# ** Note: (vsim-12126) Error and warning message counts have been restored: Errors=0, Warnings=1.
+# Loading sv_std.std
+# Loading work.ROM_SPART_TB(fast)
+# Loading work.Frame_capture(fast)
+# Loading work.Frame_FIFO2(fast)
+# Loading C:/intelFPGA_lite/23.1std/questa_fse/intel/verilog/altera_mf.dcfifo(fast)
+# Loading C:/intelFPGA_lite/23.1std/questa_fse/intel/verilog/altera_mf.dcfifo_mixed_widths(fast)
+# Loading C:/intelFPGA_lite/23.1std/questa_fse/intel/verilog/altera_mf.ALTERA_DEVICE_FAMILIES(fast)
+# Loading C:/intelFPGA_lite/23.1std/questa_fse/intel/verilog/altera_mf.dcfifo_async(fast)
+# Loading C:/intelFPGA_lite/23.1std/questa_fse/intel/verilog/altera_mf.ALTERA_DEVICE_FAMILIES(fast__1)
+# Loading C:/intelFPGA_lite/23.1std/questa_fse/intel/verilog/altera_mf.dcfifo_dffpipe(fast)
+# Loading C:/intelFPGA_lite/23.1std/questa_fse/intel/verilog/altera_mf.dcfifo_dffpipe(fast__1)
+# Loading C:/intelFPGA_lite/23.1std/questa_fse/intel/verilog/altera_mf.dcfifo_dffpipe(fast__2)
+# Loading C:/intelFPGA_lite/23.1std/questa_fse/intel/verilog/altera_mf.dcfifo_fefifo(fast)
+# Loading C:/intelFPGA_lite/23.1std/questa_fse/intel/verilog/altera_mf.dcfifo_fefifo(fast__1)
+# Loading C:/intelFPGA_lite/23.1std/questa_fse/intel/verilog/altera_mf.dcfifo_low_latency(fast)
+# Loading C:/intelFPGA_lite/23.1std/questa_fse/intel/verilog/altera_mf.ALTERA_DEVICE_FAMILIES(fast__2)
+# Loading C:/intelFPGA_lite/23.1std/questa_fse/intel/verilog/altera_mf.ALTERA_MF_HINT_EVALUATION(fast)
+# Loading C:/intelFPGA_lite/23.1std/questa_fse/intel/verilog/altera_mf.dcfifo_dffpipe(fast__3)
+# Loading work.spart(fast)
+run -all
+# BEGIN SIM
+# ** Note: $stop    : I:/ECE554/FinalProject/ECE554-Capstone-Project/Camera_FPGA/ROM_SPART_SIM/ROM_SPART_TB.sv(42)
+#    Time: 20205260 ps  Iteration: 4  Instance: /ROM_SPART_TB
+# Break in Module ROM_SPART_TB at I:/ECE554/FinalProject/ECE554-Capstone-Project/Camera_FPGA/ROM_SPART_SIM/ROM_SPART_TB.sv line 42
+# Compile of driver.sv was successful.
+# Compile of Frame_capture.sv was successful.
+# Compile of Frame_FIFO.v was successful.
+# Compile of lab1_spart.v was successful.
+# Compile of ROM_SPART_TB.sv was successful.
+# Compile of spart.sv was successful.
+# Compile of Frame_FIFO2.v was successful.
+# 7 compiles, 0 failed with no errors.
+restart -f
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
+# ** Warning: (vopt-10587) Some optimizations are turned off because the +acc switch is in effect. This will cause your simulation to run slowly. Please use -access/-debug to maintain needed visibility.
+# ** Note: (vsim-12126) Error and warning message counts have been restored: Errors=0, Warnings=1.
+# Loading sv_std.std
+# Loading work.ROM_SPART_TB(fast)
+# Loading work.Frame_capture(fast)
+# Loading work.Frame_FIFO2(fast)
+# Loading C:/intelFPGA_lite/23.1std/questa_fse/intel/verilog/altera_mf.dcfifo(fast)
+# Loading C:/intelFPGA_lite/23.1std/questa_fse/intel/verilog/altera_mf.dcfifo_mixed_widths(fast)
+# Loading C:/intelFPGA_lite/23.1std/questa_fse/intel/verilog/altera_mf.ALTERA_DEVICE_FAMILIES(fast)
+# Loading C:/intelFPGA_lite/23.1std/questa_fse/intel/verilog/altera_mf.dcfifo_async(fast)
+# Loading C:/intelFPGA_lite/23.1std/questa_fse/intel/verilog/altera_mf.ALTERA_DEVICE_FAMILIES(fast__1)
+# Loading C:/intelFPGA_lite/23.1std/questa_fse/intel/verilog/altera_mf.dcfifo_dffpipe(fast)
+# Loading C:/intelFPGA_lite/23.1std/questa_fse/intel/verilog/altera_mf.dcfifo_dffpipe(fast__1)
+# Loading C:/intelFPGA_lite/23.1std/questa_fse/intel/verilog/altera_mf.dcfifo_dffpipe(fast__2)
+# Loading C:/intelFPGA_lite/23.1std/questa_fse/intel/verilog/altera_mf.dcfifo_fefifo(fast)
+# Loading C:/intelFPGA_lite/23.1std/questa_fse/intel/verilog/altera_mf.dcfifo_fefifo(fast__1)
+# Loading C:/intelFPGA_lite/23.1std/questa_fse/intel/verilog/altera_mf.dcfifo_low_latency(fast)
+# Loading C:/intelFPGA_lite/23.1std/questa_fse/intel/verilog/altera_mf.ALTERA_DEVICE_FAMILIES(fast__2)
+# Loading C:/intelFPGA_lite/23.1std/questa_fse/intel/verilog/altera_mf.ALTERA_MF_HINT_EVALUATION(fast)
+# Loading C:/intelFPGA_lite/23.1std/questa_fse/intel/verilog/altera_mf.dcfifo_dffpipe(fast__3)
+# Loading work.spart(fast)
+run -all
+# BEGIN SIM
+# ** Note: $stop    : I:/ECE554/FinalProject/ECE554-Capstone-Project/Camera_FPGA/ROM_SPART_SIM/ROM_SPART_TB.sv(43)
+#    Time: 20206260 ps  Iteration: 0  Instance: /ROM_SPART_TB
+# Break in Module ROM_SPART_TB at I:/ECE554/FinalProject/ECE554-Capstone-Project/Camera_FPGA/ROM_SPART_SIM/ROM_SPART_TB.sv line 43
+# Compile of driver.sv was successful.
+# Compile of Frame_capture.sv failed with 2 errors.
+# Compile of Frame_FIFO.v was successful.
+# Compile of lab1_spart.v was successful.
+# Compile of ROM_SPART_TB.sv failed with 1 errors.
+# Compile of spart.sv was successful.
+# Compile of Frame_FIFO2.v was successful.
+# 7 compiles, 2 failed with 3 errors.
+# Compile of driver.sv was successful.
+# Compile of Frame_capture.sv was successful.
+# Compile of Frame_FIFO.v was successful.
+# Compile of lab1_spart.v was successful.
+# Compile of ROM_SPART_TB.sv failed with 1 errors.
+# Compile of spart.sv was successful.
+# Compile of Frame_FIFO2.v was successful.
+# 7 compiles, 1 failed with 1 error.
+# Compile of driver.sv was successful.
+# Compile of Frame_capture.sv was successful.
+# Compile of Frame_FIFO.v was successful.
+# Compile of lab1_spart.v was successful.
+# Compile of ROM_SPART_TB.sv was successful.
+# Compile of spart.sv was successful.
+# Compile of Frame_FIFO2.v was successful.
+# 7 compiles, 0 failed with no errors.
+restart -f
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
+# ** Warning: (vopt-10587) Some optimizations are turned off because the +acc switch is in effect. This will cause your simulation to run slowly. Please use -access/-debug to maintain needed visibility.
+# ** Note: (vopt-143) Recognized 1 FSM in module "Frame_capture(fast)".
+# ** Note: (vsim-12126) Error and warning message counts have been restored: Errors=0, Warnings=1.
+# Loading sv_std.std
+# Loading work.ROM_SPART_TB(fast)
+# Loading work.Frame_capture(fast)
+# Loading work.Frame_FIFO2(fast)
+# Loading C:/intelFPGA_lite/23.1std/questa_fse/intel/verilog/altera_mf.dcfifo(fast)
+# Loading C:/intelFPGA_lite/23.1std/questa_fse/intel/verilog/altera_mf.dcfifo_mixed_widths(fast)
+# Loading C:/intelFPGA_lite/23.1std/questa_fse/intel/verilog/altera_mf.ALTERA_DEVICE_FAMILIES(fast)
+# Loading C:/intelFPGA_lite/23.1std/questa_fse/intel/verilog/altera_mf.dcfifo_async(fast)
+# Loading C:/intelFPGA_lite/23.1std/questa_fse/intel/verilog/altera_mf.ALTERA_DEVICE_FAMILIES(fast__1)
+# Loading C:/intelFPGA_lite/23.1std/questa_fse/intel/verilog/altera_mf.dcfifo_dffpipe(fast)
+# Loading C:/intelFPGA_lite/23.1std/questa_fse/intel/verilog/altera_mf.dcfifo_dffpipe(fast__1)
+# Loading C:/intelFPGA_lite/23.1std/questa_fse/intel/verilog/altera_mf.dcfifo_dffpipe(fast__2)
+# Loading C:/intelFPGA_lite/23.1std/questa_fse/intel/verilog/altera_mf.dcfifo_fefifo(fast)
+# Loading C:/intelFPGA_lite/23.1std/questa_fse/intel/verilog/altera_mf.dcfifo_fefifo(fast__1)
+# Loading C:/intelFPGA_lite/23.1std/questa_fse/intel/verilog/altera_mf.dcfifo_low_latency(fast)
+# Loading C:/intelFPGA_lite/23.1std/questa_fse/intel/verilog/altera_mf.ALTERA_DEVICE_FAMILIES(fast__2)
+# Loading C:/intelFPGA_lite/23.1std/questa_fse/intel/verilog/altera_mf.ALTERA_MF_HINT_EVALUATION(fast)
+# Loading C:/intelFPGA_lite/23.1std/questa_fse/intel/verilog/altera_mf.dcfifo_dffpipe(fast__3)
+# Loading work.spart(fast)
+add wave -position insertpoint  \
+sim:/ROM_SPART_TB/iDUT/rdempty
+run -all
+# BEGIN SIM
+# ** Note: $stop    : I:/ECE554/FinalProject/ECE554-Capstone-Project/Camera_FPGA/ROM_SPART_SIM/ROM_SPART_TB.sv(48)
+#    Time: 20206260 ps  Iteration: 0  Instance: /ROM_SPART_TB
+# Break in Module ROM_SPART_TB at I:/ECE554/FinalProject/ECE554-Capstone-Project/Camera_FPGA/ROM_SPART_SIM/ROM_SPART_TB.sv line 48
+add wave -position insertpoint  \
+sim:/ROM_SPART_TB/GPIO_0
+add wave -position insertpoint  \
+{sim:/ROM_SPART_TB/GPIO_0[3]}
+add wave -position insertpoint  \
+{sim:/ROM_SPART_TB/GPIO_0[5]}
+restart -f
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# ** Note: (vsim-8009) Loading existing optimized design _opt2
+# ** Note: (vsim-12126) Error and warning message counts have been restored: Errors=0, Warnings=1.
+# Loading work.ROM_SPART_TB(fast)
+# Loading work.Frame_capture(fast)
+# Loading work.Frame_FIFO2(fast)
+# Loading C:/intelFPGA_lite/23.1std/questa_fse/intel/verilog/altera_mf.dcfifo(fast)
+# Loading C:/intelFPGA_lite/23.1std/questa_fse/intel/verilog/altera_mf.dcfifo_mixed_widths(fast)
+# Loading C:/intelFPGA_lite/23.1std/questa_fse/intel/verilog/altera_mf.ALTERA_DEVICE_FAMILIES(fast)
+# Loading C:/intelFPGA_lite/23.1std/questa_fse/intel/verilog/altera_mf.dcfifo_async(fast)
+# Loading C:/intelFPGA_lite/23.1std/questa_fse/intel/verilog/altera_mf.ALTERA_DEVICE_FAMILIES(fast__1)
+# Loading C:/intelFPGA_lite/23.1std/questa_fse/intel/verilog/altera_mf.dcfifo_dffpipe(fast)
+# Loading C:/intelFPGA_lite/23.1std/questa_fse/intel/verilog/altera_mf.dcfifo_dffpipe(fast__1)
+# Loading C:/intelFPGA_lite/23.1std/questa_fse/intel/verilog/altera_mf.dcfifo_dffpipe(fast__2)
+# Loading C:/intelFPGA_lite/23.1std/questa_fse/intel/verilog/altera_mf.dcfifo_fefifo(fast)
+# Loading C:/intelFPGA_lite/23.1std/questa_fse/intel/verilog/altera_mf.dcfifo_fefifo(fast__1)
+# Loading C:/intelFPGA_lite/23.1std/questa_fse/intel/verilog/altera_mf.dcfifo_low_latency(fast)
+# Loading C:/intelFPGA_lite/23.1std/questa_fse/intel/verilog/altera_mf.ALTERA_DEVICE_FAMILIES(fast__2)
+# Loading C:/intelFPGA_lite/23.1std/questa_fse/intel/verilog/altera_mf.ALTERA_MF_HINT_EVALUATION(fast)
+# Loading C:/intelFPGA_lite/23.1std/questa_fse/intel/verilog/altera_mf.dcfifo_dffpipe(fast__3)
+# Loading work.spart(fast)
+run -all
+# BEGIN SIM
+# ** Note: $stop    : I:/ECE554/FinalProject/ECE554-Capstone-Project/Camera_FPGA/ROM_SPART_SIM/ROM_SPART_TB.sv(48)
+#    Time: 20206260 ps  Iteration: 0  Instance: /ROM_SPART_TB
+# Break in Module ROM_SPART_TB at I:/ECE554/FinalProject/ECE554-Capstone-Project/Camera_FPGA/ROM_SPART_SIM/ROM_SPART_TB.sv line 48
+# Compile of driver.sv was successful.
+# Compile of Frame_capture.sv was successful.
+# Compile of Frame_FIFO.v was successful.
+# Compile of lab1_spart.v was successful.
+# Compile of ROM_SPART_TB.sv was successful.
+# Compile of spart.sv was successful.
+# Compile of Frame_FIFO2.v was successful.
+# 7 compiles, 0 failed with no errors.
+restart -f
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
+# ** Warning: (vopt-10587) Some optimizations are turned off because the +acc switch is in effect. This will cause your simulation to run slowly. Please use -access/-debug to maintain needed visibility.
+# ** Note: (vsim-12126) Error and warning message counts have been restored: Errors=0, Warnings=1.
+# Loading sv_std.std
+# Loading work.ROM_SPART_TB(fast)
+# Loading work.Frame_capture(fast)
+# Loading work.Frame_FIFO2(fast)
+# Loading C:/intelFPGA_lite/23.1std/questa_fse/intel/verilog/altera_mf.dcfifo(fast)
+# Loading C:/intelFPGA_lite/23.1std/questa_fse/intel/verilog/altera_mf.dcfifo_mixed_widths(fast)
+# Loading C:/intelFPGA_lite/23.1std/questa_fse/intel/verilog/altera_mf.ALTERA_DEVICE_FAMILIES(fast)
+# Loading C:/intelFPGA_lite/23.1std/questa_fse/intel/verilog/altera_mf.dcfifo_async(fast)
+# Loading C:/intelFPGA_lite/23.1std/questa_fse/intel/verilog/altera_mf.ALTERA_DEVICE_FAMILIES(fast__1)
+# Loading C:/intelFPGA_lite/23.1std/questa_fse/intel/verilog/altera_mf.dcfifo_dffpipe(fast)
+# Loading C:/intelFPGA_lite/23.1std/questa_fse/intel/verilog/altera_mf.dcfifo_dffpipe(fast__1)
+# Loading C:/intelFPGA_lite/23.1std/questa_fse/intel/verilog/altera_mf.dcfifo_dffpipe(fast__2)
+# Loading C:/intelFPGA_lite/23.1std/questa_fse/intel/verilog/altera_mf.dcfifo_fefifo(fast)
+# Loading C:/intelFPGA_lite/23.1std/questa_fse/intel/verilog/altera_mf.dcfifo_fefifo(fast__1)
+# Loading C:/intelFPGA_lite/23.1std/questa_fse/intel/verilog/altera_mf.dcfifo_low_latency(fast)
+# Loading C:/intelFPGA_lite/23.1std/questa_fse/intel/verilog/altera_mf.ALTERA_DEVICE_FAMILIES(fast__2)
+# Loading C:/intelFPGA_lite/23.1std/questa_fse/intel/verilog/altera_mf.ALTERA_MF_HINT_EVALUATION(fast)
+# Loading C:/intelFPGA_lite/23.1std/questa_fse/intel/verilog/altera_mf.dcfifo_dffpipe(fast__3)
+# Loading work.spart(fast)
+run -all
+# BEGIN SIM
+# ** Note: $stop    : I:/ECE554/FinalProject/ECE554-Capstone-Project/Camera_FPGA/ROM_SPART_SIM/ROM_SPART_TB.sv(48)
+#    Time: 21205260 ps  Iteration: 0  Instance: /ROM_SPART_TB
+# Break in Module ROM_SPART_TB at I:/ECE554/FinalProject/ECE554-Capstone-Project/Camera_FPGA/ROM_SPART_SIM/ROM_SPART_TB.sv line 48
+# Compile of driver.sv was successful.
+# Compile of Frame_capture.sv was successful.
+# Compile of Frame_FIFO.v was successful.
+# Compile of lab1_spart.v was successful.
+# Compile of ROM_SPART_TB.sv was successful.
+# Compile of spart.sv was successful.
+# Compile of Frame_FIFO2.v was successful.
+# 7 compiles, 0 failed with no errors.
+restart -f
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
+# ** Warning: (vopt-10587) Some optimizations are turned off because the +acc switch is in effect. This will cause your simulation to run slowly. Please use -access/-debug to maintain needed visibility.
+# ** Note: (vsim-12126) Error and warning message counts have been restored: Errors=0, Warnings=1.
+# Loading sv_std.std
+# Loading work.ROM_SPART_TB(fast)
+# Loading work.Frame_capture(fast)
+# Loading work.Frame_FIFO2(fast)
+# Loading C:/intelFPGA_lite/23.1std/questa_fse/intel/verilog/altera_mf.dcfifo(fast)
+# Loading C:/intelFPGA_lite/23.1std/questa_fse/intel/verilog/altera_mf.dcfifo_mixed_widths(fast)
+# Loading C:/intelFPGA_lite/23.1std/questa_fse/intel/verilog/altera_mf.ALTERA_DEVICE_FAMILIES(fast)
+# Loading C:/intelFPGA_lite/23.1std/questa_fse/intel/verilog/altera_mf.dcfifo_async(fast)
+# Loading C:/intelFPGA_lite/23.1std/questa_fse/intel/verilog/altera_mf.ALTERA_DEVICE_FAMILIES(fast__1)
+# Loading C:/intelFPGA_lite/23.1std/questa_fse/intel/verilog/altera_mf.dcfifo_dffpipe(fast)
+# Loading C:/intelFPGA_lite/23.1std/questa_fse/intel/verilog/altera_mf.dcfifo_dffpipe(fast__1)
+# Loading C:/intelFPGA_lite/23.1std/questa_fse/intel/verilog/altera_mf.dcfifo_dffpipe(fast__2)
+# Loading C:/intelFPGA_lite/23.1std/questa_fse/intel/verilog/altera_mf.dcfifo_fefifo(fast)
+# Loading C:/intelFPGA_lite/23.1std/questa_fse/intel/verilog/altera_mf.dcfifo_fefifo(fast__1)
+# Loading C:/intelFPGA_lite/23.1std/questa_fse/intel/verilog/altera_mf.dcfifo_low_latency(fast)
+# Loading C:/intelFPGA_lite/23.1std/questa_fse/intel/verilog/altera_mf.ALTERA_DEVICE_FAMILIES(fast__2)
+# Loading C:/intelFPGA_lite/23.1std/questa_fse/intel/verilog/altera_mf.ALTERA_MF_HINT_EVALUATION(fast)
+# Loading C:/intelFPGA_lite/23.1std/questa_fse/intel/verilog/altera_mf.dcfifo_dffpipe(fast__3)
+# Loading work.spart(fast)
+run -all
+# BEGIN SIM
+# ** Note: $stop    : I:/ECE554/FinalProject/ECE554-Capstone-Project/Camera_FPGA/ROM_SPART_SIM/ROM_SPART_TB.sv(48)
+#    Time: 25205260 ps  Iteration: 0  Instance: /ROM_SPART_TB
+# Break in Module ROM_SPART_TB at I:/ECE554/FinalProject/ECE554-Capstone-Project/Camera_FPGA/ROM_SPART_SIM/ROM_SPART_TB.sv line 48
+# Compile of driver.sv was successful.
+# Compile of Frame_capture.sv was successful.
+# Compile of Frame_FIFO.v was successful.
+# Compile of lab1_spart.v was successful.
+# Compile of ROM_SPART_TB.sv was successful.
+# Compile of spart.sv was successful.
+# Compile of Frame_FIFO2.v was successful.
+# 7 compiles, 0 failed with no errors.
+restart -f
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# ** Note: (vsim-8009) Loading existing optimized design _opt2
+# ** Note: (vsim-12126) Error and warning message counts have been restored: Errors=0, Warnings=1.
+# Loading work.ROM_SPART_TB(fast)
+# Loading work.Frame_capture(fast)
+# Loading work.Frame_FIFO2(fast)
+# Loading C:/intelFPGA_lite/23.1std/questa_fse/intel/verilog/altera_mf.dcfifo(fast)
+# Loading C:/intelFPGA_lite/23.1std/questa_fse/intel/verilog/altera_mf.dcfifo_mixed_widths(fast)
+# Loading C:/intelFPGA_lite/23.1std/questa_fse/intel/verilog/altera_mf.ALTERA_DEVICE_FAMILIES(fast)
+# Loading C:/intelFPGA_lite/23.1std/questa_fse/intel/verilog/altera_mf.dcfifo_async(fast)
+# Loading C:/intelFPGA_lite/23.1std/questa_fse/intel/verilog/altera_mf.ALTERA_DEVICE_FAMILIES(fast__1)
+# Loading C:/intelFPGA_lite/23.1std/questa_fse/intel/verilog/altera_mf.dcfifo_dffpipe(fast)
+# Loading C:/intelFPGA_lite/23.1std/questa_fse/intel/verilog/altera_mf.dcfifo_dffpipe(fast__1)
+# Loading C:/intelFPGA_lite/23.1std/questa_fse/intel/verilog/altera_mf.dcfifo_dffpipe(fast__2)
+# Loading C:/intelFPGA_lite/23.1std/questa_fse/intel/verilog/altera_mf.dcfifo_fefifo(fast)
+# Loading C:/intelFPGA_lite/23.1std/questa_fse/intel/verilog/altera_mf.dcfifo_fefifo(fast__1)
+# Loading C:/intelFPGA_lite/23.1std/questa_fse/intel/verilog/altera_mf.dcfifo_low_latency(fast)
+# Loading C:/intelFPGA_lite/23.1std/questa_fse/intel/verilog/altera_mf.ALTERA_DEVICE_FAMILIES(fast__2)
+# Loading C:/intelFPGA_lite/23.1std/questa_fse/intel/verilog/altera_mf.ALTERA_MF_HINT_EVALUATION(fast)
+# Loading C:/intelFPGA_lite/23.1std/questa_fse/intel/verilog/altera_mf.dcfifo_dffpipe(fast__3)
+# Loading work.spart(fast)
+run -all
+# BEGIN SIM
+# ** Note: $stop    : I:/ECE554/FinalProject/ECE554-Capstone-Project/Camera_FPGA/ROM_SPART_SIM/ROM_SPART_TB.sv(48)
+#    Time: 25205260 ps  Iteration: 0  Instance: /ROM_SPART_TB
+# Break in Module ROM_SPART_TB at I:/ECE554/FinalProject/ECE554-Capstone-Project/Camera_FPGA/ROM_SPART_SIM/ROM_SPART_TB.sv line 48
+add wave -position insertpoint  \
+sim:/ROM_SPART_TB/iDUT/WORDS_PER_FRAME
+# Compile of driver.sv was successful.
+# Compile of Frame_capture.sv was successful.
+# Compile of Frame_FIFO.v was successful.
+# Compile of lab1_spart.v was successful.
+# Compile of ROM_SPART_TB.sv was successful.
+# Compile of spart.sv was successful.
+# Compile of Frame_FIFO2.v was successful.
+# 7 compiles, 0 failed with no errors.
+restart -f
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# ** Note: (vsim-8009) Loading existing optimized design _opt2
+# ** Note: (vsim-12126) Error and warning message counts have been restored: Errors=0, Warnings=1.
+# Loading work.ROM_SPART_TB(fast)
+# Loading work.Frame_capture(fast)
+# Loading work.Frame_FIFO2(fast)
+# Loading C:/intelFPGA_lite/23.1std/questa_fse/intel/verilog/altera_mf.dcfifo(fast)
+# Loading C:/intelFPGA_lite/23.1std/questa_fse/intel/verilog/altera_mf.dcfifo_mixed_widths(fast)
+# Loading C:/intelFPGA_lite/23.1std/questa_fse/intel/verilog/altera_mf.ALTERA_DEVICE_FAMILIES(fast)
+# Loading C:/intelFPGA_lite/23.1std/questa_fse/intel/verilog/altera_mf.dcfifo_async(fast)
+# Loading C:/intelFPGA_lite/23.1std/questa_fse/intel/verilog/altera_mf.ALTERA_DEVICE_FAMILIES(fast__1)
+# Loading C:/intelFPGA_lite/23.1std/questa_fse/intel/verilog/altera_mf.dcfifo_dffpipe(fast)
+# Loading C:/intelFPGA_lite/23.1std/questa_fse/intel/verilog/altera_mf.dcfifo_dffpipe(fast__1)
+# Loading C:/intelFPGA_lite/23.1std/questa_fse/intel/verilog/altera_mf.dcfifo_dffpipe(fast__2)
+# Loading C:/intelFPGA_lite/23.1std/questa_fse/intel/verilog/altera_mf.dcfifo_fefifo(fast)
+# Loading C:/intelFPGA_lite/23.1std/questa_fse/intel/verilog/altera_mf.dcfifo_fefifo(fast__1)
+# Loading C:/intelFPGA_lite/23.1std/questa_fse/intel/verilog/altera_mf.dcfifo_low_latency(fast)
+# Loading C:/intelFPGA_lite/23.1std/questa_fse/intel/verilog/altera_mf.ALTERA_DEVICE_FAMILIES(fast__2)
+# Loading C:/intelFPGA_lite/23.1std/questa_fse/intel/verilog/altera_mf.ALTERA_MF_HINT_EVALUATION(fast)
+# Loading C:/intelFPGA_lite/23.1std/questa_fse/intel/verilog/altera_mf.dcfifo_dffpipe(fast__3)
+# Loading work.spart(fast)
+run -all
+# BEGIN SIM
+# ** Note: $stop    : I:/ECE554/FinalProject/ECE554-Capstone-Project/Camera_FPGA/ROM_SPART_SIM/ROM_SPART_TB.sv(48)
+#    Time: 25205260 ps  Iteration: 0  Instance: /ROM_SPART_TB
+# Break in Module ROM_SPART_TB at I:/ECE554/FinalProject/ECE554-Capstone-Project/Camera_FPGA/ROM_SPART_SIM/ROM_SPART_TB.sv line 48
+# Compile of driver.sv was successful.
+# Compile of Frame_capture.sv was successful.
+# Compile of Frame_FIFO.v was successful.
+# Compile of lab1_spart.v was successful.
+# Compile of ROM_SPART_TB.sv was successful.
+# Compile of spart.sv was successful.
+# Compile of Frame_FIFO2.v was successful.
+# 7 compiles, 0 failed with no errors.
+run -all
+# Compile of driver.sv was successful.
+# Compile of Frame_capture.sv was successful.
+# Compile of Frame_FIFO.v was successful.
+# Compile of lab1_spart.v was successful.
+# Compile of ROM_SPART_TB.sv was successful.
+# Compile of spart.sv was successful.
+# Compile of Frame_FIFO2.v was successful.
+# 7 compiles, 0 failed with no errors.
+restart -f
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
+# ** Warning: (vopt-10587) Some optimizations are turned off because the +acc switch is in effect. This will cause your simulation to run slowly. Please use -access/-debug to maintain needed visibility.
+# ** Note: (vopt-143) Recognized 1 FSM in module "Frame_capture(fast)".
+# ** Note: (vsim-12126) Error and warning message counts have been restored: Errors=0, Warnings=1.
+# Loading sv_std.std
+# Loading work.ROM_SPART_TB(fast)
+# Loading work.Frame_capture(fast)
+# Loading work.Frame_FIFO2(fast)
+# Loading C:/intelFPGA_lite/23.1std/questa_fse/intel/verilog/altera_mf.dcfifo(fast)
+# Loading C:/intelFPGA_lite/23.1std/questa_fse/intel/verilog/altera_mf.dcfifo_mixed_widths(fast)
+# Loading C:/intelFPGA_lite/23.1std/questa_fse/intel/verilog/altera_mf.ALTERA_DEVICE_FAMILIES(fast)
+# Loading C:/intelFPGA_lite/23.1std/questa_fse/intel/verilog/altera_mf.dcfifo_async(fast)
+# Loading C:/intelFPGA_lite/23.1std/questa_fse/intel/verilog/altera_mf.ALTERA_DEVICE_FAMILIES(fast__1)
+# Loading C:/intelFPGA_lite/23.1std/questa_fse/intel/verilog/altera_mf.dcfifo_dffpipe(fast)
+# Loading C:/intelFPGA_lite/23.1std/questa_fse/intel/verilog/altera_mf.dcfifo_dffpipe(fast__1)
+# Loading C:/intelFPGA_lite/23.1std/questa_fse/intel/verilog/altera_mf.dcfifo_dffpipe(fast__2)
+# Loading C:/intelFPGA_lite/23.1std/questa_fse/intel/verilog/altera_mf.dcfifo_fefifo(fast)
+# Loading C:/intelFPGA_lite/23.1std/questa_fse/intel/verilog/altera_mf.dcfifo_fefifo(fast__1)
+# Loading C:/intelFPGA_lite/23.1std/questa_fse/intel/verilog/altera_mf.dcfifo_low_latency(fast)
+# Loading C:/intelFPGA_lite/23.1std/questa_fse/intel/verilog/altera_mf.ALTERA_DEVICE_FAMILIES(fast__2)
+# Loading C:/intelFPGA_lite/23.1std/questa_fse/intel/verilog/altera_mf.ALTERA_MF_HINT_EVALUATION(fast)
+# Loading C:/intelFPGA_lite/23.1std/questa_fse/intel/verilog/altera_mf.dcfifo_dffpipe(fast__3)
+# Loading work.spart(fast)
+run -all
+# BEGIN SIM
+# ** Note: $stop    : I:/ECE554/FinalProject/ECE554-Capstone-Project/Camera_FPGA/ROM_SPART_SIM/ROM_SPART_TB.sv(48)
+#    Time: 25205260 ps  Iteration: 0  Instance: /ROM_SPART_TB
+# Break in Module ROM_SPART_TB at I:/ECE554/FinalProject/ECE554-Capstone-Project/Camera_FPGA/ROM_SPART_SIM/ROM_SPART_TB.sv line 48
+# Compile of driver.sv was successful.
+# Compile of Frame_capture.sv was successful.
+# Compile of Frame_FIFO.v was successful.
+# Compile of lab1_spart.v was successful.
+# Compile of ROM_SPART_TB.sv was successful.
+# Compile of spart.sv was successful.
+# Compile of Frame_FIFO2.v was successful.
+# 7 compiles, 0 failed with no errors.
+restart -f
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
+# ** Warning: (vopt-10587) Some optimizations are turned off because the +acc switch is in effect. This will cause your simulation to run slowly. Please use -access/-debug to maintain needed visibility.
+# ** Error: I:/ECE554/FinalProject/ECE554-Capstone-Project/Camera_FPGA/ROM_SPART_SIM/Frame_capture.sv(49): Module 'HalfFrame_FIFO' is not defined.
+#  For instance 'iFIFO' at path 'ROM_SPART_TB.iDUT'
+# Optimization failed
+# ** Note: (vsim-12126) Error and warning message counts have been restored: Errors=1, Warnings=1.
+# Compile of driver.sv was successful.
+# Compile of Frame_capture.sv was successful.
+# Compile of Frame_FIFO.v was successful.
+# Compile of lab1_spart.v was successful.
+# Compile of ROM_SPART_TB.sv was successful.
+# Compile of spart.sv was successful.
+# Compile of Frame_FIFO2.v was successful.
+# Compile of HalfFrame_FIFO.v was successful.
+# 8 compiles, 0 failed with no errors.
+restart -f
+# No Design Loaded!
+vsim -L C:/intelFPGA_lite/23.1std/questa_fse/intel/verilog/altera_mf -L C:/intelFPGA_lite/23.1std/questa_fse/intel/verilog/220model -vopt work.ROM_SPART_TB -voptargs=+acc
+# vsim -L C:/intelFPGA_lite/23.1std/questa_fse/intel/verilog/altera_mf -L C:/intelFPGA_lite/23.1std/questa_fse/intel/verilog/220model -vopt work.ROM_SPART_TB -voptargs="+acc" 
+# Start time: 13:08:04 on Mar 31,2025
+# ** Note: (vsim-3812) Design is being optimized...
+# ** Warning: (vopt-10587) Some optimizations are turned off because the +acc switch is in effect. This will cause your simulation to run slowly. Please use -access/-debug to maintain needed visibility.
+# ** Note: (vopt-143) Recognized 1 FSM in module "Frame_capture(fast)".
+# ** Note: (vopt-143) Recognized 2 FSMs in module "spart(fast)".
+# ** Warning: $MODEL_TECH/../intel/verilog/src/altera_mf.v(31792): (vopt-2685) [TFMPC] - Too few port connections for 'DCFIFO_MW'.  Expected 14, found 13.
+# ** Warning: $MODEL_TECH/../intel/verilog/src/altera_mf.v(31792): (vopt-2718) [TFMPC] - Missing connection for port 'eccstatus'.
+# ** Note: (vsim-12126) Error and warning message counts have been restored: Errors=1, Warnings=4.
+# Loading sv_std.std
+# Loading work.ROM_SPART_TB(fast)
+# Loading work.Frame_capture(fast)
+# Loading work.HalfFrame_FIFO(fast)
+# Loading C:/intelFPGA_lite/23.1std/questa_fse/intel/verilog/altera_mf.dcfifo(fast)
+# Loading C:/intelFPGA_lite/23.1std/questa_fse/intel/verilog/altera_mf.dcfifo_mixed_widths(fast)
+# Loading C:/intelFPGA_lite/23.1std/questa_fse/intel/verilog/altera_mf.ALTERA_DEVICE_FAMILIES(fast)
+# Loading C:/intelFPGA_lite/23.1std/questa_fse/intel/verilog/altera_mf.dcfifo_async(fast)
+# Loading C:/intelFPGA_lite/23.1std/questa_fse/intel/verilog/altera_mf.ALTERA_DEVICE_FAMILIES(fast__1)
+# Loading C:/intelFPGA_lite/23.1std/questa_fse/intel/verilog/altera_mf.dcfifo_dffpipe(fast)
+# Loading C:/intelFPGA_lite/23.1std/questa_fse/intel/verilog/altera_mf.dcfifo_dffpipe(fast__1)
+# Loading C:/intelFPGA_lite/23.1std/questa_fse/intel/verilog/altera_mf.dcfifo_dffpipe(fast__2)
+# Loading C:/intelFPGA_lite/23.1std/questa_fse/intel/verilog/altera_mf.dcfifo_fefifo(fast)
+# Loading C:/intelFPGA_lite/23.1std/questa_fse/intel/verilog/altera_mf.dcfifo_fefifo(fast__1)
+# Loading C:/intelFPGA_lite/23.1std/questa_fse/intel/verilog/altera_mf.dcfifo_low_latency(fast)
+# Loading C:/intelFPGA_lite/23.1std/questa_fse/intel/verilog/altera_mf.ALTERA_DEVICE_FAMILIES(fast__2)
+# Loading C:/intelFPGA_lite/23.1std/questa_fse/intel/verilog/altera_mf.ALTERA_MF_HINT_EVALUATION(fast)
+# Loading C:/intelFPGA_lite/23.1std/questa_fse/intel/verilog/altera_mf.dcfifo_dffpipe(fast__3)
+# Loading work.spart(fast)
+# ** Warning: (vsim-WLF-5000) WLF file currently in use: vsim.wlf
+#           File in use by: sccooper  Hostname: WIN-8114  ProcessID: 23328
+#           Attempting to use alternate WLF file "./wlftfz4cgn".
+# ** Warning: (vsim-WLF-5001) Could not open WLF file: vsim.wlf
+#           Using alternate file: ./wlftfz4cgn
+run -all
+# BEGIN SIM
+# ** Note: $stop    : I:/ECE554/FinalProject/ECE554-Capstone-Project/Camera_FPGA/ROM_SPART_SIM/ROM_SPART_TB.sv(48)
+#    Time: 25205260 ps  Iteration: 0  Instance: /ROM_SPART_TB
+# Break in Module ROM_SPART_TB at I:/ECE554/FinalProject/ECE554-Capstone-Project/Camera_FPGA/ROM_SPART_SIM/ROM_SPART_TB.sv line 48
+# Compile of driver.sv was successful.
+# Compile of Frame_capture.sv was successful.
+# Compile of Frame_FIFO.v was successful.
+# Compile of lab1_spart.v was successful.
+# Compile of ROM_SPART_TB.sv was successful.
+# Compile of spart.sv was successful.
+# Compile of Frame_FIFO2.v was successful.
+# Compile of HalfFrame_FIFO.v was successful.
+# 8 compiles, 0 failed with no errors.
+restart -f
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
+# ** Warning: (vopt-10587) Some optimizations are turned off because the +acc switch is in effect. This will cause your simulation to run slowly. Please use -access/-debug to maintain needed visibility.
+# ** Note: (vopt-143) Recognized 1 FSM in module "Frame_capture(fast)".
+# ** Note: (vsim-12126) Error and warning message counts have been restored: Errors=0, Warnings=1.
+# Loading sv_std.std
+# Loading work.ROM_SPART_TB(fast)
+# Loading work.Frame_capture(fast)
+# Loading work.HalfFrame_FIFO(fast)
+# Loading C:/intelFPGA_lite/23.1std/questa_fse/intel/verilog/altera_mf.dcfifo(fast)
+# Loading C:/intelFPGA_lite/23.1std/questa_fse/intel/verilog/altera_mf.dcfifo_mixed_widths(fast)
+# Loading C:/intelFPGA_lite/23.1std/questa_fse/intel/verilog/altera_mf.ALTERA_DEVICE_FAMILIES(fast)
+# Loading C:/intelFPGA_lite/23.1std/questa_fse/intel/verilog/altera_mf.dcfifo_async(fast)
+# Loading C:/intelFPGA_lite/23.1std/questa_fse/intel/verilog/altera_mf.ALTERA_DEVICE_FAMILIES(fast__1)
+# Loading C:/intelFPGA_lite/23.1std/questa_fse/intel/verilog/altera_mf.dcfifo_dffpipe(fast)
+# Loading C:/intelFPGA_lite/23.1std/questa_fse/intel/verilog/altera_mf.dcfifo_dffpipe(fast__1)
+# Loading C:/intelFPGA_lite/23.1std/questa_fse/intel/verilog/altera_mf.dcfifo_dffpipe(fast__2)
+# Loading C:/intelFPGA_lite/23.1std/questa_fse/intel/verilog/altera_mf.dcfifo_fefifo(fast)
+# Loading C:/intelFPGA_lite/23.1std/questa_fse/intel/verilog/altera_mf.dcfifo_fefifo(fast__1)
+# Loading C:/intelFPGA_lite/23.1std/questa_fse/intel/verilog/altera_mf.dcfifo_low_latency(fast)
+# Loading C:/intelFPGA_lite/23.1std/questa_fse/intel/verilog/altera_mf.ALTERA_DEVICE_FAMILIES(fast__2)
+# Loading C:/intelFPGA_lite/23.1std/questa_fse/intel/verilog/altera_mf.ALTERA_MF_HINT_EVALUATION(fast)
+# Loading C:/intelFPGA_lite/23.1std/questa_fse/intel/verilog/altera_mf.dcfifo_dffpipe(fast__3)
+# Loading work.spart(fast)
+run -all
+# BEGIN SIM
+# ** Note: $stop    : I:/ECE554/FinalProject/ECE554-Capstone-Project/Camera_FPGA/ROM_SPART_SIM/ROM_SPART_TB.sv(48)
+#    Time: 134050850 ps  Iteration: 0  Instance: /ROM_SPART_TB
+# Break in Module ROM_SPART_TB at I:/ECE554/FinalProject/ECE554-Capstone-Project/Camera_FPGA/ROM_SPART_SIM/ROM_SPART_TB.sv line 48
+# Compile of driver.sv was successful.
+# Compile of Frame_capture.sv was successful.
+# Compile of Frame_FIFO.v was successful.
+# Compile of lab1_spart.v was successful.
+# Compile of ROM_SPART_TB.sv was successful.
+# Compile of spart.sv was successful.
+# Compile of Frame_FIFO2.v was successful.
+# Compile of HalfFrame_FIFO.v was successful.
+# 8 compiles, 0 failed with no errors.
+restart -f
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
+# ** Warning: (vopt-10587) Some optimizations are turned off because the +acc switch is in effect. This will cause your simulation to run slowly. Please use -access/-debug to maintain needed visibility.
+# ** Note: (vopt-143) Recognized 1 FSM in module "Frame_capture(fast)".
+# ** Note: (vsim-12126) Error and warning message counts have been restored: Errors=0, Warnings=1.
+# Loading sv_std.std
+# Loading work.ROM_SPART_TB(fast)
+# Loading work.Frame_capture(fast)
+# Loading work.HalfFrame_FIFO(fast)
+# Loading C:/intelFPGA_lite/23.1std/questa_fse/intel/verilog/altera_mf.dcfifo(fast)
+# Loading C:/intelFPGA_lite/23.1std/questa_fse/intel/verilog/altera_mf.dcfifo_mixed_widths(fast)
+# Loading C:/intelFPGA_lite/23.1std/questa_fse/intel/verilog/altera_mf.ALTERA_DEVICE_FAMILIES(fast)
+# Loading C:/intelFPGA_lite/23.1std/questa_fse/intel/verilog/altera_mf.dcfifo_async(fast)
+# Loading C:/intelFPGA_lite/23.1std/questa_fse/intel/verilog/altera_mf.ALTERA_DEVICE_FAMILIES(fast__1)
+# Loading C:/intelFPGA_lite/23.1std/questa_fse/intel/verilog/altera_mf.dcfifo_dffpipe(fast)
+# Loading C:/intelFPGA_lite/23.1std/questa_fse/intel/verilog/altera_mf.dcfifo_dffpipe(fast__1)
+# Loading C:/intelFPGA_lite/23.1std/questa_fse/intel/verilog/altera_mf.dcfifo_dffpipe(fast__2)
+# Loading C:/intelFPGA_lite/23.1std/questa_fse/intel/verilog/altera_mf.dcfifo_fefifo(fast)
+# Loading C:/intelFPGA_lite/23.1std/questa_fse/intel/verilog/altera_mf.dcfifo_fefifo(fast__1)
+# Loading C:/intelFPGA_lite/23.1std/questa_fse/intel/verilog/altera_mf.dcfifo_low_latency(fast)
+# Loading C:/intelFPGA_lite/23.1std/questa_fse/intel/verilog/altera_mf.ALTERA_DEVICE_FAMILIES(fast__2)
+# Loading C:/intelFPGA_lite/23.1std/questa_fse/intel/verilog/altera_mf.ALTERA_MF_HINT_EVALUATION(fast)
+# Loading C:/intelFPGA_lite/23.1std/questa_fse/intel/verilog/altera_mf.dcfifo_dffpipe(fast__3)
+# Loading work.spart(fast)
+run -all
+# BEGIN SIM
+# ** Note: $stop    : I:/ECE554/FinalProject/ECE554-Capstone-Project/Camera_FPGA/ROM_SPART_SIM/ROM_SPART_TB.sv(48)
+#    Time: 5391800 ps  Iteration: 0  Instance: /ROM_SPART_TB
+# Break in Module ROM_SPART_TB at I:/ECE554/FinalProject/ECE554-Capstone-Project/Camera_FPGA/ROM_SPART_SIM/ROM_SPART_TB.sv line 48
+# Compile of driver.sv was successful.
+# Compile of Frame_capture.sv was successful.
+# Compile of Frame_FIFO.v was successful.
+# Compile of lab1_spart.v was successful.
+# Compile of ROM_SPART_TB.sv was successful.
+# Compile of spart.sv was successful.
+# Compile of Frame_FIFO2.v was successful.
+# Compile of HalfFrame_FIFO.v was successful.
+# 8 compiles, 0 failed with no errors.
+restart -f
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
+# ** Warning: (vopt-10587) Some optimizations are turned off because the +acc switch is in effect. This will cause your simulation to run slowly. Please use -access/-debug to maintain needed visibility.
+# ** Note: (vsim-12126) Error and warning message counts have been restored: Errors=0, Warnings=1.
+# Loading sv_std.std
+# Loading work.ROM_SPART_TB(fast)
+# Loading work.Frame_capture(fast)
+# Loading work.HalfFrame_FIFO(fast)
+# Loading C:/intelFPGA_lite/23.1std/questa_fse/intel/verilog/altera_mf.dcfifo(fast)
+# Loading C:/intelFPGA_lite/23.1std/questa_fse/intel/verilog/altera_mf.dcfifo_mixed_widths(fast)
+# Loading C:/intelFPGA_lite/23.1std/questa_fse/intel/verilog/altera_mf.ALTERA_DEVICE_FAMILIES(fast)
+# Loading C:/intelFPGA_lite/23.1std/questa_fse/intel/verilog/altera_mf.dcfifo_async(fast)
+# Loading C:/intelFPGA_lite/23.1std/questa_fse/intel/verilog/altera_mf.ALTERA_DEVICE_FAMILIES(fast__1)
+# Loading C:/intelFPGA_lite/23.1std/questa_fse/intel/verilog/altera_mf.dcfifo_dffpipe(fast)
+# Loading C:/intelFPGA_lite/23.1std/questa_fse/intel/verilog/altera_mf.dcfifo_dffpipe(fast__1)
+# Loading C:/intelFPGA_lite/23.1std/questa_fse/intel/verilog/altera_mf.dcfifo_dffpipe(fast__2)
+# Loading C:/intelFPGA_lite/23.1std/questa_fse/intel/verilog/altera_mf.dcfifo_fefifo(fast)
+# Loading C:/intelFPGA_lite/23.1std/questa_fse/intel/verilog/altera_mf.dcfifo_fefifo(fast__1)
+# Loading C:/intelFPGA_lite/23.1std/questa_fse/intel/verilog/altera_mf.dcfifo_low_latency(fast)
+# Loading C:/intelFPGA_lite/23.1std/questa_fse/intel/verilog/altera_mf.ALTERA_DEVICE_FAMILIES(fast__2)
+# Loading C:/intelFPGA_lite/23.1std/questa_fse/intel/verilog/altera_mf.ALTERA_MF_HINT_EVALUATION(fast)
+# Loading C:/intelFPGA_lite/23.1std/questa_fse/intel/verilog/altera_mf.dcfifo_dffpipe(fast__3)
+# Loading work.spart(fast)
+run -all
+# BEGIN SIM
+# ** Note: $stop    : I:/ECE554/FinalProject/ECE554-Capstone-Project/Camera_FPGA/ROM_SPART_SIM/ROM_SPART_TB.sv(48)
+#    Time: 392300 ps  Iteration: 0  Instance: /ROM_SPART_TB
+# Break in Module ROM_SPART_TB at I:/ECE554/FinalProject/ECE554-Capstone-Project/Camera_FPGA/ROM_SPART_SIM/ROM_SPART_TB.sv line 48
+add wave -position insertpoint  \
+sim:/ROM_SPART_TB/iDUT/CLK \
+sim:/ROM_SPART_TB/iDUT/D5M_PIXLCLK \
+sim:/ROM_SPART_TB/iDUT/RST_N \
+sim:/ROM_SPART_TB/iDUT/iDATA \
+sim:/ROM_SPART_TB/iDUT/iDATA_VAL \
+sim:/ROM_SPART_TB/iDUT/rxd \
+sim:/ROM_SPART_TB/iDUT/rdempty \
+sim:/ROM_SPART_TB/iDUT/txd \
+sim:/ROM_SPART_TB/iDUT/fill_fifo \
+sim:/ROM_SPART_TB/iDUT/empty_fifo \
+sim:/ROM_SPART_TB/iDUT/FIFO_word \
+sim:/ROM_SPART_TB/iDUT/word_index \
+sim:/ROM_SPART_TB/iDUT/word_ready \
+sim:/ROM_SPART_TB/iDUT/wrreq \
+sim:/ROM_SPART_TB/iDUT/word_counter \
+sim:/ROM_SPART_TB/iDUT/rdreq \
+sim:/ROM_SPART_TB/iDUT/FIFO_data \
+sim:/ROM_SPART_TB/iDUT/spart_rdy \
+sim:/ROM_SPART_TB/iDUT/iocs \
+sim:/ROM_SPART_TB/iDUT/iorw \
+sim:/ROM_SPART_TB/iDUT/rda \
+sim:/ROM_SPART_TB/iDUT/tbr \
+sim:/ROM_SPART_TB/iDUT/ioaddr \
+sim:/ROM_SPART_TB/iDUT/databus \
+sim:/ROM_SPART_TB/iDUT/config_data_low \
+sim:/ROM_SPART_TB/iDUT/config_data_high \
+sim:/ROM_SPART_TB/iDUT/next_data \
+sim:/ROM_SPART_TB/iDUT/next_state \
+sim:/ROM_SPART_TB/iDUT/state \
+sim:/ROM_SPART_TB/iDUT/rst_done \
+sim:/ROM_SPART_TB/iDUT/db_select_low \
+sim:/ROM_SPART_TB/iDUT/db_select_high \
+sim:/ROM_SPART_TB/iDUT/transmit_select \
+sim:/ROM_SPART_TB/iDUT/timer_disabled \
+sim:/ROM_SPART_TB/iDUT/timer_complete \
+sim:/ROM_SPART_TB/iDUT/delay_counter
+restart -f
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# ** Note: (vsim-8009) Loading existing optimized design _opt2
+# ** Note: (vsim-12126) Error and warning message counts have been restored: Errors=0, Warnings=1.
+# Loading work.ROM_SPART_TB(fast)
+# Loading work.Frame_capture(fast)
+# Loading work.HalfFrame_FIFO(fast)
+# Loading C:/intelFPGA_lite/23.1std/questa_fse/intel/verilog/altera_mf.dcfifo(fast)
+# Loading C:/intelFPGA_lite/23.1std/questa_fse/intel/verilog/altera_mf.dcfifo_mixed_widths(fast)
+# Loading C:/intelFPGA_lite/23.1std/questa_fse/intel/verilog/altera_mf.ALTERA_DEVICE_FAMILIES(fast)
+# Loading C:/intelFPGA_lite/23.1std/questa_fse/intel/verilog/altera_mf.dcfifo_async(fast)
+# Loading C:/intelFPGA_lite/23.1std/questa_fse/intel/verilog/altera_mf.ALTERA_DEVICE_FAMILIES(fast__1)
+# Loading C:/intelFPGA_lite/23.1std/questa_fse/intel/verilog/altera_mf.dcfifo_dffpipe(fast)
+# Loading C:/intelFPGA_lite/23.1std/questa_fse/intel/verilog/altera_mf.dcfifo_dffpipe(fast__1)
+# Loading C:/intelFPGA_lite/23.1std/questa_fse/intel/verilog/altera_mf.dcfifo_dffpipe(fast__2)
+# Loading C:/intelFPGA_lite/23.1std/questa_fse/intel/verilog/altera_mf.dcfifo_fefifo(fast)
+# Loading C:/intelFPGA_lite/23.1std/questa_fse/intel/verilog/altera_mf.dcfifo_fefifo(fast__1)
+# Loading C:/intelFPGA_lite/23.1std/questa_fse/intel/verilog/altera_mf.dcfifo_low_latency(fast)
+# Loading C:/intelFPGA_lite/23.1std/questa_fse/intel/verilog/altera_mf.ALTERA_DEVICE_FAMILIES(fast__2)
+# Loading C:/intelFPGA_lite/23.1std/questa_fse/intel/verilog/altera_mf.ALTERA_MF_HINT_EVALUATION(fast)
+# Loading C:/intelFPGA_lite/23.1std/questa_fse/intel/verilog/altera_mf.dcfifo_dffpipe(fast__3)
+# Loading work.spart(fast)
+run -all
+# BEGIN SIM
+# ** Note: $stop    : I:/ECE554/FinalProject/ECE554-Capstone-Project/Camera_FPGA/ROM_SPART_SIM/ROM_SPART_TB.sv(48)
+#    Time: 392300 ps  Iteration: 0  Instance: /ROM_SPART_TB
+# Break in Module ROM_SPART_TB at I:/ECE554/FinalProject/ECE554-Capstone-Project/Camera_FPGA/ROM_SPART_SIM/ROM_SPART_TB.sv line 48
