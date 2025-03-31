@@ -1,0 +1,28 @@
+
+State Machine - |DE1_SoC_CAMERA|I2C_CCD_Config:u8|mSetup_ST
+Name mSetup_ST.0000 mSetup_ST.0010 mSetup_ST.0001 
+mSetup_ST.0000 0 0 0 
+mSetup_ST.0001 1 0 1 
+mSetup_ST.0010 1 1 0 
+
+State Machine - |DE1_SoC_CAMERA|Frame_capture:iCap|state
+Name state.PREREAD_39_32 state.PREREAD_31_24 state.PREREAD_23_16 state.PREREAD_15_8 state.PREREAD_7_0 state.TRANSMIT_39_32 state.TRANSMIT_31_24 state.TRANSMIT_23_16 state.TRANSMIT_15_8 state.TRANSMIT_7_0 state.IDLE state.RESET 
+state.RESET 0 0 0 0 0 0 0 0 0 0 0 0 
+state.IDLE 0 0 0 0 0 0 0 0 0 0 1 1 
+state.TRANSMIT_7_0 0 0 0 0 0 0 0 0 0 1 0 1 
+state.TRANSMIT_15_8 0 0 0 0 0 0 0 0 1 0 0 1 
+state.TRANSMIT_23_16 0 0 0 0 0 0 0 1 0 0 0 1 
+state.TRANSMIT_31_24 0 0 0 0 0 0 1 0 0 0 0 1 
+state.TRANSMIT_39_32 0 0 0 0 0 1 0 0 0 0 0 1 
+state.PREREAD_7_0 0 0 0 0 1 0 0 0 0 0 0 1 
+state.PREREAD_15_8 0 0 0 1 0 0 0 0 0 0 0 1 
+state.PREREAD_23_16 0 0 1 0 0 0 0 0 0 0 0 1 
+state.PREREAD_31_24 0 1 0 0 0 0 0 0 0 0 0 1 
+state.PREREAD_39_32 1 0 0 0 0 0 0 0 0 0 0 1 
+
+State Machine - |DE1_SoC_CAMERA|Frame_capture:iCap|spart:iSpart|state
+Name state.RECEIVE state.TRANSMIT state.IDLE state.RESET 
+state.RESET 0 0 0 0 
+state.IDLE 0 0 1 1 
+state.TRANSMIT 0 1 0 1 
+state.RECEIVE 1 0 0 1 
