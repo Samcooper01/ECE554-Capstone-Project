@@ -6,7 +6,7 @@ JedecChain;
 	P ActionCode(Ign)
 		Device PartName(SOCVHPS) MfrSpec(OpMask(0));
 	P ActionCode(Cfg)
-		Device PartName(5CSEMA5F31) Path("I:/ECE554/FinalProject/ECE554-Capstone-Project/Camera_FPGA/Camera_sample_proj/") File("DE1_SoC_CAMERA.sof") MfrSpec(OpMask(1));
+		Device PartName(5CSEMA5F31) Path("I:/ECE554/FinalProject/ECE554-Capstone-Project/ECE554-Capstone-Project/Sam_camera/Camera_sample_proj/") File("DE1_SoC_CAMERA.sof") MfrSpec(OpMask(1));
 
 ChainEnd;
 

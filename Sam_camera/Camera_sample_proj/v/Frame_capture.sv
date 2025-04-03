@@ -9,9 +9,10 @@ module Frame_capture(
     output logic txd
 );
 
-localparam WORDS_PER_FRAME =    20'd0200; //102,400 words per (640X480) frame
+localparam WORDS_PER_FRAME =    20'd0500; //102,400 words per (640X480) frame
 localparam FIFO_WORD_SIZE =     16'd36;
 localparam PIXEL_DATA_SIZE =    16'd12;
+localparam FIVE_MS_DELAY =      25'd25000000;
 
 localparam br_cfg =                     2'b11; //SETS BAUD TO 38400
 localparam RESET =                      4'b0000;
@@ -45,6 +46,9 @@ logic [7:0] config_data_low, config_data_high, next_data;
 logic [3:0] next_state, state;
 logic rst_done;
 logic db_select_low, db_select_high, transmit_select;
+
+logic timer_disabled, timer_complete;
+logic [24:0] delay_counter;
 
 HalfFrame_FIFO iFIFO(	
                     .wrclk(~D5M_PIXLCLK),
@@ -133,6 +137,25 @@ assign databus =    (db_select_low) ? config_data_low :
 //DB write
 always_ff @(posedge CLK or negedge RST_N) begin
     if(!RST_N) begin
+        delay_counter <= '0;
+        timer_complete <= 0;
+    end
+    else if (timer_disabled) begin
+        delay_counter <= '0;
+        timer_complete <= 0;
+    end
+    else if (delay_counter == FIVE_MS_DELAY) begin
+        timer_complete <= 1;
+        delay_counter <= '0;
+    end
+    else begin
+        delay_counter <= delay_counter + 1;
+        timer_complete <= 0;
+    end
+end
+
+always_ff @(posedge CLK or negedge RST_N) begin
+    if(!RST_N) begin
         rst_done <= 1'b0;
     end
     else if(state == RESET && ~rst_done) begin
@@ -159,6 +182,7 @@ always @(*) begin
     transmit_select = 1'b0;
     ioaddr = 2'b00;
     spart_rdy = 1'b0;
+    timer_disabled = 1;
 
     case (state)
         RESET : begin
@@ -213,12 +237,14 @@ always @(*) begin
             end
         end
         PREREAD_7_0 : begin
-            if(!tbr) begin
-                next_state = PREREAD_7_0;
+            if(timer_complete & tbr) begin
+                spart_rdy = 1'b1;
+                timer_disabled = 1;
+                next_state = TRANSMIT_7_0;
             end
             else begin
-                spart_rdy = 1'b1;
-                next_state = TRANSMIT_7_0;
+                timer_disabled = 0;
+                next_state = PREREAD_7_0;
             end
         end
         TRANSMIT_7_0 : begin
@@ -229,11 +255,13 @@ always @(*) begin
             next_state = PREREAD_15_8;
         end
         PREREAD_15_8 : begin
-            if(!tbr) begin
-                next_state = PREREAD_15_8;
+            if(timer_complete & tbr) begin
+                timer_disabled = 1;
+                next_state = TRANSMIT_15_8;
             end
             else begin
-                next_state = TRANSMIT_15_8;
+                timer_disabled = 0;
+                next_state = PREREAD_15_8;
             end
         end
         TRANSMIT_15_8 : begin
@@ -244,11 +272,13 @@ always @(*) begin
             next_state = PREREAD_23_16;
         end
         PREREAD_23_16 : begin
-            if(!tbr) begin
-                next_state = PREREAD_23_16;
-            end
-                else begin
+            if(timer_complete & tbr) begin
+                timer_disabled = 1;
                 next_state = TRANSMIT_23_16;
+            end
+            else begin
+                timer_disabled = 0;
+                next_state = PREREAD_23_16;
             end
         end
         TRANSMIT_23_16 : begin
@@ -259,11 +289,13 @@ always @(*) begin
             next_state = PREREAD_31_24;
         end
         PREREAD_31_24 : begin
-            if(!tbr) begin
-                next_state = PREREAD_31_24;
+            if(timer_complete & tbr) begin
+                timer_disabled = 1;
+                next_state = TRANSMIT_31_24;
             end
             else begin
-                next_state = TRANSMIT_31_24;
+                timer_disabled = 0;
+                next_state = PREREAD_31_24;
             end
         end
         TRANSMIT_31_24 : begin
@@ -274,11 +306,13 @@ always @(*) begin
             next_state = PREREAD_39_32;
         end
         PREREAD_39_32 : begin
-            if(!tbr) begin
-                next_state = PREREAD_39_32;
+            if(timer_complete & tbr) begin
+                timer_disabled = 1;
+                next_state = TRANSMIT_39_32;
             end
             else begin
-                next_state = TRANSMIT_39_32;
+                timer_disabled = 0;
+                next_state = PREREAD_39_32;
             end
         end
         TRANSMIT_39_32 : begin
