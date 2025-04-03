@@ -35,11 +35,13 @@ module pan_tilt(
 wire pan_pwm; 
 wire tilt_pwm;
 
-wire [7:0]pan_angle;
-wire [7:0]tilt_angle;
+logic [7:0]pan_angle;
+logic [7:0]tilt_angle;
 
 // press button[0] to generate a low active reset signal
-wire rst_n = ~KEY[0];
+wire rst_n = KEY[0];
+
+assign LEDR[0] = ~rst_n;
 
 assign GPIO[0] = tilt_pwm; 
 assign GPIO[1] = pan_pwm;
@@ -53,17 +55,29 @@ servo SERVO_PAN(
 	.clk(CLOCK_50), 
 	.rst_n(rst_n),
 	.angle(pan_angle), 
-	.pwm_pin(pan)
+	.pwm_pin(pan_pwm)
 );
 
 servo SERVO_TILT(
 	.clk(CLOCK_50), 
 	.rst_n(rst_n),
 	.angle(tilt_angle), 
-	.pwm_pin(tilt)
+	.pwm_pin(tilt_pwm)
 );
 
-assign pan_angle = 8'd0; 
-assign tilt_angle = 8'd0;
+always @(*) begin
+	pan_angle = 8'd90; 
+	tilt_angle = 8'd90;
+end
+
+always @(*) begin
+	HEX5 = 7'b1111111;
+    HEX4 = 7'b1000000; // 0;
+    HEX3 = 7'b1000000; // 0; 
+    HEX2 = 7'b1000000; // 0; 
+    HEX1 = 7'b1000000; // 0; 
+    HEX0 = 7'b1000000; // 0
+end
+
 
 endmodule
