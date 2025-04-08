@@ -1,0 +1,946 @@
+Analysis & Synthesis report for pan_tilt
+Thu Apr  3 17:14:57 2025
+Quartus Prime Version 23.1std.0 Build 991 11/28/2023 SC Lite Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Analysis & Synthesis Summary
+  3. Analysis & Synthesis Settings
+  4. Parallel Compilation
+  5. Analysis & Synthesis Source Files Read
+  6. Analysis & Synthesis Resource Usage Summary
+  7. Analysis & Synthesis Resource Utilization by Entity
+  8. Analysis & Synthesis RAM Summary
+  9. Analysis & Synthesis DSP Block Usage Summary
+ 10. Analysis & Synthesis IP Cores Summary
+ 11. Registers Removed During Synthesis
+ 12. General Register Statistics
+ 13. Inverted Register Statistics
+ 14. Source assignments for sld_signaltap:auto_signaltap_0
+ 15. Parameter Settings for User Entity Instance: servo:SERVO_PAN|counter:CLOCK_GEN
+ 16. Parameter Settings for User Entity Instance: servo:SERVO_TILT|counter:CLOCK_GEN
+ 17. Parameter Settings for Inferred Entity Instance: sld_signaltap:auto_signaltap_0
+ 18. Parameter Settings for Inferred Entity Instance: servo:SERVO_PAN|lpm_divide:Div0
+ 19. Parameter Settings for Inferred Entity Instance: servo:SERVO_TILT|lpm_divide:Div0
+ 20. Port Connectivity Checks: "servo:SERVO_TILT"
+ 21. Port Connectivity Checks: "servo:SERVO_PAN"
+ 22. Signal Tap Logic Analyzer Settings
+ 23. Post-Synthesis Netlist Statistics for Top Partition
+ 24. Elapsed Time Per Partition
+ 25. Connections to In-System Debugging Instance "auto_signaltap_0"
+ 26. Analysis & Synthesis Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 2023  Intel Corporation. All rights reserved.
+Your use of Intel Corporation's design tools, logic functions 
+and other software and tools, and any partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Intel Program License 
+Subscription Agreement, the Intel Quartus Prime License Agreement,
+the Intel FPGA IP License Agreement, or other applicable license
+agreement, including, without limitation, that your use is for
+the sole purpose of programming logic devices manufactured by
+Intel and sold by Intel or its authorized distributors.  Please
+refer to the applicable agreement for further details, at
+https://fpgasoftware.intel.com/eula.
+
+
+
++----------------------------------------------------------------------------------+
+; Analysis & Synthesis Summary                                                     ;
++---------------------------------+------------------------------------------------+
+; Analysis & Synthesis Status     ; Successful - Thu Apr  3 17:14:57 2025          ;
+; Quartus Prime Version           ; 23.1std.0 Build 991 11/28/2023 SC Lite Edition ;
+; Revision Name                   ; pan_tilt                                       ;
+; Top-level Entity Name           ; pan_tilt                                       ;
+; Family                          ; Cyclone V                                      ;
+; Logic utilization (in ALMs)     ; N/A                                            ;
+; Total registers                 ; 581                                            ;
+; Total pins                      ; 106                                            ;
+; Total virtual pins              ; 0                                              ;
+; Total block memory bits         ; 262,144                                        ;
+; Total DSP Blocks                ; 2                                              ;
+; Total HSSI RX PCSs              ; 0                                              ;
+; Total HSSI PMA RX Deserializers ; 0                                              ;
+; Total HSSI TX PCSs              ; 0                                              ;
+; Total HSSI PMA TX Serializers   ; 0                                              ;
+; Total PLLs                      ; 0                                              ;
+; Total DLLs                      ; 0                                              ;
++---------------------------------+------------------------------------------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Settings                                                                                             ;
++---------------------------------------------------------------------------------+--------------------+--------------------+
+; Option                                                                          ; Setting            ; Default Value      ;
++---------------------------------------------------------------------------------+--------------------+--------------------+
+; Device                                                                          ; 5CSEMA5F31C6       ;                    ;
+; Top-level entity name                                                           ; pan_tilt           ; pan_tilt           ;
+; Family name                                                                     ; Cyclone V          ; Cyclone V          ;
+; Use smart compilation                                                           ; Off                ; Off                ;
+; Enable parallel Assembler and Timing Analyzer during compilation                ; On                 ; On                 ;
+; Enable compact report table                                                     ; Off                ; Off                ;
+; Restructure Multiplexers                                                        ; Auto               ; Auto               ;
+; MLAB Add Timing Constraints For Mixed-Port Feed-Through Mode Setting Don't Care ; Off                ; Off                ;
+; Create Debugging Nodes for IP Cores                                             ; Off                ; Off                ;
+; Preserve fewer node names                                                       ; On                 ; On                 ;
+; Intel FPGA IP Evaluation Mode                                                   ; Enable             ; Enable             ;
+; Verilog Version                                                                 ; Verilog_2001       ; Verilog_2001       ;
+; VHDL Version                                                                    ; VHDL_1993          ; VHDL_1993          ;
+; State Machine Processing                                                        ; Auto               ; Auto               ;
+; Safe State Machine                                                              ; Off                ; Off                ;
+; Extract Verilog State Machines                                                  ; On                 ; On                 ;
+; Extract VHDL State Machines                                                     ; On                 ; On                 ;
+; Ignore Verilog initial constructs                                               ; Off                ; Off                ;
+; Iteration limit for constant Verilog loops                                      ; 5000               ; 5000               ;
+; Iteration limit for non-constant Verilog loops                                  ; 250                ; 250                ;
+; Add Pass-Through Logic to Inferred RAMs                                         ; On                 ; On                 ;
+; Infer RAMs from Raw Logic                                                       ; On                 ; On                 ;
+; Parallel Synthesis                                                              ; On                 ; On                 ;
+; DSP Block Balancing                                                             ; Auto               ; Auto               ;
+; NOT Gate Push-Back                                                              ; On                 ; On                 ;
+; Power-Up Don't Care                                                             ; On                 ; On                 ;
+; Remove Redundant Logic Cells                                                    ; Off                ; Off                ;
+; Remove Duplicate Registers                                                      ; On                 ; On                 ;
+; Ignore CARRY Buffers                                                            ; Off                ; Off                ;
+; Ignore CASCADE Buffers                                                          ; Off                ; Off                ;
+; Ignore GLOBAL Buffers                                                           ; Off                ; Off                ;
+; Ignore ROW GLOBAL Buffers                                                       ; Off                ; Off                ;
+; Ignore LCELL Buffers                                                            ; Off                ; Off                ;
+; Ignore SOFT Buffers                                                             ; On                 ; On                 ;
+; Limit AHDL Integers to 32 Bits                                                  ; Off                ; Off                ;
+; Optimization Technique                                                          ; Balanced           ; Balanced           ;
+; Carry Chain Length                                                              ; 70                 ; 70                 ;
+; Auto Carry Chains                                                               ; On                 ; On                 ;
+; Auto Open-Drain Pins                                                            ; On                 ; On                 ;
+; Perform WYSIWYG Primitive Resynthesis                                           ; Off                ; Off                ;
+; Auto ROM Replacement                                                            ; On                 ; On                 ;
+; Auto RAM Replacement                                                            ; On                 ; On                 ;
+; Auto DSP Block Replacement                                                      ; On                 ; On                 ;
+; Auto Shift Register Replacement                                                 ; Auto               ; Auto               ;
+; Allow Shift Register Merging across Hierarchies                                 ; Auto               ; Auto               ;
+; Auto Clock Enable Replacement                                                   ; On                 ; On                 ;
+; Strict RAM Replacement                                                          ; Off                ; Off                ;
+; Allow Synchronous Control Signals                                               ; On                 ; On                 ;
+; Force Use of Synchronous Clear Signals                                          ; Off                ; Off                ;
+; Auto Resource Sharing                                                           ; Off                ; Off                ;
+; Allow Any RAM Size For Recognition                                              ; Off                ; Off                ;
+; Allow Any ROM Size For Recognition                                              ; Off                ; Off                ;
+; Allow Any Shift Register Size For Recognition                                   ; Off                ; Off                ;
+; Use LogicLock Constraints during Resource Balancing                             ; On                 ; On                 ;
+; Ignore translate_off and synthesis_off directives                               ; Off                ; Off                ;
+; Timing-Driven Synthesis                                                         ; On                 ; On                 ;
+; Report Parameter Settings                                                       ; On                 ; On                 ;
+; Report Source Assignments                                                       ; On                 ; On                 ;
+; Report Connectivity Checks                                                      ; On                 ; On                 ;
+; Ignore Maximum Fan-Out Assignments                                              ; Off                ; Off                ;
+; Synchronization Register Chain Length                                           ; 3                  ; 3                  ;
+; Power Optimization During Synthesis                                             ; Normal compilation ; Normal compilation ;
+; HDL message level                                                               ; Level2             ; Level2             ;
+; Suppress Register Optimization Related Messages                                 ; Off                ; Off                ;
+; Number of Removed Registers Reported in Synthesis Report                        ; 5000               ; 5000               ;
+; Number of Swept Nodes Reported in Synthesis Report                              ; 5000               ; 5000               ;
+; Number of Inverted Registers Reported in Synthesis Report                       ; 100                ; 100                ;
+; Clock MUX Protection                                                            ; On                 ; On                 ;
+; Auto Gated Clock Conversion                                                     ; Off                ; Off                ;
+; Block Design Naming                                                             ; Auto               ; Auto               ;
+; SDC constraint protection                                                       ; Off                ; Off                ;
+; Synthesis Effort                                                                ; Auto               ; Auto               ;
+; Shift Register Replacement - Allow Asynchronous Clear Signal                    ; On                 ; On                 ;
+; Pre-Mapping Resynthesis Optimization                                            ; Off                ; Off                ;
+; Analysis & Synthesis Message Level                                              ; Medium             ; Medium             ;
+; Disable Register Merging Across Hierarchies                                     ; Auto               ; Auto               ;
+; Resource Aware Inference For Block RAM                                          ; On                 ; On                 ;
+; Automatic Parallel Synthesis                                                    ; On                 ; On                 ;
+; Partial Reconfiguration Bitstream ID                                            ; Off                ; Off                ;
++---------------------------------------------------------------------------------+--------------------+--------------------+
+
+
++------------------------------------------+
+; Parallel Compilation                     ;
++----------------------------+-------------+
+; Processors                 ; Number      ;
++----------------------------+-------------+
+; Number detected on machine ; 20          ;
+; Maximum allowed            ; 14          ;
+;                            ;             ;
+; Average used               ; 1.00        ;
+; Maximum used               ; 14          ;
+;                            ;             ;
+; Usage by Processor         ; % Time Used ;
+;     Processor 1            ; 100.0%      ;
+;     Processors 2-14        ;   0.0%      ;
++----------------------------+-------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                                                                                                                                 ;
++--------------------------------------------------------------------+-----------------+----------------------------------------------+--------------------------------------------------------------------------------------------------------------------+-------------+
+; File Name with User-Entered Path                                   ; Used in Netlist ; File Type                                    ; File Name with Absolute Path                                                                                       ; Library     ;
++--------------------------------------------------------------------+-----------------+----------------------------------------------+--------------------------------------------------------------------------------------------------------------------+-------------+
+; ../Driver/servo.sv                                                 ; yes             ; User SystemVerilog HDL File                  ; I:/ece554/ECE554-Capstone-Project/Servo/Driver/servo.sv                                                            ;             ;
+; ../Driver/counter.sv                                               ; yes             ; User SystemVerilog HDL File                  ; I:/ece554/ECE554-Capstone-Project/Servo/Driver/counter.sv                                                          ;             ;
+; pan_tilt.sv                                                        ; yes             ; Auto-Found SystemVerilog HDL File            ; I:/ece554/ECE554-Capstone-Project/Servo/Quartus/pan_tilt.sv                                                        ;             ;
+; sld_signaltap.vhd                                                  ; yes             ; Megafunction                                 ; c:/intelfpga_lite/23.1std/quartus/libraries/megafunctions/sld_signaltap.vhd                                        ;             ;
+; sld_signaltap_impl.vhd                                             ; yes             ; Encrypted Megafunction                       ; c:/intelfpga_lite/23.1std/quartus/libraries/megafunctions/sld_signaltap_impl.vhd                                   ;             ;
+; sld_ela_control.vhd                                                ; yes             ; Encrypted Megafunction                       ; c:/intelfpga_lite/23.1std/quartus/libraries/megafunctions/sld_ela_control.vhd                                      ;             ;
+; lpm_shiftreg.tdf                                                   ; yes             ; Megafunction                                 ; c:/intelfpga_lite/23.1std/quartus/libraries/megafunctions/lpm_shiftreg.tdf                                         ;             ;
+; lpm_constant.inc                                                   ; yes             ; Megafunction                                 ; c:/intelfpga_lite/23.1std/quartus/libraries/megafunctions/lpm_constant.inc                                         ;             ;
+; dffeea.inc                                                         ; yes             ; Megafunction                                 ; c:/intelfpga_lite/23.1std/quartus/libraries/megafunctions/dffeea.inc                                               ;             ;
+; aglobal231.inc                                                     ; yes             ; Megafunction                                 ; c:/intelfpga_lite/23.1std/quartus/libraries/megafunctions/aglobal231.inc                                           ;             ;
+; sld_mbpmg.vhd                                                      ; yes             ; Encrypted Megafunction                       ; c:/intelfpga_lite/23.1std/quartus/libraries/megafunctions/sld_mbpmg.vhd                                            ;             ;
+; sld_ela_trigger_flow_sel.tdf                                       ; yes             ; Encrypted Megafunction                       ; c:/intelfpga_lite/23.1std/quartus/libraries/megafunctions/sld_ela_trigger_flow_sel.tdf                             ;             ;
+; db/sld_ela_trigger_flow_sel_5o31.tdf                               ; yes             ; Auto-Generated Megafunction                  ; I:/ece554/ECE554-Capstone-Project/Servo/Quartus/db/sld_ela_trigger_flow_sel_5o31.tdf                               ;             ;
+; db/sld_reserved_pan_tilt_auto_signaltap_0_flow_mgr_e982.v          ; yes             ; Encrypted Auto-Generated Megafunction        ; I:/ece554/ECE554-Capstone-Project/Servo/Quartus/db/sld_reserved_pan_tilt_auto_signaltap_0_flow_mgr_e982.v          ;             ;
+; sld_buffer_manager.vhd                                             ; yes             ; Encrypted Megafunction                       ; c:/intelfpga_lite/23.1std/quartus/libraries/megafunctions/sld_buffer_manager.vhd                                   ;             ;
+; altsyncram.tdf                                                     ; yes             ; Megafunction                                 ; c:/intelfpga_lite/23.1std/quartus/libraries/megafunctions/altsyncram.tdf                                           ;             ;
+; stratix_ram_block.inc                                              ; yes             ; Megafunction                                 ; c:/intelfpga_lite/23.1std/quartus/libraries/megafunctions/stratix_ram_block.inc                                    ;             ;
+; lpm_mux.inc                                                        ; yes             ; Megafunction                                 ; c:/intelfpga_lite/23.1std/quartus/libraries/megafunctions/lpm_mux.inc                                              ;             ;
+; lpm_decode.inc                                                     ; yes             ; Megafunction                                 ; c:/intelfpga_lite/23.1std/quartus/libraries/megafunctions/lpm_decode.inc                                           ;             ;
+; a_rdenreg.inc                                                      ; yes             ; Megafunction                                 ; c:/intelfpga_lite/23.1std/quartus/libraries/megafunctions/a_rdenreg.inc                                            ;             ;
+; altrom.inc                                                         ; yes             ; Megafunction                                 ; c:/intelfpga_lite/23.1std/quartus/libraries/megafunctions/altrom.inc                                               ;             ;
+; altram.inc                                                         ; yes             ; Megafunction                                 ; c:/intelfpga_lite/23.1std/quartus/libraries/megafunctions/altram.inc                                               ;             ;
+; altdpram.inc                                                       ; yes             ; Megafunction                                 ; c:/intelfpga_lite/23.1std/quartus/libraries/megafunctions/altdpram.inc                                             ;             ;
+; db/altsyncram_ik84.tdf                                             ; yes             ; Auto-Generated Megafunction                  ; I:/ece554/ECE554-Capstone-Project/Servo/Quartus/db/altsyncram_ik84.tdf                                             ;             ;
+; db/decode_tma.tdf                                                  ; yes             ; Auto-Generated Megafunction                  ; I:/ece554/ECE554-Capstone-Project/Servo/Quartus/db/decode_tma.tdf                                                  ;             ;
+; db/mux_7hb.tdf                                                     ; yes             ; Auto-Generated Megafunction                  ; I:/ece554/ECE554-Capstone-Project/Servo/Quartus/db/mux_7hb.tdf                                                     ;             ;
+; altdpram.tdf                                                       ; yes             ; Megafunction                                 ; c:/intelfpga_lite/23.1std/quartus/libraries/megafunctions/altdpram.tdf                                             ;             ;
+; memmodes.inc                                                       ; yes             ; Megafunction                                 ; c:/intelfpga_lite/23.1std/quartus/libraries/others/maxplus2/memmodes.inc                                           ;             ;
+; a_hdffe.inc                                                        ; yes             ; Megafunction                                 ; c:/intelfpga_lite/23.1std/quartus/libraries/megafunctions/a_hdffe.inc                                              ;             ;
+; alt_le_rden_reg.inc                                                ; yes             ; Megafunction                                 ; c:/intelfpga_lite/23.1std/quartus/libraries/megafunctions/alt_le_rden_reg.inc                                      ;             ;
+; altsyncram.inc                                                     ; yes             ; Megafunction                                 ; c:/intelfpga_lite/23.1std/quartus/libraries/megafunctions/altsyncram.inc                                           ;             ;
+; lpm_mux.tdf                                                        ; yes             ; Megafunction                                 ; c:/intelfpga_lite/23.1std/quartus/libraries/megafunctions/lpm_mux.tdf                                              ;             ;
+; muxlut.inc                                                         ; yes             ; Megafunction                                 ; c:/intelfpga_lite/23.1std/quartus/libraries/megafunctions/muxlut.inc                                               ;             ;
+; bypassff.inc                                                       ; yes             ; Megafunction                                 ; c:/intelfpga_lite/23.1std/quartus/libraries/megafunctions/bypassff.inc                                             ;             ;
+; altshift.inc                                                       ; yes             ; Megafunction                                 ; c:/intelfpga_lite/23.1std/quartus/libraries/megafunctions/altshift.inc                                             ;             ;
+; db/mux_glc.tdf                                                     ; yes             ; Auto-Generated Megafunction                  ; I:/ece554/ECE554-Capstone-Project/Servo/Quartus/db/mux_glc.tdf                                                     ;             ;
+; lpm_decode.tdf                                                     ; yes             ; Megafunction                                 ; c:/intelfpga_lite/23.1std/quartus/libraries/megafunctions/lpm_decode.tdf                                           ;             ;
+; declut.inc                                                         ; yes             ; Megafunction                                 ; c:/intelfpga_lite/23.1std/quartus/libraries/megafunctions/declut.inc                                               ;             ;
+; lpm_compare.inc                                                    ; yes             ; Megafunction                                 ; c:/intelfpga_lite/23.1std/quartus/libraries/megafunctions/lpm_compare.inc                                          ;             ;
+; db/decode_vnf.tdf                                                  ; yes             ; Auto-Generated Megafunction                  ; I:/ece554/ECE554-Capstone-Project/Servo/Quartus/db/decode_vnf.tdf                                                  ;             ;
+; lpm_counter.tdf                                                    ; yes             ; Megafunction                                 ; c:/intelfpga_lite/23.1std/quartus/libraries/megafunctions/lpm_counter.tdf                                          ;             ;
+; lpm_add_sub.inc                                                    ; yes             ; Megafunction                                 ; c:/intelfpga_lite/23.1std/quartus/libraries/megafunctions/lpm_add_sub.inc                                          ;             ;
+; cmpconst.inc                                                       ; yes             ; Megafunction                                 ; c:/intelfpga_lite/23.1std/quartus/libraries/megafunctions/cmpconst.inc                                             ;             ;
+; lpm_counter.inc                                                    ; yes             ; Megafunction                                 ; c:/intelfpga_lite/23.1std/quartus/libraries/megafunctions/lpm_counter.inc                                          ;             ;
+; alt_counter_stratix.inc                                            ; yes             ; Megafunction                                 ; c:/intelfpga_lite/23.1std/quartus/libraries/megafunctions/alt_counter_stratix.inc                                  ;             ;
+; db/cntr_85j.tdf                                                    ; yes             ; Auto-Generated Megafunction                  ; I:/ece554/ECE554-Capstone-Project/Servo/Quartus/db/cntr_85j.tdf                                                    ;             ;
+; db/cntr_49i.tdf                                                    ; yes             ; Auto-Generated Megafunction                  ; I:/ece554/ECE554-Capstone-Project/Servo/Quartus/db/cntr_49i.tdf                                                    ;             ;
+; db/cmpr_e9c.tdf                                                    ; yes             ; Auto-Generated Megafunction                  ; I:/ece554/ECE554-Capstone-Project/Servo/Quartus/db/cmpr_e9c.tdf                                                    ;             ;
+; db/cntr_kri.tdf                                                    ; yes             ; Auto-Generated Megafunction                  ; I:/ece554/ECE554-Capstone-Project/Servo/Quartus/db/cntr_kri.tdf                                                    ;             ;
+; db/cmpr_99c.tdf                                                    ; yes             ; Auto-Generated Megafunction                  ; I:/ece554/ECE554-Capstone-Project/Servo/Quartus/db/cmpr_99c.tdf                                                    ;             ;
+; sld_rom_sr.vhd                                                     ; yes             ; Encrypted Megafunction                       ; c:/intelfpga_lite/23.1std/quartus/libraries/megafunctions/sld_rom_sr.vhd                                           ;             ;
+; sld_jtag_endpoint_adapter.vhd                                      ; yes             ; Encrypted Megafunction                       ; c:/intelfpga_lite/23.1std/quartus/libraries/megafunctions/sld_jtag_endpoint_adapter.vhd                            ;             ;
+; sld_jtag_endpoint_adapter_impl.sv                                  ; yes             ; Encrypted Megafunction                       ; c:/intelfpga_lite/23.1std/quartus/libraries/megafunctions/sld_jtag_endpoint_adapter_impl.sv                        ;             ;
+; sld_hub.vhd                                                        ; yes             ; Encrypted Megafunction                       ; c:/intelfpga_lite/23.1std/quartus/libraries/megafunctions/sld_hub.vhd                                              ; altera_sld  ;
+; db/ip/sld76ff8c70/alt_sld_fab.v                                    ; yes             ; Encrypted Auto-Found Verilog HDL File        ; I:/ece554/ECE554-Capstone-Project/Servo/Quartus/db/ip/sld76ff8c70/alt_sld_fab.v                                    ; alt_sld_fab ;
+; db/ip/sld76ff8c70/submodules/alt_sld_fab_alt_sld_fab.v             ; yes             ; Encrypted Auto-Found Verilog HDL File        ; I:/ece554/ECE554-Capstone-Project/Servo/Quartus/db/ip/sld76ff8c70/submodules/alt_sld_fab_alt_sld_fab.v             ; alt_sld_fab ;
+; db/ip/sld76ff8c70/submodules/alt_sld_fab_alt_sld_fab_ident.sv      ; yes             ; Auto-Found SystemVerilog HDL File            ; I:/ece554/ECE554-Capstone-Project/Servo/Quartus/db/ip/sld76ff8c70/submodules/alt_sld_fab_alt_sld_fab_ident.sv      ; alt_sld_fab ;
+; db/ip/sld76ff8c70/submodules/alt_sld_fab_alt_sld_fab_presplit.sv   ; yes             ; Encrypted Auto-Found SystemVerilog HDL File  ; I:/ece554/ECE554-Capstone-Project/Servo/Quartus/db/ip/sld76ff8c70/submodules/alt_sld_fab_alt_sld_fab_presplit.sv   ; alt_sld_fab ;
+; db/ip/sld76ff8c70/submodules/alt_sld_fab_alt_sld_fab_sldfabric.vhd ; yes             ; Encrypted Auto-Found VHDL File               ; I:/ece554/ECE554-Capstone-Project/Servo/Quartus/db/ip/sld76ff8c70/submodules/alt_sld_fab_alt_sld_fab_sldfabric.vhd ; alt_sld_fab ;
+; db/ip/sld76ff8c70/submodules/alt_sld_fab_alt_sld_fab_splitter.sv   ; yes             ; Encrypted Auto-Found SystemVerilog HDL File  ; I:/ece554/ECE554-Capstone-Project/Servo/Quartus/db/ip/sld76ff8c70/submodules/alt_sld_fab_alt_sld_fab_splitter.sv   ; alt_sld_fab ;
+; sld_jtag_hub.vhd                                                   ; yes             ; Encrypted Megafunction                       ; c:/intelfpga_lite/23.1std/quartus/libraries/megafunctions/sld_jtag_hub.vhd                                         ;             ;
+; lpm_divide.tdf                                                     ; yes             ; Megafunction                                 ; c:/intelfpga_lite/23.1std/quartus/libraries/megafunctions/lpm_divide.tdf                                           ;             ;
+; abs_divider.inc                                                    ; yes             ; Megafunction                                 ; c:/intelfpga_lite/23.1std/quartus/libraries/megafunctions/abs_divider.inc                                          ;             ;
+; sign_div_unsign.inc                                                ; yes             ; Megafunction                                 ; c:/intelfpga_lite/23.1std/quartus/libraries/megafunctions/sign_div_unsign.inc                                      ;             ;
+; db/lpm_divide_qbm.tdf                                              ; yes             ; Auto-Generated Megafunction                  ; I:/ece554/ECE554-Capstone-Project/Servo/Quartus/db/lpm_divide_qbm.tdf                                              ;             ;
+; db/sign_div_unsign_0mh.tdf                                         ; yes             ; Auto-Generated Megafunction                  ; I:/ece554/ECE554-Capstone-Project/Servo/Quartus/db/sign_div_unsign_0mh.tdf                                         ;             ;
+; db/alt_u_div_60f.tdf                                               ; yes             ; Auto-Generated Megafunction                  ; I:/ece554/ECE554-Capstone-Project/Servo/Quartus/db/alt_u_div_60f.tdf                                               ;             ;
++--------------------------------------------------------------------+-----------------+----------------------------------------------+--------------------------------------------------------------------------------------------------------------------+-------------+
+
+
++------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary                            ;
++---------------------------------------------+--------------------------+
+; Resource                                    ; Usage                    ;
++---------------------------------------------+--------------------------+
+; Estimate of Logic utilization (ALMs needed) ; 584                      ;
+;                                             ;                          ;
+; Combinational ALUT usage for logic          ; 900                      ;
+;     -- 7 input functions                    ; 1                        ;
+;     -- 6 input functions                    ; 98                       ;
+;     -- 5 input functions                    ; 65                       ;
+;     -- 4 input functions                    ; 147                      ;
+;     -- <=3 input functions                  ; 589                      ;
+;                                             ;                          ;
+; Dedicated logic registers                   ; 581                      ;
+;                                             ;                          ;
+; I/O pins                                    ; 106                      ;
+; Total MLAB memory bits                      ; 0                        ;
+; Total block memory bits                     ; 262144                   ;
+;                                             ;                          ;
+; Total DSP Blocks                            ; 2                        ;
+;                                             ;                          ;
+; Maximum fan-out node                        ; altera_internal_jtag~TDO ;
+; Maximum fan-out                             ; 391                      ;
+; Total fan-out                               ; 6297                     ;
+; Average fan-out                             ; 3.55                     ;
++---------------------------------------------+--------------------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           ;
++-----------------------------------------------------------------------------------------------------------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+------------------------------------------------------+--------------+
+; Compilation Hierarchy Node                                                                                                              ; Combinational ALUTs ; Dedicated Logic Registers ; Block Memory Bits ; DSP Blocks ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                                                                                                                                                                                                                                                                                  ; Entity Name                                          ; Library Name ;
++-----------------------------------------------------------------------------------------------------------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+------------------------------------------------------+--------------+
+; |pan_tilt                                                                                                                               ; 900 (0)             ; 581 (0)                   ; 262144            ; 2          ; 106  ; 0            ; |pan_tilt                                                                                                                                                                                                                                                                                                                                            ; pan_tilt                                             ; work         ;
+;    |servo:SERVO_PAN|                                                                                                                    ; 276 (32)            ; 24 (1)                    ; 0                 ; 1          ; 0    ; 0            ; |pan_tilt|servo:SERVO_PAN                                                                                                                                                                                                                                                                                                                            ; servo                                                ; work         ;
+;       |counter:CLOCK_GEN|                                                                                                               ; 27 (27)             ; 23 (23)                   ; 0                 ; 0          ; 0    ; 0            ; |pan_tilt|servo:SERVO_PAN|counter:CLOCK_GEN                                                                                                                                                                                                                                                                                                          ; counter                                              ; work         ;
+;       |lpm_divide:Div0|                                                                                                                 ; 217 (0)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |pan_tilt|servo:SERVO_PAN|lpm_divide:Div0                                                                                                                                                                                                                                                                                                            ; lpm_divide                                           ; work         ;
+;          |lpm_divide_qbm:auto_generated|                                                                                                ; 217 (0)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |pan_tilt|servo:SERVO_PAN|lpm_divide:Div0|lpm_divide_qbm:auto_generated                                                                                                                                                                                                                                                                              ; lpm_divide_qbm                                       ; work         ;
+;             |sign_div_unsign_0mh:divider|                                                                                               ; 217 (0)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |pan_tilt|servo:SERVO_PAN|lpm_divide:Div0|lpm_divide_qbm:auto_generated|sign_div_unsign_0mh:divider                                                                                                                                                                                                                                                  ; sign_div_unsign_0mh                                  ; work         ;
+;                |alt_u_div_60f:divider|                                                                                                  ; 217 (217)           ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |pan_tilt|servo:SERVO_PAN|lpm_divide:Div0|lpm_divide_qbm:auto_generated|sign_div_unsign_0mh:divider|alt_u_div_60f:divider                                                                                                                                                                                                                            ; alt_u_div_60f                                        ; work         ;
+;    |servo:SERVO_TILT|                                                                                                                   ; 249 (32)            ; 1 (1)                     ; 0                 ; 1          ; 0    ; 0            ; |pan_tilt|servo:SERVO_TILT                                                                                                                                                                                                                                                                                                                           ; servo                                                ; work         ;
+;       |lpm_divide:Div0|                                                                                                                 ; 217 (0)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |pan_tilt|servo:SERVO_TILT|lpm_divide:Div0                                                                                                                                                                                                                                                                                                           ; lpm_divide                                           ; work         ;
+;          |lpm_divide_qbm:auto_generated|                                                                                                ; 217 (0)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |pan_tilt|servo:SERVO_TILT|lpm_divide:Div0|lpm_divide_qbm:auto_generated                                                                                                                                                                                                                                                                             ; lpm_divide_qbm                                       ; work         ;
+;             |sign_div_unsign_0mh:divider|                                                                                               ; 217 (0)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |pan_tilt|servo:SERVO_TILT|lpm_divide:Div0|lpm_divide_qbm:auto_generated|sign_div_unsign_0mh:divider                                                                                                                                                                                                                                                 ; sign_div_unsign_0mh                                  ; work         ;
+;                |alt_u_div_60f:divider|                                                                                                  ; 217 (217)           ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |pan_tilt|servo:SERVO_TILT|lpm_divide:Div0|lpm_divide_qbm:auto_generated|sign_div_unsign_0mh:divider|alt_u_div_60f:divider                                                                                                                                                                                                                           ; alt_u_div_60f                                        ; work         ;
+;    |sld_hub:auto_hub|                                                                                                                   ; 90 (1)              ; 90 (0)                    ; 0                 ; 0          ; 0    ; 0            ; |pan_tilt|sld_hub:auto_hub                                                                                                                                                                                                                                                                                                                           ; sld_hub                                              ; altera_sld   ;
+;       |alt_sld_fab_with_jtag_input:\instrumentation_fabric_with_node_gen:fabric_gen_new_way:with_jtag_input_gen:instrumentation_fabric| ; 89 (0)              ; 90 (0)                    ; 0                 ; 0          ; 0    ; 0            ; |pan_tilt|sld_hub:auto_hub|alt_sld_fab_with_jtag_input:\instrumentation_fabric_with_node_gen:fabric_gen_new_way:with_jtag_input_gen:instrumentation_fabric                                                                                                                                                                                           ; alt_sld_fab_with_jtag_input                          ; altera_sld   ;
+;          |alt_sld_fab:instrumentation_fabric|                                                                                           ; 89 (0)              ; 90 (0)                    ; 0                 ; 0          ; 0    ; 0            ; |pan_tilt|sld_hub:auto_hub|alt_sld_fab_with_jtag_input:\instrumentation_fabric_with_node_gen:fabric_gen_new_way:with_jtag_input_gen:instrumentation_fabric|alt_sld_fab:instrumentation_fabric                                                                                                                                                        ; alt_sld_fab                                          ; alt_sld_fab  ;
+;             |alt_sld_fab_alt_sld_fab:alt_sld_fab|                                                                                       ; 89 (1)              ; 90 (5)                    ; 0                 ; 0          ; 0    ; 0            ; |pan_tilt|sld_hub:auto_hub|alt_sld_fab_with_jtag_input:\instrumentation_fabric_with_node_gen:fabric_gen_new_way:with_jtag_input_gen:instrumentation_fabric|alt_sld_fab:instrumentation_fabric|alt_sld_fab_alt_sld_fab:alt_sld_fab                                                                                                                    ; alt_sld_fab_alt_sld_fab                              ; alt_sld_fab  ;
+;                |alt_sld_fab_alt_sld_fab_sldfabric:sldfabric|                                                                            ; 88 (0)              ; 85 (0)                    ; 0                 ; 0          ; 0    ; 0            ; |pan_tilt|sld_hub:auto_hub|alt_sld_fab_with_jtag_input:\instrumentation_fabric_with_node_gen:fabric_gen_new_way:with_jtag_input_gen:instrumentation_fabric|alt_sld_fab:instrumentation_fabric|alt_sld_fab_alt_sld_fab:alt_sld_fab|alt_sld_fab_alt_sld_fab_sldfabric:sldfabric                                                                        ; alt_sld_fab_alt_sld_fab_sldfabric                    ; alt_sld_fab  ;
+;                   |sld_jtag_hub:\jtag_hub_gen:real_sld_jtag_hub|                                                                        ; 88 (55)             ; 85 (57)                   ; 0                 ; 0          ; 0    ; 0            ; |pan_tilt|sld_hub:auto_hub|alt_sld_fab_with_jtag_input:\instrumentation_fabric_with_node_gen:fabric_gen_new_way:with_jtag_input_gen:instrumentation_fabric|alt_sld_fab:instrumentation_fabric|alt_sld_fab_alt_sld_fab:alt_sld_fab|alt_sld_fab_alt_sld_fab_sldfabric:sldfabric|sld_jtag_hub:\jtag_hub_gen:real_sld_jtag_hub                           ; sld_jtag_hub                                         ; work         ;
+;                      |sld_rom_sr:hub_info_reg|                                                                                          ; 15 (15)             ; 9 (9)                     ; 0                 ; 0          ; 0    ; 0            ; |pan_tilt|sld_hub:auto_hub|alt_sld_fab_with_jtag_input:\instrumentation_fabric_with_node_gen:fabric_gen_new_way:with_jtag_input_gen:instrumentation_fabric|alt_sld_fab:instrumentation_fabric|alt_sld_fab_alt_sld_fab:alt_sld_fab|alt_sld_fab_alt_sld_fab_sldfabric:sldfabric|sld_jtag_hub:\jtag_hub_gen:real_sld_jtag_hub|sld_rom_sr:hub_info_reg   ; sld_rom_sr                                           ; work         ;
+;                      |sld_shadow_jsm:shadow_jsm|                                                                                        ; 18 (18)             ; 19 (19)                   ; 0                 ; 0          ; 0    ; 0            ; |pan_tilt|sld_hub:auto_hub|alt_sld_fab_with_jtag_input:\instrumentation_fabric_with_node_gen:fabric_gen_new_way:with_jtag_input_gen:instrumentation_fabric|alt_sld_fab:instrumentation_fabric|alt_sld_fab_alt_sld_fab:alt_sld_fab|alt_sld_fab_alt_sld_fab_sldfabric:sldfabric|sld_jtag_hub:\jtag_hub_gen:real_sld_jtag_hub|sld_shadow_jsm:shadow_jsm ; sld_shadow_jsm                                       ; altera_sld   ;
+;    |sld_signaltap:auto_signaltap_0|                                                                                                     ; 285 (2)             ; 466 (3)                   ; 262144            ; 0          ; 0    ; 0            ; |pan_tilt|sld_signaltap:auto_signaltap_0                                                                                                                                                                                                                                                                                                             ; sld_signaltap                                        ; work         ;
+;       |sld_signaltap_impl:sld_signaltap_body|                                                                                           ; 283 (0)             ; 463 (0)                   ; 262144            ; 0          ; 0    ; 0            ; |pan_tilt|sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body                                                                                                                                                                                                                                                                       ; sld_signaltap_impl                                   ; work         ;
+;          |sld_signaltap_implb:sld_signaltap_body|                                                                                       ; 283 (67)            ; 463 (102)                 ; 262144            ; 0          ; 0    ; 0            ; |pan_tilt|sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_signaltap_implb:sld_signaltap_body                                                                                                                                                                                                                                ; sld_signaltap_implb                                  ; work         ;
+;             |altdpram:\stp_non_zero_ram_gen:attribute_mem_gen:attribute_mem|                                                            ; 2 (0)               ; 106 (106)                 ; 0                 ; 0          ; 0    ; 0            ; |pan_tilt|sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_signaltap_implb:sld_signaltap_body|altdpram:\stp_non_zero_ram_gen:attribute_mem_gen:attribute_mem                                                                                                                                                                 ; altdpram                                             ; work         ;
+;                |lpm_decode:wdecoder|                                                                                                    ; 2 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |pan_tilt|sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_signaltap_implb:sld_signaltap_body|altdpram:\stp_non_zero_ram_gen:attribute_mem_gen:attribute_mem|lpm_decode:wdecoder                                                                                                                                             ; lpm_decode                                           ; work         ;
+;                   |decode_vnf:auto_generated|                                                                                           ; 2 (2)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |pan_tilt|sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_signaltap_implb:sld_signaltap_body|altdpram:\stp_non_zero_ram_gen:attribute_mem_gen:attribute_mem|lpm_decode:wdecoder|decode_vnf:auto_generated                                                                                                                   ; decode_vnf                                           ; work         ;
+;             |altsyncram:\stp_non_zero_ram_gen:stp_buffer_ram|                                                                           ; 26 (0)              ; 4 (0)                     ; 262144            ; 0          ; 0    ; 0            ; |pan_tilt|sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_signaltap_implb:sld_signaltap_body|altsyncram:\stp_non_zero_ram_gen:stp_buffer_ram                                                                                                                                                                                ; altsyncram                                           ; work         ;
+;                |altsyncram_ik84:auto_generated|                                                                                         ; 26 (0)              ; 4 (4)                     ; 262144            ; 0          ; 0    ; 0            ; |pan_tilt|sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_signaltap_implb:sld_signaltap_body|altsyncram:\stp_non_zero_ram_gen:stp_buffer_ram|altsyncram_ik84:auto_generated                                                                                                                                                 ; altsyncram_ik84                                      ; work         ;
+;                   |decode_tma:decode2|                                                                                                  ; 16 (16)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |pan_tilt|sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_signaltap_implb:sld_signaltap_body|altsyncram:\stp_non_zero_ram_gen:stp_buffer_ram|altsyncram_ik84:auto_generated|decode_tma:decode2                                                                                                                              ; decode_tma                                           ; work         ;
+;                   |mux_7hb:mux3|                                                                                                        ; 10 (10)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |pan_tilt|sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_signaltap_implb:sld_signaltap_body|altsyncram:\stp_non_zero_ram_gen:stp_buffer_ram|altsyncram_ik84:auto_generated|mux_7hb:mux3                                                                                                                                    ; mux_7hb                                              ; work         ;
+;             |lpm_shiftreg:segment_offset_config_deserialize|                                                                            ; 0 (0)               ; 17 (17)                   ; 0                 ; 0          ; 0    ; 0            ; |pan_tilt|sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_signaltap_implb:sld_signaltap_body|lpm_shiftreg:segment_offset_config_deserialize                                                                                                                                                                                 ; lpm_shiftreg                                         ; work         ;
+;             |lpm_shiftreg:status_register|                                                                                              ; 7 (7)               ; 7 (7)                     ; 0                 ; 0          ; 0    ; 0            ; |pan_tilt|sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_signaltap_implb:sld_signaltap_body|lpm_shiftreg:status_register                                                                                                                                                                                                   ; lpm_shiftreg                                         ; work         ;
+;             |serial_crc_16:\tdo_crc_gen:tdo_crc_calc|                                                                                   ; 4 (4)               ; 13 (13)                   ; 0                 ; 0          ; 0    ; 0            ; |pan_tilt|sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_signaltap_implb:sld_signaltap_body|serial_crc_16:\tdo_crc_gen:tdo_crc_calc                                                                                                                                                                                        ; serial_crc_16                                        ; work         ;
+;             |sld_buffer_manager:sld_buffer_manager_inst|                                                                                ; 113 (113)           ; 94 (94)                   ; 0                 ; 0          ; 0    ; 0            ; |pan_tilt|sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_signaltap_implb:sld_signaltap_body|sld_buffer_manager:sld_buffer_manager_inst                                                                                                                                                                                     ; sld_buffer_manager                                   ; work         ;
+;             |sld_ela_control:ela_control|                                                                                               ; 4 (1)               ; 14 (1)                    ; 0                 ; 0          ; 0    ; 0            ; |pan_tilt|sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_signaltap_implb:sld_signaltap_body|sld_ela_control:ela_control                                                                                                                                                                                                    ; sld_ela_control                                      ; work         ;
+;                |lpm_shiftreg:trigger_config_deserialize|                                                                                ; 0 (0)               ; 4 (4)                     ; 0                 ; 0          ; 0    ; 0            ; |pan_tilt|sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_signaltap_implb:sld_signaltap_body|sld_ela_control:ela_control|lpm_shiftreg:trigger_config_deserialize                                                                                                                                                            ; lpm_shiftreg                                         ; work         ;
+;                |sld_ela_basic_multi_level_trigger:\basic_multi_level_mbpm_trigger_gen:multi_level_mbpm|                                 ; 0 (0)               ; 6 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |pan_tilt|sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_signaltap_implb:sld_signaltap_body|sld_ela_control:ela_control|sld_ela_basic_multi_level_trigger:\basic_multi_level_mbpm_trigger_gen:multi_level_mbpm                                                                                                             ; sld_ela_basic_multi_level_trigger                    ; work         ;
+;                   |lpm_shiftreg:trigger_condition_deserialize|                                                                          ; 0 (0)               ; 6 (6)                     ; 0                 ; 0          ; 0    ; 0            ; |pan_tilt|sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_signaltap_implb:sld_signaltap_body|sld_ela_control:ela_control|sld_ela_basic_multi_level_trigger:\basic_multi_level_mbpm_trigger_gen:multi_level_mbpm|lpm_shiftreg:trigger_condition_deserialize                                                                  ; lpm_shiftreg                                         ; work         ;
+;                |sld_ela_trigger_flow_sel:\generated:ela_trigger_flow_mgr_entity|                                                        ; 3 (0)               ; 3 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |pan_tilt|sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_signaltap_implb:sld_signaltap_body|sld_ela_control:ela_control|sld_ela_trigger_flow_sel:\generated:ela_trigger_flow_mgr_entity                                                                                                                                    ; sld_ela_trigger_flow_sel                             ; work         ;
+;                   |sld_ela_trigger_flow_sel_5o31:auto_generated|                                                                        ; 3 (0)               ; 3 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |pan_tilt|sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_signaltap_implb:sld_signaltap_body|sld_ela_control:ela_control|sld_ela_trigger_flow_sel:\generated:ela_trigger_flow_mgr_entity|sld_ela_trigger_flow_sel_5o31:auto_generated                                                                                       ; sld_ela_trigger_flow_sel_5o31                        ; work         ;
+;                      |sld_reserved_pan_tilt_auto_signaltap_0_flow_mgr_e982:mgl_prim1|                                                   ; 3 (3)               ; 3 (3)                     ; 0                 ; 0          ; 0    ; 0            ; |pan_tilt|sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_signaltap_implb:sld_signaltap_body|sld_ela_control:ela_control|sld_ela_trigger_flow_sel:\generated:ela_trigger_flow_mgr_entity|sld_ela_trigger_flow_sel_5o31:auto_generated|sld_reserved_pan_tilt_auto_signaltap_0_flow_mgr_e982:mgl_prim1                        ; sld_reserved_pan_tilt_auto_signaltap_0_flow_mgr_e982 ; work         ;
+;             |sld_offload_buffer_mgr:\stp_non_zero_depth_offload_gen:stp_offload_buff_mgr_inst|                                          ; 40 (9)              ; 98 (2)                    ; 0                 ; 0          ; 0    ; 0            ; |pan_tilt|sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_signaltap_implb:sld_signaltap_body|sld_offload_buffer_mgr:\stp_non_zero_depth_offload_gen:stp_offload_buff_mgr_inst                                                                                                                                               ; sld_offload_buffer_mgr                               ; work         ;
+;                |lpm_counter:read_pointer_counter|                                                                                       ; 17 (0)              ; 17 (0)                    ; 0                 ; 0          ; 0    ; 0            ; |pan_tilt|sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_signaltap_implb:sld_signaltap_body|sld_offload_buffer_mgr:\stp_non_zero_depth_offload_gen:stp_offload_buff_mgr_inst|lpm_counter:read_pointer_counter                                                                                                              ; lpm_counter                                          ; work         ;
+;                   |cntr_85j:auto_generated|                                                                                             ; 17 (17)             ; 17 (17)                   ; 0                 ; 0          ; 0    ; 0            ; |pan_tilt|sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_signaltap_implb:sld_signaltap_body|sld_offload_buffer_mgr:\stp_non_zero_depth_offload_gen:stp_offload_buff_mgr_inst|lpm_counter:read_pointer_counter|cntr_85j:auto_generated                                                                                      ; cntr_85j                                             ; work         ;
+;                |lpm_counter:status_advance_pointer_counter|                                                                             ; 8 (0)               ; 6 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |pan_tilt|sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_signaltap_implb:sld_signaltap_body|sld_offload_buffer_mgr:\stp_non_zero_depth_offload_gen:stp_offload_buff_mgr_inst|lpm_counter:status_advance_pointer_counter                                                                                                    ; lpm_counter                                          ; work         ;
+;                   |cntr_49i:auto_generated|                                                                                             ; 8 (8)               ; 6 (6)                     ; 0                 ; 0          ; 0    ; 0            ; |pan_tilt|sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_signaltap_implb:sld_signaltap_body|sld_offload_buffer_mgr:\stp_non_zero_depth_offload_gen:stp_offload_buff_mgr_inst|lpm_counter:status_advance_pointer_counter|cntr_49i:auto_generated                                                                            ; cntr_49i                                             ; work         ;
+;                |lpm_counter:status_read_pointer_counter|                                                                                ; 3 (0)               ; 1 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |pan_tilt|sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_signaltap_implb:sld_signaltap_body|sld_offload_buffer_mgr:\stp_non_zero_depth_offload_gen:stp_offload_buff_mgr_inst|lpm_counter:status_read_pointer_counter                                                                                                       ; lpm_counter                                          ; work         ;
+;                   |cntr_kri:auto_generated|                                                                                             ; 3 (3)               ; 1 (1)                     ; 0                 ; 0          ; 0    ; 0            ; |pan_tilt|sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_signaltap_implb:sld_signaltap_body|sld_offload_buffer_mgr:\stp_non_zero_depth_offload_gen:stp_offload_buff_mgr_inst|lpm_counter:status_read_pointer_counter|cntr_kri:auto_generated                                                                               ; cntr_kri                                             ; work         ;
+;                |lpm_shiftreg:info_data_shift_out|                                                                                       ; 0 (0)               ; 35 (35)                   ; 0                 ; 0          ; 0    ; 0            ; |pan_tilt|sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_signaltap_implb:sld_signaltap_body|sld_offload_buffer_mgr:\stp_non_zero_depth_offload_gen:stp_offload_buff_mgr_inst|lpm_shiftreg:info_data_shift_out                                                                                                              ; lpm_shiftreg                                         ; work         ;
+;                |lpm_shiftreg:ram_data_shift_out|                                                                                        ; 2 (2)               ; 2 (2)                     ; 0                 ; 0          ; 0    ; 0            ; |pan_tilt|sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_signaltap_implb:sld_signaltap_body|sld_offload_buffer_mgr:\stp_non_zero_depth_offload_gen:stp_offload_buff_mgr_inst|lpm_shiftreg:ram_data_shift_out                                                                                                               ; lpm_shiftreg                                         ; work         ;
+;                |lpm_shiftreg:status_data_shift_out|                                                                                     ; 1 (1)               ; 35 (35)                   ; 0                 ; 0          ; 0    ; 0            ; |pan_tilt|sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_signaltap_implb:sld_signaltap_body|sld_offload_buffer_mgr:\stp_non_zero_depth_offload_gen:stp_offload_buff_mgr_inst|lpm_shiftreg:status_data_shift_out                                                                                                            ; lpm_shiftreg                                         ; work         ;
+;             |sld_rom_sr:crc_rom_sr|                                                                                                     ; 20 (20)             ; 8 (8)                     ; 0                 ; 0          ; 0    ; 0            ; |pan_tilt|sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_signaltap_implb:sld_signaltap_body|sld_rom_sr:crc_rom_sr                                                                                                                                                                                                          ; sld_rom_sr                                           ; work         ;
++-----------------------------------------------------------------------------------------------------------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+------------------------------------------------------+--------------+
+Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis RAM Summary                                                                                                                                                                                                                                                                            ;
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+------+------------------+--------------+--------------+--------------+--------------+--------+------+
+; Name                                                                                                                                                                                                  ; Type ; Mode             ; Port A Depth ; Port A Width ; Port B Depth ; Port B Width ; Size   ; MIF  ;
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+------+------------------+--------------+--------------+--------------+--------------+--------+------+
+; sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_signaltap_implb:sld_signaltap_body|altsyncram:\stp_non_zero_ram_gen:stp_buffer_ram|altsyncram_ik84:auto_generated|ALTSYNCRAM ; AUTO ; Simple Dual Port ; 131072       ; 2            ; 131072       ; 2            ; 262144 ; None ;
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+------+------------------+--------------+--------------+--------------+--------------+--------+------+
+
+
++-----------------------------------------------+
+; Analysis & Synthesis DSP Block Usage Summary  ;
++---------------------------------+-------------+
+; Statistic                       ; Number Used ;
++---------------------------------+-------------+
+; Two Independent 18x18           ; 2           ;
+; Total number of DSP blocks      ; 2           ;
+;                                 ;             ;
+; Fixed Point Unsigned Multiplier ; 2           ;
++---------------------------------+-------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis IP Cores Summary                                                                                                                                                                                                                                                                                                                                                                           ;
++--------+--------------+---------+--------------+--------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-----------------+
+; Vendor ; IP Core Name ; Version ; Release Date ; License Type ; Entity Instance                                                                                                                                                                                                                                                                                                               ; IP Include File ;
++--------+--------------+---------+--------------+--------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-----------------+
+; Altera ; Signal Tap   ; N/A     ; N/A          ; Licensed     ; |pan_tilt|sld_hub:auto_hub|alt_sld_fab_with_jtag_input:\instrumentation_fabric_with_node_gen:fabric_gen_new_way:with_jtag_input_gen:instrumentation_fabric|alt_sld_fab:instrumentation_fabric                                                                                                                                 ;                 ;
+; Altera ; Signal Tap   ; N/A     ; N/A          ; Licensed     ; |pan_tilt|sld_hub:auto_hub|alt_sld_fab_with_jtag_input:\instrumentation_fabric_with_node_gen:fabric_gen_new_way:with_jtag_input_gen:instrumentation_fabric|alt_sld_fab:instrumentation_fabric|alt_sld_fab_alt_sld_fab:alt_sld_fab                                                                                             ;                 ;
+; Altera ; Signal Tap   ; N/A     ; N/A          ; Licensed     ; |pan_tilt|sld_hub:auto_hub|alt_sld_fab_with_jtag_input:\instrumentation_fabric_with_node_gen:fabric_gen_new_way:with_jtag_input_gen:instrumentation_fabric|alt_sld_fab:instrumentation_fabric|alt_sld_fab_alt_sld_fab:alt_sld_fab|alt_sld_fab_alt_sld_fab_presplit:presplit                                                   ;                 ;
+; Altera ; Signal Tap   ; N/A     ; N/A          ; Licensed     ; |pan_tilt|sld_hub:auto_hub|alt_sld_fab_with_jtag_input:\instrumentation_fabric_with_node_gen:fabric_gen_new_way:with_jtag_input_gen:instrumentation_fabric|alt_sld_fab:instrumentation_fabric|alt_sld_fab_alt_sld_fab:alt_sld_fab|alt_sld_fab_alt_sld_fab_sldfabric:sldfabric                                                 ;                 ;
+; Altera ; Signal Tap   ; N/A     ; N/A          ; Licensed     ; |pan_tilt|sld_hub:auto_hub|alt_sld_fab_with_jtag_input:\instrumentation_fabric_with_node_gen:fabric_gen_new_way:with_jtag_input_gen:instrumentation_fabric|alt_sld_fab:instrumentation_fabric|alt_sld_fab_alt_sld_fab:alt_sld_fab|alt_sld_fab_alt_sld_fab_splitter:splitter                                                   ;                 ;
+; Altera ; Signal Tap   ; N/A     ; N/A          ; Licensed     ; |pan_tilt|sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_signaltap_implb:sld_signaltap_body|sld_ela_control:ela_control|sld_ela_trigger_flow_sel:\generated:ela_trigger_flow_mgr_entity|sld_ela_trigger_flow_sel_5o31:auto_generated|sld_reserved_pan_tilt_auto_signaltap_0_flow_mgr_e982:mgl_prim1 ;                 ;
++--------+--------------+---------+--------------+--------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-----------------+
+
+
++--------------------------------------------------------------------------------------------------------------------+
+; Registers Removed During Synthesis                                                                                 ;
++----------------------------------------------------+---------------------------------------------------------------+
+; Register name                                      ; Reason for Removal                                            ;
++----------------------------------------------------+---------------------------------------------------------------+
+; servo:SERVO_TILT|counter:CLOCK_GEN|counter[14]     ; Merged with servo:SERVO_PAN|counter:CLOCK_GEN|counter[14]     ;
+; servo:SERVO_TILT|counter:CLOCK_GEN|tick            ; Merged with servo:SERVO_PAN|counter:CLOCK_GEN|tick            ;
+; servo:SERVO_TILT|counter:CLOCK_GEN|counter[15]     ; Merged with servo:SERVO_PAN|counter:CLOCK_GEN|counter[15]     ;
+; servo:SERVO_TILT|counter:CLOCK_GEN|counter[13]     ; Merged with servo:SERVO_PAN|counter:CLOCK_GEN|counter[13]     ;
+; servo:SERVO_TILT|counter:CLOCK_GEN|counter[12]     ; Merged with servo:SERVO_PAN|counter:CLOCK_GEN|counter[12]     ;
+; servo:SERVO_TILT|counter:CLOCK_GEN|counter[11]     ; Merged with servo:SERVO_PAN|counter:CLOCK_GEN|counter[11]     ;
+; servo:SERVO_TILT|counter:CLOCK_GEN|counter[10]     ; Merged with servo:SERVO_PAN|counter:CLOCK_GEN|counter[10]     ;
+; servo:SERVO_TILT|counter:CLOCK_GEN|counter[9]      ; Merged with servo:SERVO_PAN|counter:CLOCK_GEN|counter[9]      ;
+; servo:SERVO_TILT|counter:CLOCK_GEN|counter[8]      ; Merged with servo:SERVO_PAN|counter:CLOCK_GEN|counter[8]      ;
+; servo:SERVO_TILT|counter:CLOCK_GEN|counter[7]      ; Merged with servo:SERVO_PAN|counter:CLOCK_GEN|counter[7]      ;
+; servo:SERVO_TILT|counter:CLOCK_GEN|counter[6]      ; Merged with servo:SERVO_PAN|counter:CLOCK_GEN|counter[6]      ;
+; servo:SERVO_TILT|counter:CLOCK_GEN|counter[5]      ; Merged with servo:SERVO_PAN|counter:CLOCK_GEN|counter[5]      ;
+; servo:SERVO_TILT|counter:CLOCK_GEN|counter[4]      ; Merged with servo:SERVO_PAN|counter:CLOCK_GEN|counter[4]      ;
+; servo:SERVO_TILT|counter:CLOCK_GEN|counter[3]      ; Merged with servo:SERVO_PAN|counter:CLOCK_GEN|counter[3]      ;
+; servo:SERVO_TILT|counter:CLOCK_GEN|counter[2]      ; Merged with servo:SERVO_PAN|counter:CLOCK_GEN|counter[2]      ;
+; servo:SERVO_TILT|counter:CLOCK_GEN|counter[1]      ; Merged with servo:SERVO_PAN|counter:CLOCK_GEN|counter[1]      ;
+; servo:SERVO_TILT|counter:CLOCK_GEN|counter[0]      ; Merged with servo:SERVO_PAN|counter:CLOCK_GEN|counter[0]      ;
+; servo:SERVO_TILT|counter:CLOCK_GEN|tick_counter[5] ; Merged with servo:SERVO_PAN|counter:CLOCK_GEN|tick_counter[5] ;
+; servo:SERVO_TILT|counter:CLOCK_GEN|tick_counter[4] ; Merged with servo:SERVO_PAN|counter:CLOCK_GEN|tick_counter[4] ;
+; servo:SERVO_TILT|counter:CLOCK_GEN|tick_counter[1] ; Merged with servo:SERVO_PAN|counter:CLOCK_GEN|tick_counter[1] ;
+; servo:SERVO_TILT|counter:CLOCK_GEN|tick_counter[3] ; Merged with servo:SERVO_PAN|counter:CLOCK_GEN|tick_counter[3] ;
+; servo:SERVO_TILT|counter:CLOCK_GEN|tick_counter[2] ; Merged with servo:SERVO_PAN|counter:CLOCK_GEN|tick_counter[2] ;
+; servo:SERVO_TILT|counter:CLOCK_GEN|tick_counter[0] ; Merged with servo:SERVO_PAN|counter:CLOCK_GEN|tick_counter[0] ;
+; Total Number of Removed Registers = 23             ;                                                               ;
++----------------------------------------------------+---------------------------------------------------------------+
+
+
++------------------------------------------------------+
+; General Register Statistics                          ;
++----------------------------------------------+-------+
+; Statistic                                    ; Value ;
++----------------------------------------------+-------+
+; Total registers                              ; 581   ;
+; Number of registers using Synchronous Clear  ; 162   ;
+; Number of registers using Synchronous Load   ; 167   ;
+; Number of registers using Asynchronous Clear ; 243   ;
+; Number of registers using Asynchronous Load  ; 0     ;
+; Number of registers using Clock Enable       ; 385   ;
+; Number of registers using Preset             ; 0     ;
++----------------------------------------------+-------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Inverted Register Statistics                                                                                                                                                                                                                                                                                                              ;
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+---------+
+; Inverted Register                                                                                                                                                                                                                                                                                                               ; Fan out ;
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+---------+
+; sld_hub:auto_hub|alt_sld_fab_with_jtag_input:\instrumentation_fabric_with_node_gen:fabric_gen_new_way:with_jtag_input_gen:instrumentation_fabric|alt_sld_fab:instrumentation_fabric|alt_sld_fab_alt_sld_fab:alt_sld_fab|alt_sld_fab_alt_sld_fab_sldfabric:sldfabric|sld_jtag_hub:\jtag_hub_gen:real_sld_jtag_hub|jtag_ir_reg[1] ; 3       ;
+; sld_hub:auto_hub|alt_sld_fab_with_jtag_input:\instrumentation_fabric_with_node_gen:fabric_gen_new_way:with_jtag_input_gen:instrumentation_fabric|alt_sld_fab:instrumentation_fabric|alt_sld_fab_alt_sld_fab:alt_sld_fab|alt_sld_fab_alt_sld_fab_sldfabric:sldfabric|sld_jtag_hub:\jtag_hub_gen:real_sld_jtag_hub|jtag_ir_reg[2] ; 3       ;
+; sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_signaltap_implb:sld_signaltap_body|sld_buffer_manager:sld_buffer_manager_inst|modified_post_count[15]                                                                                                                                                  ; 1       ;
+; sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_signaltap_implb:sld_signaltap_body|sld_buffer_manager:sld_buffer_manager_inst|modified_post_count[16]                                                                                                                                                  ; 1       ;
+; sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_signaltap_implb:sld_signaltap_body|sld_buffer_manager:sld_buffer_manager_inst|modified_post_count[17]                                                                                                                                                  ; 1       ;
+; sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_signaltap_implb:sld_signaltap_body|sld_buffer_manager:sld_buffer_manager_inst|modified_post_count[12]                                                                                                                                                  ; 1       ;
+; sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_signaltap_implb:sld_signaltap_body|sld_buffer_manager:sld_buffer_manager_inst|modified_post_count[13]                                                                                                                                                  ; 1       ;
+; sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_signaltap_implb:sld_signaltap_body|sld_buffer_manager:sld_buffer_manager_inst|modified_post_count[14]                                                                                                                                                  ; 1       ;
+; sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_signaltap_implb:sld_signaltap_body|sld_buffer_manager:sld_buffer_manager_inst|modified_post_count[9]                                                                                                                                                   ; 1       ;
+; sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_signaltap_implb:sld_signaltap_body|sld_buffer_manager:sld_buffer_manager_inst|modified_post_count[10]                                                                                                                                                  ; 1       ;
+; sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_signaltap_implb:sld_signaltap_body|sld_buffer_manager:sld_buffer_manager_inst|modified_post_count[11]                                                                                                                                                  ; 1       ;
+; sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_signaltap_implb:sld_signaltap_body|sld_buffer_manager:sld_buffer_manager_inst|modified_post_count[6]                                                                                                                                                   ; 1       ;
+; sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_signaltap_implb:sld_signaltap_body|sld_buffer_manager:sld_buffer_manager_inst|modified_post_count[7]                                                                                                                                                   ; 1       ;
+; sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_signaltap_implb:sld_signaltap_body|sld_buffer_manager:sld_buffer_manager_inst|modified_post_count[8]                                                                                                                                                   ; 1       ;
+; sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_signaltap_implb:sld_signaltap_body|sld_buffer_manager:sld_buffer_manager_inst|modified_post_count[0]                                                                                                                                                   ; 1       ;
+; sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_signaltap_implb:sld_signaltap_body|sld_buffer_manager:sld_buffer_manager_inst|modified_post_count[1]                                                                                                                                                   ; 1       ;
+; sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_signaltap_implb:sld_signaltap_body|sld_buffer_manager:sld_buffer_manager_inst|modified_post_count[2]                                                                                                                                                   ; 1       ;
+; sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_signaltap_implb:sld_signaltap_body|sld_buffer_manager:sld_buffer_manager_inst|modified_post_count[3]                                                                                                                                                   ; 1       ;
+; sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_signaltap_implb:sld_signaltap_body|sld_buffer_manager:sld_buffer_manager_inst|modified_post_count[4]                                                                                                                                                   ; 1       ;
+; sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_signaltap_implb:sld_signaltap_body|sld_buffer_manager:sld_buffer_manager_inst|modified_post_count[5]                                                                                                                                                   ; 1       ;
+; Total number of inverted registers = 20                                                                                                                                                                                                                                                                                         ;         ;
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+---------+
+
+
++-------------------------------------------------------+
+; Source assignments for sld_signaltap:auto_signaltap_0 ;
++-----------------+-------+------+----------------------+
+; Assignment      ; Value ; From ; To                   ;
++-----------------+-------+------+----------------------+
+; MESSAGE_DISABLE ; 13410 ; -    ; -                    ;
++-----------------+-------+------+----------------------+
+
+
++--------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: servo:SERVO_PAN|counter:CLOCK_GEN ;
++----------------+----------------------------------+----------------------------+
+; Parameter Name ; Value                            ; Type                       ;
++----------------+----------------------------------+----------------------------+
+; TICKS_PER_US   ; 00000000000000000000000000110010 ; Unsigned Binary            ;
+; PERIOD         ; 00000000000000000100111000100000 ; Unsigned Binary            ;
++----------------+----------------------------------+----------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++---------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: servo:SERVO_TILT|counter:CLOCK_GEN ;
++----------------+----------------------------------+-----------------------------+
+; Parameter Name ; Value                            ; Type                        ;
++----------------+----------------------------------+-----------------------------+
+; TICKS_PER_US   ; 00000000000000000000000000110010 ; Unsigned Binary             ;
+; PERIOD         ; 00000000000000000100111000100000 ; Unsigned Binary             ;
++----------------+----------------------------------+-----------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: sld_signaltap:auto_signaltap_0                                         ;
++-------------------------------------------------+------------------------------------------------------+----------------+
+; Parameter Name                                  ; Value                                                ; Type           ;
++-------------------------------------------------+------------------------------------------------------+----------------+
+; lpm_type                                        ; sld_signaltap                                        ; String         ;
+; sld_node_info                                   ; 805334528                                            ; Untyped        ;
+; SLD_SECTION_ID                                  ; hdl_signaltap_0                                      ; String         ;
+; SLD_IP_VERSION                                  ; 6                                                    ; Signed Integer ;
+; SLD_IP_MINOR_VERSION                            ; 0                                                    ; Signed Integer ;
+; SLD_COMMON_IP_VERSION                           ; 0                                                    ; Signed Integer ;
+; sld_data_bits                                   ; 2                                                    ; Untyped        ;
+; sld_trigger_bits                                ; 1                                                    ; Untyped        ;
+; SLD_NODE_CRC_BITS                               ; 32                                                   ; Signed Integer ;
+; SLD_NODE_CRC_HIWORD                             ; 41394                                                ; Signed Integer ;
+; SLD_NODE_CRC_LOWORD                             ; 50132                                                ; Signed Integer ;
+; sld_incremental_routing                         ; 1                                                    ; Untyped        ;
+; sld_sample_depth                                ; 131072                                               ; Untyped        ;
+; sld_segment_size                                ; 131072                                               ; Untyped        ;
+; sld_ram_block_type                              ; AUTO                                                 ; Untyped        ;
+; sld_state_bits                                  ; 2                                                    ; Untyped        ;
+; sld_buffer_full_stop                            ; 0                                                    ; Untyped        ;
+; SLD_MEM_ADDRESS_BITS                            ; 7                                                    ; Signed Integer ;
+; SLD_DATA_BIT_CNTR_BITS                          ; 4                                                    ; Signed Integer ;
+; sld_trigger_level                               ; 2                                                    ; Untyped        ;
+; sld_trigger_in_enabled                          ; 0                                                    ; Untyped        ;
+; SLD_HPS_TRIGGER_IN_ENABLED                      ; 0                                                    ; Signed Integer ;
+; SLD_HPS_TRIGGER_OUT_ENABLED                     ; 0                                                    ; Signed Integer ;
+; SLD_HPS_EVENT_ENABLED                           ; 0                                                    ; Signed Integer ;
+; SLD_HPS_EVENT_ID                                ; 0                                                    ; Signed Integer ;
+; sld_advanced_trigger_entity                     ; basic,1,basic,1,                                     ; Untyped        ;
+; sld_trigger_level_pipeline                      ; 1                                                    ; Untyped        ;
+; sld_trigger_pipeline                            ; 0                                                    ; Untyped        ;
+; sld_ram_pipeline                                ; 0                                                    ; Untyped        ;
+; sld_counter_pipeline                            ; 0                                                    ; Untyped        ;
+; sld_enable_advanced_trigger                     ; 0                                                    ; Untyped        ;
+; SLD_ADVANCED_TRIGGER_1                          ; NONE                                                 ; String         ;
+; SLD_ADVANCED_TRIGGER_2                          ; NONE                                                 ; String         ;
+; SLD_ADVANCED_TRIGGER_3                          ; NONE                                                 ; String         ;
+; SLD_ADVANCED_TRIGGER_4                          ; NONE                                                 ; String         ;
+; SLD_ADVANCED_TRIGGER_5                          ; NONE                                                 ; String         ;
+; SLD_ADVANCED_TRIGGER_6                          ; NONE                                                 ; String         ;
+; SLD_ADVANCED_TRIGGER_7                          ; NONE                                                 ; String         ;
+; SLD_ADVANCED_TRIGGER_8                          ; NONE                                                 ; String         ;
+; SLD_ADVANCED_TRIGGER_9                          ; NONE                                                 ; String         ;
+; SLD_ADVANCED_TRIGGER_10                         ; NONE                                                 ; String         ;
+; sld_inversion_mask_length                       ; 27                                                   ; Untyped        ;
+; sld_inversion_mask                              ; 000000000000000000000000000                          ; Untyped        ;
+; sld_power_up_trigger                            ; 0                                                    ; Untyped        ;
+; sld_state_flow_mgr_entity                       ; sld_reserved_pan_tilt_auto_signaltap_0_flow_mgr_e982 ; Untyped        ;
+; sld_state_flow_use_generated                    ; 1                                                    ; Untyped        ;
+; sld_current_resource_width                      ; 0                                                    ; Untyped        ;
+; sld_attribute_mem_mode                          ; OFF                                                  ; Untyped        ;
+; sld_storage_qualifier_bits                      ; 2                                                    ; Untyped        ;
+; SLD_STORAGE_QUALIFIER_GAP_RECORD                ; 0                                                    ; Signed Integer ;
+; SLD_STORAGE_QUALIFIER_MODE                      ; OFF                                                  ; String         ;
+; SLD_STORAGE_QUALIFIER_ENABLE_ADVANCED_CONDITION ; 0                                                    ; Signed Integer ;
+; sld_storage_qualifier_inversion_mask_length     ; 0                                                    ; Untyped        ;
+; SLD_STORAGE_QUALIFIER_ADVANCED_CONDITION_ENTITY ; basic                                                ; String         ;
+; SLD_STORAGE_QUALIFIER_PIPELINE                  ; 0                                                    ; Signed Integer ;
+; SLD_CREATE_MONITOR_INTERFACE                    ; 0                                                    ; Signed Integer ;
+; SLD_USE_JTAG_SIGNAL_ADAPTER                     ; 1                                                    ; Signed Integer ;
++-------------------------------------------------+------------------------------------------------------+----------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: servo:SERVO_PAN|lpm_divide:Div0 ;
++------------------------+----------------+----------------------------------------+
+; Parameter Name         ; Value          ; Type                                   ;
++------------------------+----------------+----------------------------------------+
+; LPM_WIDTHN             ; 18             ; Untyped                                ;
+; LPM_WIDTHD             ; 8              ; Untyped                                ;
+; LPM_NREPRESENTATION    ; UNSIGNED       ; Untyped                                ;
+; LPM_DREPRESENTATION    ; UNSIGNED       ; Untyped                                ;
+; LPM_PIPELINE           ; 0              ; Untyped                                ;
+; LPM_REMAINDERPOSITIVE  ; TRUE           ; Untyped                                ;
+; MAXIMIZE_SPEED         ; 5              ; Untyped                                ;
+; CBXI_PARAMETER         ; lpm_divide_qbm ; Untyped                                ;
+; CARRY_CHAIN            ; MANUAL         ; Untyped                                ;
+; OPTIMIZE_FOR_SPEED     ; 5              ; Untyped                                ;
+; AUTO_CARRY_CHAINS      ; ON             ; AUTO_CARRY                             ;
+; IGNORE_CARRY_BUFFERS   ; OFF            ; IGNORE_CARRY                           ;
+; AUTO_CASCADE_CHAINS    ; ON             ; AUTO_CASCADE                           ;
+; IGNORE_CASCADE_BUFFERS ; OFF            ; IGNORE_CASCADE                         ;
++------------------------+----------------+----------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: servo:SERVO_TILT|lpm_divide:Div0 ;
++------------------------+----------------+-----------------------------------------+
+; Parameter Name         ; Value          ; Type                                    ;
++------------------------+----------------+-----------------------------------------+
+; LPM_WIDTHN             ; 18             ; Untyped                                 ;
+; LPM_WIDTHD             ; 8              ; Untyped                                 ;
+; LPM_NREPRESENTATION    ; UNSIGNED       ; Untyped                                 ;
+; LPM_DREPRESENTATION    ; UNSIGNED       ; Untyped                                 ;
+; LPM_PIPELINE           ; 0              ; Untyped                                 ;
+; LPM_REMAINDERPOSITIVE  ; TRUE           ; Untyped                                 ;
+; MAXIMIZE_SPEED         ; 5              ; Untyped                                 ;
+; CBXI_PARAMETER         ; lpm_divide_qbm ; Untyped                                 ;
+; CARRY_CHAIN            ; MANUAL         ; Untyped                                 ;
+; OPTIMIZE_FOR_SPEED     ; 5              ; Untyped                                 ;
+; AUTO_CARRY_CHAINS      ; ON             ; AUTO_CARRY                              ;
+; IGNORE_CARRY_BUFFERS   ; OFF            ; IGNORE_CARRY                            ;
+; AUTO_CASCADE_CHAINS    ; ON             ; AUTO_CASCADE                            ;
+; IGNORE_CASCADE_BUFFERS ; OFF            ; IGNORE_CASCADE                          ;
++------------------------+----------------+-----------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------+
+; Port Connectivity Checks: "servo:SERVO_TILT"  ;
++-------------+-------+----------+--------------+
+; Port        ; Type  ; Severity ; Details      ;
++-------------+-------+----------+--------------+
+; angle[4..3] ; Input ; Info     ; Stuck at VCC ;
+; angle[7]    ; Input ; Info     ; Stuck at GND ;
+; angle[6]    ; Input ; Info     ; Stuck at VCC ;
+; angle[5]    ; Input ; Info     ; Stuck at GND ;
+; angle[2]    ; Input ; Info     ; Stuck at GND ;
+; angle[1]    ; Input ; Info     ; Stuck at VCC ;
+; angle[0]    ; Input ; Info     ; Stuck at GND ;
++-------------+-------+----------+--------------+
+
+
++-----------------------------------------------+
+; Port Connectivity Checks: "servo:SERVO_PAN"   ;
++-------------+-------+----------+--------------+
+; Port        ; Type  ; Severity ; Details      ;
++-------------+-------+----------+--------------+
+; angle[4..3] ; Input ; Info     ; Stuck at VCC ;
+; angle[7]    ; Input ; Info     ; Stuck at GND ;
+; angle[6]    ; Input ; Info     ; Stuck at VCC ;
+; angle[5]    ; Input ; Info     ; Stuck at GND ;
+; angle[2]    ; Input ; Info     ; Stuck at GND ;
+; angle[1]    ; Input ; Info     ; Stuck at VCC ;
+; angle[0]    ; Input ; Info     ; Stuck at GND ;
++-------------+-------+----------+--------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Signal Tap Logic Analyzer Settings                                                                                                                                                                                                                                      ;
++----------------+------------------+---------------------+------------------+--------------+----------+------------------------+----------------------+--------------------+-----------------------------+-----------------+------------------+--------------------------+
+; Instance Index ; Instance Name    ; Trigger Input Width ; Data Input Width ; Sample Depth ; Segments ; Storage Qualifier Type ; Trigger Flow Control ; Trigger Conditions ; Advanced Trigger Conditions ; Trigger In Used ; Trigger Out Used ; Power-Up Trigger Enabled ;
++----------------+------------------+---------------------+------------------+--------------+----------+------------------------+----------------------+--------------------+-----------------------------+-----------------+------------------+--------------------------+
+; 0              ; auto_signaltap_0 ; 1                   ; 2                ; 131072       ; 1        ; continuous             ; state-based          ; 2                  ; 0                           ; no              ; no               ; no                       ;
++----------------+------------------+---------------------+------------------+--------------+----------+------------------------+----------------------+--------------------+-----------------------------+-----------------+------------------+--------------------------+
+
+
++-----------------------------------------------------+
+; Post-Synthesis Netlist Statistics for Top Partition ;
++-----------------------+-----------------------------+
+; Type                  ; Count                       ;
++-----------------------+-----------------------------+
+; arriav_ff             ; 25                          ;
+;     CLR               ; 9                           ;
+;     CLR SCLR          ; 16                          ;
+; arriav_io_obuf        ; 36                          ;
+; arriav_lcell_comb     ; 528                         ;
+;     arith             ; 262                         ;
+;         0 data inputs ; 50                          ;
+;         1 data inputs ; 51                          ;
+;         2 data inputs ; 9                           ;
+;         3 data inputs ; 98                          ;
+;         4 data inputs ; 54                          ;
+;     normal            ; 248                         ;
+;         0 data inputs ; 2                           ;
+;         1 data inputs ; 1                           ;
+;         2 data inputs ; 134                         ;
+;         3 data inputs ; 41                          ;
+;         4 data inputs ; 44                          ;
+;         5 data inputs ; 3                           ;
+;         6 data inputs ; 23                          ;
+;     shared            ; 18                          ;
+;         0 data inputs ; 2                           ;
+;         1 data inputs ; 16                          ;
+; arriav_mac            ; 2                           ;
+; boundary_port         ; 108                         ;
+;                       ;                             ;
+; Max LUT depth         ; 23.70                       ;
+; Average LUT depth     ; 18.99                       ;
++-----------------------+-----------------------------+
+
+
++-------------------------------+
+; Elapsed Time Per Partition    ;
++----------------+--------------+
+; Partition Name ; Elapsed Time ;
++----------------+--------------+
+; Top            ; 00:00:02     ;
++----------------+--------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Connections to In-System Debugging Instance "auto_signaltap_0"                                                                                                                           ;
++-----------------------------------------------+---------------+-----------+--------------------------------+-------------------+-----------------------------------------------+---------+
+; Name                                          ; Type          ; Status    ; Partition Name                 ; Netlist Type Used ; Actual Connection                             ; Details ;
++-----------------------------------------------+---------------+-----------+--------------------------------+-------------------+-----------------------------------------------+---------+
+; CLOCK_50                                      ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; CLOCK_50                                      ; N/A     ;
+; servo:SERVO_PAN|counter:CLOCK_GEN|counter[14] ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; servo:SERVO_PAN|counter:CLOCK_GEN|counter[14] ; N/A     ;
+; servo:SERVO_PAN|pwm_pin                       ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; servo:SERVO_PAN|pwm_pin                       ; N/A     ;
+; servo:SERVO_PAN|pwm_pin                       ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; servo:SERVO_PAN|pwm_pin                       ; N/A     ;
+; auto_signaltap_0|gnd                          ; post-fitting  ; connected ; sld_signaltap:auto_signaltap_0 ; post-synthesis    ; sld_signaltap:auto_signaltap_0|~GND           ; N/A     ;
+; auto_signaltap_0|gnd                          ; post-fitting  ; connected ; sld_signaltap:auto_signaltap_0 ; post-synthesis    ; sld_signaltap:auto_signaltap_0|~GND           ; N/A     ;
+; auto_signaltap_0|gnd                          ; post-fitting  ; connected ; sld_signaltap:auto_signaltap_0 ; post-synthesis    ; sld_signaltap:auto_signaltap_0|~GND           ; N/A     ;
+; auto_signaltap_0|gnd                          ; post-fitting  ; connected ; sld_signaltap:auto_signaltap_0 ; post-synthesis    ; sld_signaltap:auto_signaltap_0|~GND           ; N/A     ;
+; auto_signaltap_0|gnd                          ; post-fitting  ; connected ; sld_signaltap:auto_signaltap_0 ; post-synthesis    ; sld_signaltap:auto_signaltap_0|~GND           ; N/A     ;
+; auto_signaltap_0|gnd                          ; post-fitting  ; connected ; sld_signaltap:auto_signaltap_0 ; post-synthesis    ; sld_signaltap:auto_signaltap_0|~GND           ; N/A     ;
+; auto_signaltap_0|gnd                          ; post-fitting  ; connected ; sld_signaltap:auto_signaltap_0 ; post-synthesis    ; sld_signaltap:auto_signaltap_0|~GND           ; N/A     ;
+; auto_signaltap_0|gnd                          ; post-fitting  ; connected ; sld_signaltap:auto_signaltap_0 ; post-synthesis    ; sld_signaltap:auto_signaltap_0|~GND           ; N/A     ;
+; auto_signaltap_0|gnd                          ; post-fitting  ; connected ; sld_signaltap:auto_signaltap_0 ; post-synthesis    ; sld_signaltap:auto_signaltap_0|~GND           ; N/A     ;
+; auto_signaltap_0|gnd                          ; post-fitting  ; connected ; sld_signaltap:auto_signaltap_0 ; post-synthesis    ; sld_signaltap:auto_signaltap_0|~GND           ; N/A     ;
+; auto_signaltap_0|gnd                          ; post-fitting  ; connected ; sld_signaltap:auto_signaltap_0 ; post-synthesis    ; sld_signaltap:auto_signaltap_0|~GND           ; N/A     ;
+; auto_signaltap_0|gnd                          ; post-fitting  ; connected ; sld_signaltap:auto_signaltap_0 ; post-synthesis    ; sld_signaltap:auto_signaltap_0|~GND           ; N/A     ;
+; auto_signaltap_0|gnd                          ; post-fitting  ; connected ; sld_signaltap:auto_signaltap_0 ; post-synthesis    ; sld_signaltap:auto_signaltap_0|~GND           ; N/A     ;
+; auto_signaltap_0|gnd                          ; post-fitting  ; connected ; sld_signaltap:auto_signaltap_0 ; post-synthesis    ; sld_signaltap:auto_signaltap_0|~GND           ; N/A     ;
+; auto_signaltap_0|gnd                          ; post-fitting  ; connected ; sld_signaltap:auto_signaltap_0 ; post-synthesis    ; sld_signaltap:auto_signaltap_0|~GND           ; N/A     ;
+; auto_signaltap_0|gnd                          ; post-fitting  ; connected ; sld_signaltap:auto_signaltap_0 ; post-synthesis    ; sld_signaltap:auto_signaltap_0|~GND           ; N/A     ;
+; auto_signaltap_0|gnd                          ; post-fitting  ; connected ; sld_signaltap:auto_signaltap_0 ; post-synthesis    ; sld_signaltap:auto_signaltap_0|~GND           ; N/A     ;
+; auto_signaltap_0|gnd                          ; post-fitting  ; connected ; sld_signaltap:auto_signaltap_0 ; post-synthesis    ; sld_signaltap:auto_signaltap_0|~GND           ; N/A     ;
+; auto_signaltap_0|gnd                          ; post-fitting  ; connected ; sld_signaltap:auto_signaltap_0 ; post-synthesis    ; sld_signaltap:auto_signaltap_0|~GND           ; N/A     ;
+; auto_signaltap_0|vcc                          ; post-fitting  ; connected ; sld_signaltap:auto_signaltap_0 ; post-synthesis    ; sld_signaltap:auto_signaltap_0|~VCC           ; N/A     ;
+; auto_signaltap_0|vcc                          ; post-fitting  ; connected ; sld_signaltap:auto_signaltap_0 ; post-synthesis    ; sld_signaltap:auto_signaltap_0|~VCC           ; N/A     ;
+; auto_signaltap_0|vcc                          ; post-fitting  ; connected ; sld_signaltap:auto_signaltap_0 ; post-synthesis    ; sld_signaltap:auto_signaltap_0|~VCC           ; N/A     ;
+; auto_signaltap_0|vcc                          ; post-fitting  ; connected ; sld_signaltap:auto_signaltap_0 ; post-synthesis    ; sld_signaltap:auto_signaltap_0|~VCC           ; N/A     ;
+; auto_signaltap_0|vcc                          ; post-fitting  ; connected ; sld_signaltap:auto_signaltap_0 ; post-synthesis    ; sld_signaltap:auto_signaltap_0|~VCC           ; N/A     ;
+; auto_signaltap_0|vcc                          ; post-fitting  ; connected ; sld_signaltap:auto_signaltap_0 ; post-synthesis    ; sld_signaltap:auto_signaltap_0|~VCC           ; N/A     ;
+; auto_signaltap_0|vcc                          ; post-fitting  ; connected ; sld_signaltap:auto_signaltap_0 ; post-synthesis    ; sld_signaltap:auto_signaltap_0|~VCC           ; N/A     ;
+; auto_signaltap_0|vcc                          ; post-fitting  ; connected ; sld_signaltap:auto_signaltap_0 ; post-synthesis    ; sld_signaltap:auto_signaltap_0|~VCC           ; N/A     ;
+; auto_signaltap_0|vcc                          ; post-fitting  ; connected ; sld_signaltap:auto_signaltap_0 ; post-synthesis    ; sld_signaltap:auto_signaltap_0|~VCC           ; N/A     ;
+; auto_signaltap_0|vcc                          ; post-fitting  ; connected ; sld_signaltap:auto_signaltap_0 ; post-synthesis    ; sld_signaltap:auto_signaltap_0|~VCC           ; N/A     ;
+; auto_signaltap_0|vcc                          ; post-fitting  ; connected ; sld_signaltap:auto_signaltap_0 ; post-synthesis    ; sld_signaltap:auto_signaltap_0|~VCC           ; N/A     ;
+; auto_signaltap_0|vcc                          ; post-fitting  ; connected ; sld_signaltap:auto_signaltap_0 ; post-synthesis    ; sld_signaltap:auto_signaltap_0|~VCC           ; N/A     ;
+; auto_signaltap_0|vcc                          ; post-fitting  ; connected ; sld_signaltap:auto_signaltap_0 ; post-synthesis    ; sld_signaltap:auto_signaltap_0|~VCC           ; N/A     ;
++-----------------------------------------------+---------------+-----------+--------------------------------+-------------------+-----------------------------------------------+---------+
+
+
++-------------------------------+
+; Analysis & Synthesis Messages ;
++-------------------------------+
+Info: *******************************************************************
+Info: Running Quartus Prime Analysis & Synthesis
+    Info: Version 23.1std.0 Build 991 11/28/2023 SC Lite Edition
+    Info: Processing started: Thu Apr  3 17:14:13 2025
+Info: Command: quartus_map --read_settings_files=on --write_settings_files=off pan_tilt -c pan_tilt
+Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
+Info (20030): Parallel compilation is enabled and will use 14 of the 14 processors detected
+Info (12021): Found 1 design units, including 1 entities, in source file /ece554/ece554-capstone-project/servo/driver/servo.sv
+    Info (12023): Found entity 1: servo File: I:/ece554/ECE554-Capstone-Project/Servo/Driver/servo.sv Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file /ece554/ece554-capstone-project/servo/driver/counter.sv
+    Info (12023): Found entity 1: counter File: I:/ece554/ECE554-Capstone-Project/Servo/Driver/counter.sv Line: 1
+Warning (12019): Can't analyze file -- file pan_tilt.v is missing
+Warning (12125): Using design file pan_tilt.sv, which is not specified as a design file for the current project, but contains definitions for 1 design units and 1 entities in project
+    Info (12023): Found entity 1: pan_tilt File: I:/ece554/ECE554-Capstone-Project/Servo/Quartus/pan_tilt.sv Line: 6
+Info (12127): Elaborating entity "pan_tilt" for the top level hierarchy
+Warning (10034): Output port "LEDR[9..1]" at pan_tilt.sv(26) has no driver File: I:/ece554/ECE554-Capstone-Project/Servo/Quartus/pan_tilt.sv Line: 26
+Info (12128): Elaborating entity "servo" for hierarchy "servo:SERVO_PAN" File: I:/ece554/ECE554-Capstone-Project/Servo/Quartus/pan_tilt.sv Line: 59
+Warning (10230): Verilog HDL assignment warning at servo.sv(42): truncated value with size 32 to match size of target (16) File: I:/ece554/ECE554-Capstone-Project/Servo/Driver/servo.sv Line: 42
+Info (12128): Elaborating entity "counter" for hierarchy "servo:SERVO_PAN|counter:CLOCK_GEN" File: I:/ece554/ECE554-Capstone-Project/Servo/Driver/servo.sv Line: 27
+Warning (10230): Verilog HDL assignment warning at counter.sv(26): truncated value with size 32 to match size of target (6) File: I:/ece554/ECE554-Capstone-Project/Servo/Driver/counter.sv Line: 26
+Warning (10230): Verilog HDL assignment warning at counter.sv(39): truncated value with size 32 to match size of target (16) File: I:/ece554/ECE554-Capstone-Project/Servo/Driver/counter.sv Line: 39
+Info (12021): Found 1 design units, including 1 entities, in source file db/sld_ela_trigger_flow_sel_5o31.tdf
+    Info (12023): Found entity 1: sld_ela_trigger_flow_sel_5o31 File: I:/ece554/ECE554-Capstone-Project/Servo/Quartus/db/sld_ela_trigger_flow_sel_5o31.tdf Line: 25
+Info (12021): Found 1 design units, including 1 entities, in source file db/sld_reserved_pan_tilt_auto_signaltap_0_flow_mgr_e982.v
+    Info (12023): Found entity 1: sld_reserved_pan_tilt_auto_signaltap_0_flow_mgr_e982 File: I:/ece554/ECE554-Capstone-Project/Servo/Quartus/db/sld_reserved_pan_tilt_auto_signaltap_0_flow_mgr_e982.v Line: 29
+Info (12021): Found 1 design units, including 1 entities, in source file db/altsyncram_ik84.tdf
+    Info (12023): Found entity 1: altsyncram_ik84 File: I:/ece554/ECE554-Capstone-Project/Servo/Quartus/db/altsyncram_ik84.tdf Line: 32
+Info (12021): Found 1 design units, including 1 entities, in source file db/decode_tma.tdf
+    Info (12023): Found entity 1: decode_tma File: I:/ece554/ECE554-Capstone-Project/Servo/Quartus/db/decode_tma.tdf Line: 23
+Info (12021): Found 1 design units, including 1 entities, in source file db/mux_7hb.tdf
+    Info (12023): Found entity 1: mux_7hb File: I:/ece554/ECE554-Capstone-Project/Servo/Quartus/db/mux_7hb.tdf Line: 23
+Info (12021): Found 1 design units, including 1 entities, in source file db/mux_glc.tdf
+    Info (12023): Found entity 1: mux_glc File: I:/ece554/ECE554-Capstone-Project/Servo/Quartus/db/mux_glc.tdf Line: 23
+Info (12021): Found 1 design units, including 1 entities, in source file db/decode_vnf.tdf
+    Info (12023): Found entity 1: decode_vnf File: I:/ece554/ECE554-Capstone-Project/Servo/Quartus/db/decode_vnf.tdf Line: 23
+Info (12021): Found 1 design units, including 1 entities, in source file db/cntr_85j.tdf
+    Info (12023): Found entity 1: cntr_85j File: I:/ece554/ECE554-Capstone-Project/Servo/Quartus/db/cntr_85j.tdf Line: 26
+Info (12021): Found 1 design units, including 1 entities, in source file db/cntr_49i.tdf
+    Info (12023): Found entity 1: cntr_49i File: I:/ece554/ECE554-Capstone-Project/Servo/Quartus/db/cntr_49i.tdf Line: 28
+Info (12021): Found 1 design units, including 1 entities, in source file db/cmpr_e9c.tdf
+    Info (12023): Found entity 1: cmpr_e9c File: I:/ece554/ECE554-Capstone-Project/Servo/Quartus/db/cmpr_e9c.tdf Line: 23
+Info (12021): Found 1 design units, including 1 entities, in source file db/cntr_kri.tdf
+    Info (12023): Found entity 1: cntr_kri File: I:/ece554/ECE554-Capstone-Project/Servo/Quartus/db/cntr_kri.tdf Line: 28
+Info (12021): Found 1 design units, including 1 entities, in source file db/cmpr_99c.tdf
+    Info (12023): Found entity 1: cmpr_99c File: I:/ece554/ECE554-Capstone-Project/Servo/Quartus/db/cmpr_99c.tdf Line: 23
+Info (12033): Analysis and Synthesis generated Signal Tap or debug node instance "auto_signaltap_0"
+Info (11170): Starting IP generation for the debug fabric: alt_sld_fab.
+Info (11172): 2025.04.03.17:14:41 Progress: Loading sld76ff8c70/alt_sld_fab_wrapper_hw.tcl
+Info (11172): Alt_sld_fab.alt_sld_fab: SLD fabric agents which did not specify prefer_host were connected to JTAG
+Info (11172): Alt_sld_fab: Generating alt_sld_fab "alt_sld_fab" for QUARTUS_SYNTH
+Info (11172): Alt_sld_fab: "alt_sld_fab" instantiated alt_sld_fab "alt_sld_fab"
+Info (11172): Presplit: "alt_sld_fab" instantiated altera_super_splitter "presplit"
+Info (11172): Splitter: "alt_sld_fab" instantiated altera_sld_splitter "splitter"
+Info (11172): Sldfabric: "alt_sld_fab" instantiated altera_sld_jtag_hub "sldfabric"
+Info (11172): Ident: "alt_sld_fab" instantiated altera_connection_identification_hub "ident"
+Info (11172): Alt_sld_fab: Done "alt_sld_fab" with 6 modules, 6 files
+Info (11171): Finished IP generation for the debug fabric: alt_sld_fab.
+Info (12021): Found 1 design units, including 1 entities, in source file db/ip/sld76ff8c70/alt_sld_fab.v
+    Info (12023): Found entity 1: alt_sld_fab File: I:/ece554/ECE554-Capstone-Project/Servo/Quartus/db/ip/sld76ff8c70/alt_sld_fab.v Line: 9
+Info (12021): Found 1 design units, including 1 entities, in source file db/ip/sld76ff8c70/submodules/alt_sld_fab_alt_sld_fab.v
+    Info (12023): Found entity 1: alt_sld_fab_alt_sld_fab File: I:/ece554/ECE554-Capstone-Project/Servo/Quartus/db/ip/sld76ff8c70/submodules/alt_sld_fab_alt_sld_fab.v Line: 9
+Info (12021): Found 1 design units, including 1 entities, in source file db/ip/sld76ff8c70/submodules/alt_sld_fab_alt_sld_fab_ident.sv
+    Info (12023): Found entity 1: alt_sld_fab_alt_sld_fab_ident File: I:/ece554/ECE554-Capstone-Project/Servo/Quartus/db/ip/sld76ff8c70/submodules/alt_sld_fab_alt_sld_fab_ident.sv Line: 33
+Info (12021): Found 1 design units, including 1 entities, in source file db/ip/sld76ff8c70/submodules/alt_sld_fab_alt_sld_fab_presplit.sv
+    Info (12023): Found entity 1: alt_sld_fab_alt_sld_fab_presplit File: I:/ece554/ECE554-Capstone-Project/Servo/Quartus/db/ip/sld76ff8c70/submodules/alt_sld_fab_alt_sld_fab_presplit.sv Line: 3
+Info (12021): Found 2 design units, including 1 entities, in source file db/ip/sld76ff8c70/submodules/alt_sld_fab_alt_sld_fab_sldfabric.vhd
+    Info (12022): Found design unit 1: alt_sld_fab_alt_sld_fab_sldfabric-rtl File: I:/ece554/ECE554-Capstone-Project/Servo/Quartus/db/ip/sld76ff8c70/submodules/alt_sld_fab_alt_sld_fab_sldfabric.vhd Line: 102
+    Info (12023): Found entity 1: alt_sld_fab_alt_sld_fab_sldfabric File: I:/ece554/ECE554-Capstone-Project/Servo/Quartus/db/ip/sld76ff8c70/submodules/alt_sld_fab_alt_sld_fab_sldfabric.vhd Line: 11
+Info (12021): Found 1 design units, including 1 entities, in source file db/ip/sld76ff8c70/submodules/alt_sld_fab_alt_sld_fab_splitter.sv
+    Info (12023): Found entity 1: alt_sld_fab_alt_sld_fab_splitter File: I:/ece554/ECE554-Capstone-Project/Servo/Quartus/db/ip/sld76ff8c70/submodules/alt_sld_fab_alt_sld_fab_splitter.sv Line: 3
+Info (278001): Inferred 2 megafunctions from design logic
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "servo:SERVO_PAN|Div0" File: I:/ece554/ECE554-Capstone-Project/Servo/Driver/servo.sv Line: 42
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "servo:SERVO_TILT|Div0" File: I:/ece554/ECE554-Capstone-Project/Servo/Driver/servo.sv Line: 42
+Info (12130): Elaborated megafunction instantiation "servo:SERVO_PAN|lpm_divide:Div0" File: I:/ece554/ECE554-Capstone-Project/Servo/Driver/servo.sv Line: 42
+Info (12133): Instantiated megafunction "servo:SERVO_PAN|lpm_divide:Div0" with the following parameter: File: I:/ece554/ECE554-Capstone-Project/Servo/Driver/servo.sv Line: 42
+    Info (12134): Parameter "LPM_WIDTHN" = "18"
+    Info (12134): Parameter "LPM_WIDTHD" = "8"
+    Info (12134): Parameter "LPM_NREPRESENTATION" = "UNSIGNED"
+    Info (12134): Parameter "LPM_DREPRESENTATION" = "UNSIGNED"
+Info (12021): Found 1 design units, including 1 entities, in source file db/lpm_divide_qbm.tdf
+    Info (12023): Found entity 1: lpm_divide_qbm File: I:/ece554/ECE554-Capstone-Project/Servo/Quartus/db/lpm_divide_qbm.tdf Line: 25
+Info (12021): Found 1 design units, including 1 entities, in source file db/sign_div_unsign_0mh.tdf
+    Info (12023): Found entity 1: sign_div_unsign_0mh File: I:/ece554/ECE554-Capstone-Project/Servo/Quartus/db/sign_div_unsign_0mh.tdf Line: 25
+Info (12021): Found 1 design units, including 1 entities, in source file db/alt_u_div_60f.tdf
+    Info (12023): Found entity 1: alt_u_div_60f File: I:/ece554/ECE554-Capstone-Project/Servo/Quartus/db/alt_u_div_60f.tdf Line: 23
+Warning (13034): The following nodes have both tri-state and non-tri-state drivers
+    Warning (13035): Inserted always-enabled tri-state buffer between "GPIO[0]" and its non-tri-state driver. File: I:/ece554/ECE554-Capstone-Project/Servo/Quartus/pan_tilt.sv Line: 33
+    Warning (13035): Inserted always-enabled tri-state buffer between "GPIO[1]" and its non-tri-state driver. File: I:/ece554/ECE554-Capstone-Project/Servo/Quartus/pan_tilt.sv Line: 33
+Warning (13039): The following bidirectional pins have no drivers
+    Warning (13040): bidirectional pin "GPIO[2]" has no driver File: I:/ece554/ECE554-Capstone-Project/Servo/Quartus/pan_tilt.sv Line: 33
+    Warning (13040): bidirectional pin "GPIO[3]" has no driver File: I:/ece554/ECE554-Capstone-Project/Servo/Quartus/pan_tilt.sv Line: 33
+    Warning (13040): bidirectional pin "GPIO[4]" has no driver File: I:/ece554/ECE554-Capstone-Project/Servo/Quartus/pan_tilt.sv Line: 33
+    Warning (13040): bidirectional pin "GPIO[5]" has no driver File: I:/ece554/ECE554-Capstone-Project/Servo/Quartus/pan_tilt.sv Line: 33
+    Warning (13040): bidirectional pin "GPIO[6]" has no driver File: I:/ece554/ECE554-Capstone-Project/Servo/Quartus/pan_tilt.sv Line: 33
+    Warning (13040): bidirectional pin "GPIO[7]" has no driver File: I:/ece554/ECE554-Capstone-Project/Servo/Quartus/pan_tilt.sv Line: 33
+    Warning (13040): bidirectional pin "GPIO[8]" has no driver File: I:/ece554/ECE554-Capstone-Project/Servo/Quartus/pan_tilt.sv Line: 33
+    Warning (13040): bidirectional pin "GPIO[9]" has no driver File: I:/ece554/ECE554-Capstone-Project/Servo/Quartus/pan_tilt.sv Line: 33
+    Warning (13040): bidirectional pin "GPIO[10]" has no driver File: I:/ece554/ECE554-Capstone-Project/Servo/Quartus/pan_tilt.sv Line: 33
+    Warning (13040): bidirectional pin "GPIO[11]" has no driver File: I:/ece554/ECE554-Capstone-Project/Servo/Quartus/pan_tilt.sv Line: 33
+    Warning (13040): bidirectional pin "GPIO[12]" has no driver File: I:/ece554/ECE554-Capstone-Project/Servo/Quartus/pan_tilt.sv Line: 33
+    Warning (13040): bidirectional pin "GPIO[13]" has no driver File: I:/ece554/ECE554-Capstone-Project/Servo/Quartus/pan_tilt.sv Line: 33
+    Warning (13040): bidirectional pin "GPIO[14]" has no driver File: I:/ece554/ECE554-Capstone-Project/Servo/Quartus/pan_tilt.sv Line: 33
+    Warning (13040): bidirectional pin "GPIO[15]" has no driver File: I:/ece554/ECE554-Capstone-Project/Servo/Quartus/pan_tilt.sv Line: 33
+    Warning (13040): bidirectional pin "GPIO[16]" has no driver File: I:/ece554/ECE554-Capstone-Project/Servo/Quartus/pan_tilt.sv Line: 33
+    Warning (13040): bidirectional pin "GPIO[17]" has no driver File: I:/ece554/ECE554-Capstone-Project/Servo/Quartus/pan_tilt.sv Line: 33
+    Warning (13040): bidirectional pin "GPIO[18]" has no driver File: I:/ece554/ECE554-Capstone-Project/Servo/Quartus/pan_tilt.sv Line: 33
+    Warning (13040): bidirectional pin "GPIO[19]" has no driver File: I:/ece554/ECE554-Capstone-Project/Servo/Quartus/pan_tilt.sv Line: 33
+    Warning (13040): bidirectional pin "GPIO[20]" has no driver File: I:/ece554/ECE554-Capstone-Project/Servo/Quartus/pan_tilt.sv Line: 33
+    Warning (13040): bidirectional pin "GPIO[21]" has no driver File: I:/ece554/ECE554-Capstone-Project/Servo/Quartus/pan_tilt.sv Line: 33
+    Warning (13040): bidirectional pin "GPIO[22]" has no driver File: I:/ece554/ECE554-Capstone-Project/Servo/Quartus/pan_tilt.sv Line: 33
+    Warning (13040): bidirectional pin "GPIO[23]" has no driver File: I:/ece554/ECE554-Capstone-Project/Servo/Quartus/pan_tilt.sv Line: 33
+    Warning (13040): bidirectional pin "GPIO[24]" has no driver File: I:/ece554/ECE554-Capstone-Project/Servo/Quartus/pan_tilt.sv Line: 33
+    Warning (13040): bidirectional pin "GPIO[25]" has no driver File: I:/ece554/ECE554-Capstone-Project/Servo/Quartus/pan_tilt.sv Line: 33
+    Warning (13040): bidirectional pin "GPIO[26]" has no driver File: I:/ece554/ECE554-Capstone-Project/Servo/Quartus/pan_tilt.sv Line: 33
+    Warning (13040): bidirectional pin "GPIO[27]" has no driver File: I:/ece554/ECE554-Capstone-Project/Servo/Quartus/pan_tilt.sv Line: 33
+    Warning (13040): bidirectional pin "GPIO[28]" has no driver File: I:/ece554/ECE554-Capstone-Project/Servo/Quartus/pan_tilt.sv Line: 33
+    Warning (13040): bidirectional pin "GPIO[29]" has no driver File: I:/ece554/ECE554-Capstone-Project/Servo/Quartus/pan_tilt.sv Line: 33
+    Warning (13040): bidirectional pin "GPIO[30]" has no driver File: I:/ece554/ECE554-Capstone-Project/Servo/Quartus/pan_tilt.sv Line: 33
+    Warning (13040): bidirectional pin "GPIO[31]" has no driver File: I:/ece554/ECE554-Capstone-Project/Servo/Quartus/pan_tilt.sv Line: 33
+    Warning (13040): bidirectional pin "GPIO[32]" has no driver File: I:/ece554/ECE554-Capstone-Project/Servo/Quartus/pan_tilt.sv Line: 33
+    Warning (13040): bidirectional pin "GPIO[33]" has no driver File: I:/ece554/ECE554-Capstone-Project/Servo/Quartus/pan_tilt.sv Line: 33
+    Warning (13040): bidirectional pin "GPIO[34]" has no driver File: I:/ece554/ECE554-Capstone-Project/Servo/Quartus/pan_tilt.sv Line: 33
+    Warning (13040): bidirectional pin "GPIO[35]" has no driver File: I:/ece554/ECE554-Capstone-Project/Servo/Quartus/pan_tilt.sv Line: 33
+Warning (13009): TRI or OPNDRN buffers permanently enabled
+    Warning (13010): Node "GPIO[0]~synth" File: I:/ece554/ECE554-Capstone-Project/Servo/Quartus/pan_tilt.sv Line: 33
+    Warning (13010): Node "GPIO[1]~synth" File: I:/ece554/ECE554-Capstone-Project/Servo/Quartus/pan_tilt.sv Line: 33
+Warning (13024): Output pins are stuck at VCC or GND
+    Warning (13410): Pin "HEX0[0]" is stuck at GND File: I:/ece554/ECE554-Capstone-Project/Servo/Quartus/pan_tilt.sv Line: 15
+    Warning (13410): Pin "HEX0[1]" is stuck at GND File: I:/ece554/ECE554-Capstone-Project/Servo/Quartus/pan_tilt.sv Line: 15
+    Warning (13410): Pin "HEX0[2]" is stuck at GND File: I:/ece554/ECE554-Capstone-Project/Servo/Quartus/pan_tilt.sv Line: 15
+    Warning (13410): Pin "HEX0[3]" is stuck at GND File: I:/ece554/ECE554-Capstone-Project/Servo/Quartus/pan_tilt.sv Line: 15
+    Warning (13410): Pin "HEX0[4]" is stuck at GND File: I:/ece554/ECE554-Capstone-Project/Servo/Quartus/pan_tilt.sv Line: 15
+    Warning (13410): Pin "HEX0[5]" is stuck at GND File: I:/ece554/ECE554-Capstone-Project/Servo/Quartus/pan_tilt.sv Line: 15
+    Warning (13410): Pin "HEX0[6]" is stuck at VCC File: I:/ece554/ECE554-Capstone-Project/Servo/Quartus/pan_tilt.sv Line: 15
+    Warning (13410): Pin "HEX1[0]" is stuck at GND File: I:/ece554/ECE554-Capstone-Project/Servo/Quartus/pan_tilt.sv Line: 16
+    Warning (13410): Pin "HEX1[1]" is stuck at GND File: I:/ece554/ECE554-Capstone-Project/Servo/Quartus/pan_tilt.sv Line: 16
+    Warning (13410): Pin "HEX1[2]" is stuck at GND File: I:/ece554/ECE554-Capstone-Project/Servo/Quartus/pan_tilt.sv Line: 16
+    Warning (13410): Pin "HEX1[3]" is stuck at GND File: I:/ece554/ECE554-Capstone-Project/Servo/Quartus/pan_tilt.sv Line: 16
+    Warning (13410): Pin "HEX1[4]" is stuck at GND File: I:/ece554/ECE554-Capstone-Project/Servo/Quartus/pan_tilt.sv Line: 16
+    Warning (13410): Pin "HEX1[5]" is stuck at GND File: I:/ece554/ECE554-Capstone-Project/Servo/Quartus/pan_tilt.sv Line: 16
+    Warning (13410): Pin "HEX1[6]" is stuck at VCC File: I:/ece554/ECE554-Capstone-Project/Servo/Quartus/pan_tilt.sv Line: 16
+    Warning (13410): Pin "HEX2[0]" is stuck at GND File: I:/ece554/ECE554-Capstone-Project/Servo/Quartus/pan_tilt.sv Line: 17
+    Warning (13410): Pin "HEX2[1]" is stuck at GND File: I:/ece554/ECE554-Capstone-Project/Servo/Quartus/pan_tilt.sv Line: 17
+    Warning (13410): Pin "HEX2[2]" is stuck at GND File: I:/ece554/ECE554-Capstone-Project/Servo/Quartus/pan_tilt.sv Line: 17
+    Warning (13410): Pin "HEX2[3]" is stuck at GND File: I:/ece554/ECE554-Capstone-Project/Servo/Quartus/pan_tilt.sv Line: 17
+    Warning (13410): Pin "HEX2[4]" is stuck at GND File: I:/ece554/ECE554-Capstone-Project/Servo/Quartus/pan_tilt.sv Line: 17
+    Warning (13410): Pin "HEX2[5]" is stuck at GND File: I:/ece554/ECE554-Capstone-Project/Servo/Quartus/pan_tilt.sv Line: 17
+    Warning (13410): Pin "HEX2[6]" is stuck at VCC File: I:/ece554/ECE554-Capstone-Project/Servo/Quartus/pan_tilt.sv Line: 17
+    Warning (13410): Pin "HEX3[0]" is stuck at GND File: I:/ece554/ECE554-Capstone-Project/Servo/Quartus/pan_tilt.sv Line: 18
+    Warning (13410): Pin "HEX3[1]" is stuck at GND File: I:/ece554/ECE554-Capstone-Project/Servo/Quartus/pan_tilt.sv Line: 18
+    Warning (13410): Pin "HEX3[2]" is stuck at GND File: I:/ece554/ECE554-Capstone-Project/Servo/Quartus/pan_tilt.sv Line: 18
+    Warning (13410): Pin "HEX3[3]" is stuck at GND File: I:/ece554/ECE554-Capstone-Project/Servo/Quartus/pan_tilt.sv Line: 18
+    Warning (13410): Pin "HEX3[4]" is stuck at GND File: I:/ece554/ECE554-Capstone-Project/Servo/Quartus/pan_tilt.sv Line: 18
+    Warning (13410): Pin "HEX3[5]" is stuck at GND File: I:/ece554/ECE554-Capstone-Project/Servo/Quartus/pan_tilt.sv Line: 18
+    Warning (13410): Pin "HEX3[6]" is stuck at VCC File: I:/ece554/ECE554-Capstone-Project/Servo/Quartus/pan_tilt.sv Line: 18
+    Warning (13410): Pin "HEX4[0]" is stuck at GND File: I:/ece554/ECE554-Capstone-Project/Servo/Quartus/pan_tilt.sv Line: 19
+    Warning (13410): Pin "HEX4[1]" is stuck at GND File: I:/ece554/ECE554-Capstone-Project/Servo/Quartus/pan_tilt.sv Line: 19
+    Warning (13410): Pin "HEX4[2]" is stuck at GND File: I:/ece554/ECE554-Capstone-Project/Servo/Quartus/pan_tilt.sv Line: 19
+    Warning (13410): Pin "HEX4[3]" is stuck at GND File: I:/ece554/ECE554-Capstone-Project/Servo/Quartus/pan_tilt.sv Line: 19
+    Warning (13410): Pin "HEX4[4]" is stuck at GND File: I:/ece554/ECE554-Capstone-Project/Servo/Quartus/pan_tilt.sv Line: 19
+    Warning (13410): Pin "HEX4[5]" is stuck at GND File: I:/ece554/ECE554-Capstone-Project/Servo/Quartus/pan_tilt.sv Line: 19
+    Warning (13410): Pin "HEX4[6]" is stuck at VCC File: I:/ece554/ECE554-Capstone-Project/Servo/Quartus/pan_tilt.sv Line: 19
+    Warning (13410): Pin "HEX5[0]" is stuck at VCC File: I:/ece554/ECE554-Capstone-Project/Servo/Quartus/pan_tilt.sv Line: 20
+    Warning (13410): Pin "HEX5[1]" is stuck at VCC File: I:/ece554/ECE554-Capstone-Project/Servo/Quartus/pan_tilt.sv Line: 20
+    Warning (13410): Pin "HEX5[2]" is stuck at VCC File: I:/ece554/ECE554-Capstone-Project/Servo/Quartus/pan_tilt.sv Line: 20
+    Warning (13410): Pin "HEX5[3]" is stuck at VCC File: I:/ece554/ECE554-Capstone-Project/Servo/Quartus/pan_tilt.sv Line: 20
+    Warning (13410): Pin "HEX5[4]" is stuck at VCC File: I:/ece554/ECE554-Capstone-Project/Servo/Quartus/pan_tilt.sv Line: 20
+    Warning (13410): Pin "HEX5[5]" is stuck at VCC File: I:/ece554/ECE554-Capstone-Project/Servo/Quartus/pan_tilt.sv Line: 20
+    Warning (13410): Pin "HEX5[6]" is stuck at VCC File: I:/ece554/ECE554-Capstone-Project/Servo/Quartus/pan_tilt.sv Line: 20
+    Warning (13410): Pin "LEDR[1]" is stuck at GND File: I:/ece554/ECE554-Capstone-Project/Servo/Quartus/pan_tilt.sv Line: 26
+    Warning (13410): Pin "LEDR[2]" is stuck at GND File: I:/ece554/ECE554-Capstone-Project/Servo/Quartus/pan_tilt.sv Line: 26
+    Warning (13410): Pin "LEDR[3]" is stuck at GND File: I:/ece554/ECE554-Capstone-Project/Servo/Quartus/pan_tilt.sv Line: 26
+    Warning (13410): Pin "LEDR[4]" is stuck at GND File: I:/ece554/ECE554-Capstone-Project/Servo/Quartus/pan_tilt.sv Line: 26
+    Warning (13410): Pin "LEDR[5]" is stuck at GND File: I:/ece554/ECE554-Capstone-Project/Servo/Quartus/pan_tilt.sv Line: 26
+    Warning (13410): Pin "LEDR[6]" is stuck at GND File: I:/ece554/ECE554-Capstone-Project/Servo/Quartus/pan_tilt.sv Line: 26
+    Warning (13410): Pin "LEDR[7]" is stuck at GND File: I:/ece554/ECE554-Capstone-Project/Servo/Quartus/pan_tilt.sv Line: 26
+    Warning (13410): Pin "LEDR[8]" is stuck at GND File: I:/ece554/ECE554-Capstone-Project/Servo/Quartus/pan_tilt.sv Line: 26
+    Warning (13410): Pin "LEDR[9]" is stuck at GND File: I:/ece554/ECE554-Capstone-Project/Servo/Quartus/pan_tilt.sv Line: 26
+Info (286031): Timing-Driven Synthesis is running on partition "Top"
+Info (35024): Successfully connected in-system debug instance "auto_signaltap_0" to all 36 required data inputs, trigger inputs, acquisition clocks, and dynamic pins
+Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
+    Info (16011): Adding 9 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
+Warning (21074): Design contains 16 input pin(s) that do not drive logic
+    Warning (15610): No output dependent on input pin "CLOCK2_50" File: I:/ece554/ECE554-Capstone-Project/Servo/Quartus/pan_tilt.sv Line: 9
+    Warning (15610): No output dependent on input pin "CLOCK3_50" File: I:/ece554/ECE554-Capstone-Project/Servo/Quartus/pan_tilt.sv Line: 10
+    Warning (15610): No output dependent on input pin "CLOCK4_50" File: I:/ece554/ECE554-Capstone-Project/Servo/Quartus/pan_tilt.sv Line: 11
+    Warning (15610): No output dependent on input pin "KEY[1]" File: I:/ece554/ECE554-Capstone-Project/Servo/Quartus/pan_tilt.sv Line: 23
+    Warning (15610): No output dependent on input pin "KEY[2]" File: I:/ece554/ECE554-Capstone-Project/Servo/Quartus/pan_tilt.sv Line: 23
+    Warning (15610): No output dependent on input pin "KEY[3]" File: I:/ece554/ECE554-Capstone-Project/Servo/Quartus/pan_tilt.sv Line: 23
+    Warning (15610): No output dependent on input pin "SW[0]" File: I:/ece554/ECE554-Capstone-Project/Servo/Quartus/pan_tilt.sv Line: 29
+    Warning (15610): No output dependent on input pin "SW[1]" File: I:/ece554/ECE554-Capstone-Project/Servo/Quartus/pan_tilt.sv Line: 29
+    Warning (15610): No output dependent on input pin "SW[2]" File: I:/ece554/ECE554-Capstone-Project/Servo/Quartus/pan_tilt.sv Line: 29
+    Warning (15610): No output dependent on input pin "SW[3]" File: I:/ece554/ECE554-Capstone-Project/Servo/Quartus/pan_tilt.sv Line: 29
+    Warning (15610): No output dependent on input pin "SW[4]" File: I:/ece554/ECE554-Capstone-Project/Servo/Quartus/pan_tilt.sv Line: 29
+    Warning (15610): No output dependent on input pin "SW[5]" File: I:/ece554/ECE554-Capstone-Project/Servo/Quartus/pan_tilt.sv Line: 29
+    Warning (15610): No output dependent on input pin "SW[6]" File: I:/ece554/ECE554-Capstone-Project/Servo/Quartus/pan_tilt.sv Line: 29
+    Warning (15610): No output dependent on input pin "SW[7]" File: I:/ece554/ECE554-Capstone-Project/Servo/Quartus/pan_tilt.sv Line: 29
+    Warning (15610): No output dependent on input pin "SW[8]" File: I:/ece554/ECE554-Capstone-Project/Servo/Quartus/pan_tilt.sv Line: 29
+    Warning (15610): No output dependent on input pin "SW[9]" File: I:/ece554/ECE554-Capstone-Project/Servo/Quartus/pan_tilt.sv Line: 29
+Info (21057): Implemented 1420 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 21 input pins
+    Info (21059): Implemented 53 output pins
+    Info (21060): Implemented 36 bidirectional pins
+    Info (21061): Implemented 1275 logic cells
+    Info (21064): Implemented 32 RAM segments
+    Info (21062): Implemented 2 DSP elements
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 117 warnings
+    Info: Peak virtual memory: 4952 megabytes
+    Info: Processing ended: Thu Apr  3 17:14:57 2025
+    Info: Elapsed time: 00:00:44
+    Info: Total CPU time (on all processors): 00:00:32
+
+

@@ -1,7 +1,7 @@
 module counter
 # (
     parameter TICKS_PER_US = 'd50,   // 50 FPGA clock cycles for 1us tick
-    parameter PERIOD = 'd10000        // units of us, equal to 20ms      
+    parameter PERIOD = 'd20000        // units of us, equal to 20ms      
 ) (
     input clk, 
     input rst_n, 
