@@ -753,9 +753,11 @@ set_global_assignment -name MAX_CORE_JUNCTION_TEMP 85
 
 set_global_assignment -name POWER_PRESET_COOLING_SOLUTION "23 MM HEAT SINK WITH 200 LFPM AIRFLOW"
 set_global_assignment -name POWER_BOARD_THERMAL_MODEL "NONE (CONSERVATIVE)"
-set_global_assignment -name SYSTEMVERILOG_FILE v/EDGE_DETECT.sv
+set_global_assignment -name SYSTEMVERILOG_FILE v/GAUSSIAN.sv
+set_global_assignment -name SYSTEMVERILOG_FILE v/LAPLACIAN.sv
+set_global_assignment -name SYSTEMVERILOG_FILE v/VERT_EDGE_DETECT.sv
+set_global_assignment -name SYSTEMVERILOG_FILE v/HORIZ_EDGE_DETECT.sv
 set_global_assignment -name VERILOG_FILE v/RAW2RGB_640.v
-set_global_assignment -name SYSTEMVERILOG_FILE v/MEMORY_STORE.sv
 set_global_assignment -name SYSTEMVERILOG_FILE v/GRAYSCALE.sv
 set_global_assignment -name VERILOG_FILE v/VGA_Controller.v
 set_global_assignment -name VERILOG_FILE v/SEG7_LUT.v

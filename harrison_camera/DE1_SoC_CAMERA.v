@@ -312,9 +312,10 @@ CCD_Capture       u3	(
 
 
 //D5M raw date convert to RGB data
-wire              sCCD_DVAL_GRAY, sCCD_DVAL_RGB;
+wire              sCCD_DVAL_GRAY, sCCD_DVAL_RGB, sCCD_DVAL_VERT_EDGE, sCCD_DVAL_HORIZ_EDGE, 
+                  sCCD_DVAL_LAP, sCCD_DVAL_GAUSS;
 wire     [11:0]   sCCD_GRAY;
-wire     [11:0]   sCCD_EDGE;
+wire     [11:0]   sCCD_VERT_EDGE, sCCD_HORIZ_EDGE, sCCD_LAP, sCCD_GAUSS;
 wire	   [11:0]   sCCD_R_RGB;
 wire     [11:0]   sCCD_G_RGB;
 wire     [11:0]   sCCD_B_RGB;
@@ -343,30 +344,78 @@ GRAYSCALE         u4_1 (
                      .oDVAL(sCCD_DVAL_GRAY)
                      );
 
-EDGE_DETECT       u4_2 (
-                  .iCLK(iCLK),
-                  .iRST(iRST),
-                  .iGray(sCCD_GRAY),
-                  .iDVAL(sCCD_DVAL_GRAY),
-                  .oEdge(sCCD_EDGE)
+VERT_EDGE_DETECT  u4_2 (
+                  .iCLK(D5M_PIXLCLK),
+                  .iRST(DLY_RST_1),
+                  .iGray(sCCD_GAUSS),
+                  .iDVAL(sCCD_DVAL_GAUSS),
+                  .oEdge(sCCD_VERT_EDGE),
+                  .oDVAL(sCCD_DVAL_VERT_EDGE)
                   );
 
+HORIZ_EDGE_DETECT u4_3 (
+                  .iCLK(D5M_PIXLCLK),
+                  .iRST(DLY_RST_1),
+                  .iGray(sCCD_GAUSS),
+                  .iDVAL(sCCD_DVAL_GAUSS),
+                  .oEdge(sCCD_HORIZ_EDGE),
+                  .oDVAL(sCCD_DVAL_HORIZ_EDGE)
+                  );
+
+GAUSSIAN          u4_4 (
+                  .iCLK(D5M_PIXLCLK),
+                  .iRST(DLY_RST_1),
+                  .iGray(sCCD_GRAY),
+                  .iDVAL(sCCD_DVAL_GRAY),
+                  .oGauss(sCCD_GAUSS),
+                  .oDVAL(sCCD_DVAL_GAUSS)
+                  );
+
+LAPLACIAN         u4_5 (
+                  .iCLK(D5M_PIXLCLK),
+                  .iRST(DLY_RST_1),
+                  .iGray(sCCD_GAUSS),
+                  .iDVAL(sCCD_DVAL_GAUSS),
+                  .oLap(sCCD_LAP),
+                  .oDVAL(sCCD_DVAL_LAP)
+                  );
+                  
 /* FOR DISPLAY PURPOSES */
-assign sCCD_R     =  SW[1] ? sCCD_EDGE : sCCD_R_RGB;
-assign sCCD_G     =  SW[1] ? sCCD_EDGE : sCCD_G_RGB;
-assign sCCD_B     =  SW[1] ? sCCD_EDGE : sCCD_B_RGB;
-assign sCCD_DVAL  =  SW[1] ? sCCD_DVAL_GRAY : sCCD_DVAL_RGB;
+assign sCCD_R     =  SW[6] ?  sCCD_GAUSS                       :
+                     SW[5] ?  sCCD_LAP                         :
+                     SW[4] ?  sCCD_HORIZ_EDGE | sCCD_VERT_EDGE : 
+                     SW[3] ?  sCCD_HORIZ_EDGE                  :
+                     SW[2] ?  sCCD_VERT_EDGE                   :
+                     SW[1] ?  sCCD_GRAY                        :
+                              sCCD_R_RGB;
 
+assign sCCD_G     =  SW[6] ?  sCCD_GAUSS                       :
+                     SW[5] ?  sCCD_LAP                         :
+                     SW[4] ?  sCCD_HORIZ_EDGE | sCCD_VERT_EDGE : 
+                     SW[3] ?  sCCD_HORIZ_EDGE                  :
+                     SW[2] ?  sCCD_VERT_EDGE                   :
+                     SW[1] ?  sCCD_GRAY                        :
+                              sCCD_G_RGB;
 
-/*
-MEMORY_STORE      u4_2 (
-                        .iFRAMECOUNT(Frame_Cont),
-                        .iDVAL(sCCD_DVAL_GRAY),
-                        .iGray(sCCD_GRAY),
-                        .oDVAL_1(sCCD_DVAL_1),
-                        .oDVAL_2(sCCD_DVAL_2)
-);
-*/
+assign sCCD_B     =  SW[6] ?  sCCD_GAUSS                       :
+                     SW[5] ?  sCCD_LAP                         :
+                     SW[4] ?  sCCD_HORIZ_EDGE | sCCD_VERT_EDGE : 
+                     SW[3] ?  sCCD_HORIZ_EDGE                  :
+                     SW[2] ?  sCCD_VERT_EDGE                   :
+                     SW[1] ?  sCCD_GRAY                        :
+                              sCCD_B_RGB;
+
+assign sCCD_DVAL  =  SW[6] ?  sCCD_DVAL_GAUSS                              :  
+                     SW[5] ?  sCCD_DVAL_LAP                                :
+                     SW[4] ?  sCCD_DVAL_HORIZ_EDGE | sCCD_DVAL_VERT_EDGE   : 
+                     SW[3] ?  sCCD_DVAL_HORIZ_EDGE                         :
+                     SW[2] ?  sCCD_DVAL_VERT_EDGE                          :
+                     SW[1] ?  sCCD_DVAL_GRAY                               :
+                              sCCD_DVAL_RGB;
+
+// Next steps, buffer each pixel as a yes/no (edge/no edge) in 640x480 memory w/ coordinates. 
+// Compare these pixels with the current frame, if Dcurr - Dprev > threshold, track change. 
+// Make it all red maybe.
 
 //Frame count display
 SEG7_LUT_6 			u5	(	
