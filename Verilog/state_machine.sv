@@ -15,6 +15,9 @@ module state_machine(
 logic [2:0] {IDLE, TRACKING, LOCKED}
 
 // State Machine Sequential Logic
+always_ff @(posedge clk or negedge rst_n) begin
+    state = state_next;
+end
 
 // State Machine implementation
 
