@@ -19,8 +19,7 @@ logic timer_stop;
 logic timer_done;
 
 // Instantiated Modules
-timer #(.clock_frequency_mhz(clock_frequency_mhz), .time_milliseconds(fire_time_milliseconds)) 
-    DUT (.clk(clk), .rst_n(rst_n), .start(timer_start), .stop(timer_stop), .done(timer_done));
+timer #(.clock_frequency_mhz(clock_frequency_mhz), .time_milliseconds(fire_time_milliseconds)) fire_timer (.clk(clk), .rst_n(rst_n), .start(timer_start), .stop(timer_stop), .done(timer_done));
 
 // State Machine Signals
 enum logic [2:0] {IDLE, TRACKING, LOCKED} state, state_next;
