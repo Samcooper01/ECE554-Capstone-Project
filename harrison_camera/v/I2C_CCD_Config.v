@@ -77,8 +77,8 @@ reg	[3:0]	mSetup_ST;
 input 		iEXPOSURE_ADJ;
 input		iEXPOSURE_DEC_p;	
 
-parameter 	default_exposure 			= 16'h07c0;
-parameter 	exposure_change_value	 	= 16'd200;
+parameter 	default_exposure 			= 16'h0320;
+parameter 	exposure_change_value	 	= 16'd020;
 
 reg	[24:0]	combo_cnt;
 wire		combo_pulse;
@@ -103,8 +103,8 @@ assign sensor_start_column    	= i640_MODE_SW ?  24'h020000 : 24'h020000;
 assign sensor_row_size	 		= i640_MODE_SW ?  24'h03077F : 24'h03077F;	// 1919
 assign sensor_column_size 		= i640_MODE_SW ?  24'h0409FF : 24'h0409FF;	// 2559
 
-assign sensor_row_mode 			= i640_MODE_SW ?  24'h220000 : 24'h220011;	// row binning or row skipping
-assign sensor_column_mode		= i640_MODE_SW ?  24'h230000 : 24'h230011;	// col binning or col skipping
+assign sensor_row_mode 			= i640_MODE_SW ?  24'h220003 : 24'h220011;	// row binning or row skipping
+assign sensor_column_mode		= i640_MODE_SW ?  24'h230003 : 24'h230011;	// col binning or col skipping
 
 	
 always@(posedge iCLK or negedge iRST_N)
