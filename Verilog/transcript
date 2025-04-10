@@ -226,3 +226,19 @@ run -all
 # ** Note: $stop    : I:/ECE554/ECE554-Capstone-Project/Verilog/timer_tb.sv(44)
 #    Time: 4014 ns  Iteration: 1  Instance: /timer_tb
 # Break in Module timer_tb at I:/ECE554/ECE554-Capstone-Project/Verilog/timer_tb.sv line 44
+# Compile of state_machine.sv failed with 1 errors.
+# Compile of state_machine.sv failed with 1 errors.
+# Compile of state_machine.sv failed with 3 errors.
+# Compile of state_machine.sv failed with 3 errors.
+# Compile of state_machine.sv failed with 6 errors.
+# Compile of state_machine.sv failed with 8 errors.
+# Load canceled
+# Compile of state_machine.sv failed with 10 errors.
+# Compile of state_machine.sv failed with 8 errors.
+# Compile of state_machine.sv failed with 2 errors.
+# Load canceled
+# Compile of state_machine.sv was successful.
+# Compile of timer.sv was successful.
+# Compile of timer_tb.sv was successful.
+# Compile of state_machine.sv was successful.
+# 3 compiles, 0 failed with no errors.

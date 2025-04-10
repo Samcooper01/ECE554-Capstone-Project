@@ -1,4 +1,11 @@
-I:/ECE554/ECE554-Capstone-Project/Verilog/timer.sv {1 {vlog -work work -vopt -sv -stats=none I:/ECE554/ECE554-Capstone-Project/Verilog/timer.sv
+I:/ECE554/ECE554-Capstone-Project/Verilog/timer_tb.sv {1 {vlog -work work -vopt -sv -stats=none I:/ECE554/ECE554-Capstone-Project/Verilog/timer_tb.sv
+Questa Intel Starter FPGA Edition-64 vlog 2023.3 Compiler 2023.07 Jul 17 2023
+-- Compiling module timer_tb
+
+Top level modules:
+	timer_tb
+
+} {} {}} I:/ECE554/ECE554-Capstone-Project/Verilog/timer.sv {1 {vlog -work work -vopt -sv -stats=none I:/ECE554/ECE554-Capstone-Project/Verilog/timer.sv
 Questa Intel Starter FPGA Edition-64 vlog 2023.3 Compiler 2023.07 Jul 17 2023
 -- Compiling module timer
 
