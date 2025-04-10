@@ -320,6 +320,7 @@ wire	   [11:0]   sCCD_R_RGB;
 wire     [11:0]   sCCD_G_RGB;
 wire     [11:0]   sCCD_B_RGB;
 
+
 RAW2RGB				u4	(	
 							.iCLK(D5M_PIXLCLK),
 							.iRST(DLY_RST_1),
@@ -333,6 +334,20 @@ RAW2RGB				u4	(
 							.iY_Cont(Y_Cont)
 						   );
 
+/*
+RAW2RGB_bilinear		u4	(	
+							.iCLK(D5M_PIXLCLK),
+							.iRST(DLY_RST_1),
+							.iDATA(mCCD_DATA),
+							.iDVAL(mCCD_DVAL),
+							.oRed(sCCD_R_RGB),
+							.oGreen(sCCD_G_RGB),
+							.oBlue(sCCD_B_RGB),
+							.oDVAL(sCCD_DVAL_RGB),
+							.iX_Cont(X_Cont),
+							.iY_Cont(Y_Cont)
+						   );
+*/
 GRAYSCALE         u4_1 (
                      .iCLK(D5M_PIXLCLK),
                      .iRST(DLY_RST_1),
@@ -381,7 +396,8 @@ LAPLACIAN         u4_5 (
                   );
                   
 /* FOR DISPLAY PURPOSES */
-assign sCCD_R     =  SW[6] ?  sCCD_GAUSS                       :
+assign sCCD_R     =  SW[7] ?  sCCD_ODETECT_R                   :
+                     SW[6] ?  sCCD_GAUSS                       :
                      SW[5] ?  sCCD_LAP                         :
                      SW[4] ?  sCCD_HORIZ_EDGE | sCCD_VERT_EDGE : 
                      SW[3] ?  sCCD_HORIZ_EDGE                  :
@@ -389,7 +405,8 @@ assign sCCD_R     =  SW[6] ?  sCCD_GAUSS                       :
                      SW[1] ?  sCCD_GRAY                        :
                               sCCD_R_RGB;
 
-assign sCCD_G     =  SW[6] ?  sCCD_GAUSS                       :
+assign sCCD_G     =  SW[7] ?  sCCD_ODETECT_G                   :
+                     SW[6] ?  sCCD_GAUSS                       :
                      SW[5] ?  sCCD_LAP                         :
                      SW[4] ?  sCCD_HORIZ_EDGE | sCCD_VERT_EDGE : 
                      SW[3] ?  sCCD_HORIZ_EDGE                  :
@@ -397,7 +414,8 @@ assign sCCD_G     =  SW[6] ?  sCCD_GAUSS                       :
                      SW[1] ?  sCCD_GRAY                        :
                               sCCD_G_RGB;
 
-assign sCCD_B     =  SW[6] ?  sCCD_GAUSS                       :
+assign sCCD_B     =  SW[7] ? sCCD_ODETECT_B                    :
+                     SW[6] ?  sCCD_GAUSS                       :
                      SW[5] ?  sCCD_LAP                         :
                      SW[4] ?  sCCD_HORIZ_EDGE | sCCD_VERT_EDGE : 
                      SW[3] ?  sCCD_HORIZ_EDGE                  :
@@ -405,7 +423,8 @@ assign sCCD_B     =  SW[6] ?  sCCD_GAUSS                       :
                      SW[1] ?  sCCD_GRAY                        :
                               sCCD_B_RGB;
 
-assign sCCD_DVAL  =  SW[6] ?  sCCD_DVAL_GAUSS                              :  
+assign sCCD_DVAL  =  SW[7] ?  sCCD_DVAL_ODETECT                            :
+                     SW[6] ?  sCCD_DVAL_GAUSS                              :  
                      SW[5] ?  sCCD_DVAL_LAP                                :
                      SW[4] ?  sCCD_DVAL_HORIZ_EDGE | sCCD_DVAL_VERT_EDGE   : 
                      SW[3] ?  sCCD_DVAL_HORIZ_EDGE                         :
@@ -416,6 +435,23 @@ assign sCCD_DVAL  =  SW[6] ?  sCCD_DVAL_GAUSS                              :
 // Next steps, buffer each pixel as a yes/no (edge/no edge) in 640x480 memory w/ coordinates. 
 // Compare these pixels with the current frame, if Dcurr - Dprev > threshold, track change. 
 // Make it all red maybe.
+
+wire [11:0] sCCD_ODETECT_R, sCCD_ODETECT_G, sCCD_ODETECT_B;
+wire oObjectDetected, sCCD_DVAL_ODETECT;
+STORE_FRAME   u4_6 (
+                  .iCLK(D5M_PIXLCLK),
+                  .iRST(DLY_RST_1),
+                  .iDVAL(sCCD_DVAL_HORIZ_EDGE | sCCD_DVAL_VERT_EDGE),            // Using this one for now
+                  .iDATA(sCCD_HORIZ_EDGE | sCCD_VERT_EDGE),                      // Using this one for now 
+                  .iFrame_Cont(Frame_Cont[0]),                                   // For comparing frames 
+                  .iX_Cont(X_Cont[10:0]),
+                  .iY_Cont(Y_Cont[10:0]),
+                  .oObjectDetected(oObjectDetected),
+                  .oRed(sCCD_ODETECT_R),
+                  .oGreen(sCCD_ODETECT_G),
+                  .oBlue(sCCD_ODETECT_B),
+                  .oDVAL(sCCD_DVAL_ODETECT)
+                  );
 
 //Frame count display
 SEG7_LUT_6 			u5	(	
