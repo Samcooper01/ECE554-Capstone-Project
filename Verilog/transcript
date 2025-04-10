@@ -242,3 +242,85 @@ run -all
 # Compile of timer_tb.sv was successful.
 # Compile of state_machine.sv was successful.
 # 3 compiles, 0 failed with no errors.
+# Compile of timer_tb.sv was successful.
+# Compile of state_machine.sv was successful.
+# Compile of state_machine_tb.sv failed with 2 errors.
+# 3 compiles, 1 failed with 2 errors.
+# Compile of timer.sv was successful.
+# Compile of timer_tb.sv was successful.
+# Compile of state_machine.sv was successful.
+# Compile of state_machine_tb.sv failed with 5 errors.
+# 4 compiles, 1 failed with 5 errors.
+# Compile of timer.sv was successful.
+# Compile of timer_tb.sv was successful.
+# Compile of state_machine.sv was successful.
+# Compile of state_machine_tb.sv was successful.
+# 4 compiles, 0 failed with no errors.
+vsim -voptargs=+acc work.state_machine_tb
+# End time: 18:00:56 on Apr 10,2025, Elapsed time: 1:16:22
+# Errors: 0, Warnings: 18
+# vsim -voptargs="+acc" work.state_machine_tb 
+# Start time: 18:00:56 on Apr 10,2025
+# ** Note: (vsim-3812) Design is being optimized...
+# ** Warning: (vopt-10587) Some optimizations are turned off because the +acc switch is in effect. This will cause your simulation to run slowly. Please use -access/-debug to maintain needed visibility.
+# ** Note: (vopt-143) Recognized 1 FSM in module "state_machine(fast)".
+# ** Note: (vopt-143) Recognized 1 FSM in module "timer(fast)".
+# ** Note: (vsim-12126) Error and warning message counts have been restored: Errors=0, Warnings=1.
+# Loading sv_std.std
+# Loading work.state_machine_tb(fast)
+# Loading work.state_machine(fast)
+# Loading work.timer(fast)
+add wave -position insertpoint  \
+sim:/state_machine_tb/DUT/state
+add wave -position insertpoint  \
+sim:/state_machine_tb/fire
+add wave -position insertpoint  \
+sim:/state_machine_tb/on_screen
+add wave -position insertpoint  \
+sim:/state_machine_tb/clk
+run -all
+# ** Note: $stop    : I:/ECE554/ECE554-Capstone-Project/Verilog/state_machine_tb.sv(41)
+#    Time: 10220 ns  Iteration: 1  Instance: /state_machine_tb
+# Break in Module state_machine_tb at I:/ECE554/ECE554-Capstone-Project/Verilog/state_machine_tb.sv line 41
+# Compile of timer.sv was successful.
+# Compile of timer_tb.sv was successful.
+# Compile of state_machine.sv was successful.
+# Compile of state_machine_tb.sv failed with 3 errors.
+# 4 compiles, 1 failed with 3 errors.
+# Compile of timer.sv was successful.
+# Compile of timer_tb.sv was successful.
+# Compile of state_machine.sv was successful.
+# Compile of state_machine_tb.sv was successful.
+# 4 compiles, 0 failed with no errors.
+vsim -voptargs=+acc work.state_machine_tb
+# End time: 18:05:56 on Apr 10,2025, Elapsed time: 0:05:00
+# Errors: 0, Warnings: 4
+# vsim -voptargs="+acc" work.state_machine_tb 
+# Start time: 18:05:56 on Apr 10,2025
+# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
+# ** Warning: (vopt-10587) Some optimizations are turned off because the +acc switch is in effect. This will cause your simulation to run slowly. Please use -access/-debug to maintain needed visibility.
+# ** Note: (vsim-12126) Error and warning message counts have been restored: Errors=0, Warnings=1.
+# Loading sv_std.std
+# Loading work.state_machine_tb(fast)
+# Loading work.state_machine(fast)
+# Loading work.timer(fast)
+add wave -position insertpoint  \
+sim:/state_machine_tb/clk
+add wave -position insertpoint  \
+sim:/state_machine_tb/on_screen
+add wave -position insertpoint  \
+sim:/state_machine_tb/fire
+add wave -position insertpoint  \
+sim:/state_machine_tb/DUT/state
+run -all
+# YAHOO!!! All tests passed!
+# ** Note: $stop    : I:/ECE554/ECE554-Capstone-Project/Verilog/state_machine_tb.sv(56)
+#    Time: 15370 ns  Iteration: 1  Instance: /state_machine_tb
+# Break in Module state_machine_tb at I:/ECE554/ECE554-Capstone-Project/Verilog/state_machine_tb.sv line 56
+# Compile of timer.sv was successful.
+# Compile of state_machine.sv was successful.
+# Compile of tracking_buffer.sv failed with 1 errors.
+# 3 compiles, 1 failed with 1 error.
+# Compile of tracking_buffer.sv failed with 3 errors.
+# Compile of tracking_buffer.sv failed with 1 errors.
+# Compile of tracking_buffer.sv was successful.
