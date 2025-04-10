@@ -37,7 +37,7 @@ always_comb begin
     counter_next = counter;
     case(state)
         IDLE: begin
-            if (start) begin
+            if (start && !stop) begin
                 state_next = RUN;
             end
         end
