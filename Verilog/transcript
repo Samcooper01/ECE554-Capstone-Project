@@ -324,3 +324,60 @@ run -all
 # Compile of tracking_buffer.sv failed with 3 errors.
 # Compile of tracking_buffer.sv failed with 1 errors.
 # Compile of tracking_buffer.sv was successful.
+# Compile of tracking_buffer_tb.sv failed with 2 errors.
+# Compile of tracking_buffer_tb.sv was successful.
+vsim -voptargs=+acc work.tracking_buffer_tb
+# End time: 18:43:40 on Apr 10,2025, Elapsed time: 0:37:44
+# Errors: 0, Warnings: 10
+# vsim -voptargs="+acc" work.tracking_buffer_tb 
+# Start time: 18:43:40 on Apr 10,2025
+# ** Note: (vsim-3812) Design is being optimized...
+# ** Warning: (vopt-10587) Some optimizations are turned off because the +acc switch is in effect. This will cause your simulation to run slowly. Please use -access/-debug to maintain needed visibility.
+# ** Note: (vopt-143) Recognized 1 FSM in module "timer(fast)".
+# ** Note: (vsim-12126) Error and warning message counts have been restored: Errors=0, Warnings=1.
+# Loading sv_std.std
+# Loading work.tracking_buffer_tb(fast)
+# Loading work.tracking_buffer(fast)
+# Loading work.timer(fast)
+run -all
+# Error 9: the object is on screen after the timer ended
+# YAHOO!!! All tests passed!
+# ** Note: $stop    : I:/ECE554/ECE554-Capstone-Project/Verilog/tracking_buffer_tb.sv(76)
+#    Time: 48090 ns  Iteration: 1  Instance: /tracking_buffer_tb
+# Break in Module tracking_buffer_tb at I:/ECE554/ECE554-Capstone-Project/Verilog/tracking_buffer_tb.sv line 76
+# Compile of tracking_buffer_tb.sv failed with 11 errors.
+# Compile of tracking_buffer_tb.sv was successful.
+restart
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
+# ** Warning: (vopt-10587) Some optimizations are turned off because the +acc switch is in effect. This will cause your simulation to run slowly. Please use -access/-debug to maintain needed visibility.
+# ** Note: (vsim-12126) Error and warning message counts have been restored: Errors=0, Warnings=1.
+# Loading sv_std.std
+# Loading work.tracking_buffer_tb(fast)
+# Loading work.tracking_buffer(fast)
+# Loading work.timer(fast)
+add wave -position insertpoint  \
+sim:/tracking_buffer_tb/clk
+add wave -position insertpoint  \
+sim:/tracking_buffer_tb/oObjectDetected
+add wave -position insertpoint  \
+sim:/tracking_buffer_tb/on_screen
+add wave -position insertpoint  \
+sim:/tracking_buffer_tb/DUT/timer_done
+run -all
+# Error 9: the object is on screen after the timer ended
+# ** Note: $stop    : I:/ECE554/ECE554-Capstone-Project/Verilog/tracking_buffer_tb.sv(81)
+#    Time: 48090 ns  Iteration: 1  Instance: /tracking_buffer_tb
+# Break in Module tracking_buffer_tb at I:/ECE554/ECE554-Capstone-Project/Verilog/tracking_buffer_tb.sv line 81
+# Compile of timer.sv was successful.
+# Compile of timer_tb.sv was successful.
+# Compile of state_machine.sv was successful.
+# Compile of state_machine_tb.sv was successful.
+# Compile of tracking_buffer.sv was successful.
+# Compile of tracking_buffer_tb.sv was successful.
+# 6 compiles, 0 failed with no errors.
+run -all
+# YAHOO!!! All tests passed!
+# ** Note: $stop    : I:/ECE554/ECE554-Capstone-Project/Verilog/tracking_buffer_tb.sv(85)
+#    Time: 48090 ns  Iteration: 1  Instance: /tracking_buffer_tb
+# Break in Module tracking_buffer_tb at I:/ECE554/ECE554-Capstone-Project/Verilog/tracking_buffer_tb.sv line 85
