@@ -45,7 +45,7 @@ initial begin
 end
 
 always begin
-    #1;
+    #5;
     clk = ~clk;
 end
 
