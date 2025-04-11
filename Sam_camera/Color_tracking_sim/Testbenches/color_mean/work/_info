@@ -1,0 +1,160 @@
+m255
+K4
+z2
+Z0 !s12c _opt1
+Z1 !s99 nomlopt
+R0
+R1
+R0
+R1
+R0
+R1
+R0
+R1
+R0
+R1
+R0
+R1
+R0
+R1
+R0
+R1
+R0
+R1
+Z2 !s12c _opt
+R1
+R2
+R1
+R2
+R1
+R2
+R1
+R2
+R1
+R2
+R1
+R2
+R1
+R2
+R1
+R2
+R1
+R2
+R1
+R2
+R1
+R2
+R1
+R2
+R1
+R2
+R1
+R2
+R1
+R2
+R1
+R2
+R1
+R2
+R1
+R2
+R1
+R2
+R1
+R2
+R1
+R2
+R1
+R2
+R1
+R2
+R1
+R2
+R1
+R2
+R1
+R2
+R1
+!s11f vlog 2023.3 2023.07, Jul 17 2023
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z3 dC:/intelFPGA_lite/23.1std
+T_opt
+!s110 1744086475
+VR]SYho>9A@YW;TXJSE_QK2
+Z4 04 25 4 work color_mean_calibration_tb fast 0
+=4-4cd71793b85b-67f4a5c8-3b2-22dc
+R1
+Z5 !s12b OEM100
+Z6 !s124 OEM10U2 
+Z7 o-quiet -auto_acc_if_foreign -work work +acc
+Z8 tCvgOpt 0
+n@_opt
+Z9 OL;O;2023.3;77
+R3
+T_opt1
+!s110 1744323147
+VCTJ><OWHScbCJTkFaQVjG0
+R4
+=11-4cd71793b85b-67f84247-2b3-44e8
+R1
+R5
+R6
+R7
+R8
+n@_opt1
+R9
+vcolor_mean_calibration
+2I:/ECE554/FinalProject/ECE554-Capstone-Project/ECE554-Capstone-Project/Sam_camera/Color_tracking_sim/color_mean_calibration.sv
+Z10 DXx6 sv_std 3 std 0 22 9oUSJO;AeEaW`l:M@^WG92
+!s110 1744323139
+!i10b 1
+!s100 A_:nPMPaEhZ^dzS8dT`Db0
+I8__6d4gZ3hjJ]ne@JJ77?1
+S1
+Z11 dI:/ECE554/FinalProject/ECE554-Capstone-Project/ECE554-Capstone-Project/Sam_camera/Color_tracking_sim/Testbenches/color_mean
+w1744319918
+8I:/ECE554/FinalProject/ECE554-Capstone-Project/ECE554-Capstone-Project/Sam_camera/Color_tracking_sim/color_mean_calibration.sv
+FI:/ECE554/FinalProject/ECE554-Capstone-Project/ECE554-Capstone-Project/Sam_camera/Color_tracking_sim/color_mean_calibration.sv
+!i122 83
+L0 1 135
+Z12 VDg1SIo80bB@j0V0VzS_@n1
+Z13 OL;L;2023.3;77
+r1
+!s85 0
+31
+!s108 1744323138.000000
+!s107 I:/ECE554/FinalProject/ECE554-Capstone-Project/ECE554-Capstone-Project/Sam_camera/Color_tracking_sim/color_mean_calibration.sv|
+!s90 -reportprogress|300|-work|work|-vopt|-sv|-stats=none|I:/ECE554/FinalProject/ECE554-Capstone-Project/ECE554-Capstone-Project/Sam_camera/Color_tracking_sim/color_mean_calibration.sv|
+!i113 0
+Z14 o-work work -sv -L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
+R8
+vcolor_mean_calibration_tb
+2I:/ECE554/FinalProject/ECE554-Capstone-Project/ECE554-Capstone-Project/Sam_camera/Color_tracking_sim/Testbenches/color_mean/color_mean_calibration_tb.sv
+R10
+!s110 1744323138
+!i10b 1
+!s100 eFoDi3`_oe17]BB[iN5BU1
+IkoZ?^FfiMS9ET1kWm1KdK1
+S1
+R11
+w1744323132
+8I:/ECE554/FinalProject/ECE554-Capstone-Project/ECE554-Capstone-Project/Sam_camera/Color_tracking_sim/Testbenches/color_mean/color_mean_calibration_tb.sv
+FI:/ECE554/FinalProject/ECE554-Capstone-Project/ECE554-Capstone-Project/Sam_camera/Color_tracking_sim/Testbenches/color_mean/color_mean_calibration_tb.sv
+!i122 82
+L0 1 116
+R12
+R13
+r1
+!s85 0
+31
+!s108 1744323136.000000
+!s107 I:/ECE554/FinalProject/ECE554-Capstone-Project/ECE554-Capstone-Project/Sam_camera/Color_tracking_sim/Testbenches/color_mean/color_mean_calibration_tb.sv|
+!s90 -reportprogress|300|-work|work|-vopt|-sv|-stats=none|I:/ECE554/FinalProject/ECE554-Capstone-Project/ECE554-Capstone-Project/Sam_camera/Color_tracking_sim/Testbenches/color_mean/color_mean_calibration_tb.sv|
+!i113 0
+R14
+R8
