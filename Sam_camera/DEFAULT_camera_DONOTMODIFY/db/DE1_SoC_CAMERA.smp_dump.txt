@@ -4,3 +4,10 @@ Name mSetup_ST.0000 mSetup_ST.0010 mSetup_ST.0001
 mSetup_ST.0000 0 0 0 
 mSetup_ST.0001 1 0 1 
 mSetup_ST.0010 1 1 0 
+
+State Machine - |DE1_SoC_CAMERA|color_mean_calibration:iMEAN_CALC|state
+Name state.CALC_DONE state.START_CAL state.FRAME_BEGIN state.IDLE 
+state.IDLE 0 0 0 0 
+state.FRAME_BEGIN 0 0 1 1 
+state.START_CAL 0 1 0 1 
+state.CALC_DONE 1 0 0 1 

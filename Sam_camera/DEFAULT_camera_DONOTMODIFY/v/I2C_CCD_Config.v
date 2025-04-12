@@ -117,7 +117,6 @@ assign sensor_column_size 		= iZOOM_MODE_SW ?  24'h0409FF : 24'h0409FF;
  													//640		//2559
 assign sensor_row_mode 			= iZOOM_MODE_SW ?  24'h220003 : 24'h220011;
 assign sensor_column_mode		= iZOOM_MODE_SW ?  24'h230003 : 24'h230011;
-
 	
 always@(posedge iCLK or negedge iRST_N)
 	begin
@@ -252,7 +251,7 @@ begin
 	4	:	LUT_DATA	<=	24'h060019;				//	V_Blanking	
 	5	:	LUT_DATA	<=	24'h0A8000;				//	change latch
 	6	:	LUT_DATA	<=	24'h2B0013;				//	Green 1 Gain
-	7	:	LUT_DATA	<=	24'h2C009A;				//	Blue Gain
+	7	:	LUT_DATA	<=	24'h2C019C;				//	Blue Gain
 	8	:	LUT_DATA	<=	24'h2D019C;				//	Red Gain
 	9	:	LUT_DATA	<=	24'h2E0013;				//	Green 2 Gain
 	10	:	LUT_DATA	<=	24'h100051;				//	set up PLL power on

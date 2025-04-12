@@ -25,8 +25,12 @@ module STORE_FRAME(iCLK, iRST, iDVAL, iDATA, iFrame_Cont, iX_Cont, iY_Cont, oObj
     logic empty;
     logic wrreq, rdreq, rdreq_ff;
     logic [11:0] threshold;
+    logic [11:0] counter;
+    logic oObjectDetected_thresh;
 
     assign threshold = 12'd64;
+
+    assign oObjectDetected = ((counter >= 5) & oObjectDetected_thresh) ? oObjectDetected_thresh : 1'b0;
 
     always_ff @(posedge iCLK) begin
         rdreq_ff <= rdreq;
@@ -49,11 +53,21 @@ module STORE_FRAME(iCLK, iRST, iDVAL, iDATA, iFrame_Cont, iX_Cont, iY_Cont, oObj
                     //odd frame
     assign rdreq = iFrame_Cont[0] & iDVAL & ({iX_Cont[0],iY_Cont[0]} == 2'b10);
 
+    always_ff @(posedge iCLK or negedge iRST) begin
+        if(~iRST) 
+            counter <= '0;
+        else if(~iFrame_Cont[0]) begin
+            counter <= '0; 
+        end
+        else if(oObjectDetected_thresh) 
+            counter <= counter + 1'b1;
+    end
+
 
     //  abs(iDATA - oDATA) > threshold ? object detected : no object detected
     // if oDATA > iDATA then oDATA - iDATA = oDVAL
     // if oDATA < iDATA then iDATA - oDATA = oDVAL
-    assign oObjectDetected = (rdreq_ff) ? ((oDATA > iDATA_ff) ? (oDATA - iDATA_ff) > threshold : (iDATA_ff - oDATA) > threshold)  
+    assign oObjectDetected_thresh = (rdreq_ff) ? ((oDATA > iDATA_ff) ? (oDATA - iDATA_ff) > threshold : (iDATA_ff - oDATA) > threshold)  
                             : 1'b0;
     
 

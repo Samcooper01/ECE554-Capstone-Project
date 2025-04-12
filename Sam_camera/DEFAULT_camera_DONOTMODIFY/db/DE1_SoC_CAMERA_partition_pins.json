@@ -508,15 +508,31 @@
 					"strict" : false
 				},
 				{
+					"name" : "SW[8]",
+					"strict" : false
+				},
+				{
+					"name" : "SW[7]",
+					"strict" : false
+				},
+				{
+					"name" : "D5M_D[0]",
+					"strict" : false
+				},
+				{
 					"name" : "D5M_LVAL",
 					"strict" : false
 				},
 				{
-					"name" : "KEY[1]",
+					"name" : "D5M_D[10]",
 					"strict" : false
 				},
 				{
-					"name" : "SW[9]",
+					"name" : "D5M_D[11]",
+					"strict" : false
+				},
+				{
+					"name" : "D5M_D[1]",
 					"strict" : false
 				},
 				{
@@ -552,11 +568,11 @@
 					"strict" : false
 				},
 				{
-					"name" : "D5M_D[10]",
+					"name" : "KEY[1]",
 					"strict" : false
 				},
 				{
-					"name" : "D5M_D[11]",
+					"name" : "SW[9]",
 					"strict" : false
 				},
 				{

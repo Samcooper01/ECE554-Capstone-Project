@@ -13,6 +13,9 @@ module color_mean_calibration_tb();
     logic [11:0]    oRed;
     logic [11:0]    oGreen;
     logic [11:0]    oBlue;
+    logic [9:0]     oX_Cent;
+    logic [8:0]     oY_Cent;
+    logic           oCent_Val;
 
     STORE_FRAME iDUT(
         .iCLK(D5M_PXCLK),
@@ -27,6 +30,18 @@ module color_mean_calibration_tb();
         .oGreen(oGreen),               // Pixel value at the location (detected or not) 
         .oBlue(oBlue),                // Pixel value at the location (detected or not)
         .oDVAL()                       // Data valid signal
+    );
+
+    MEAN_COORDS iCORDS(
+        .iCLK(D5M_PXCLK),
+        .iRST(iRST_N),
+        .iFVAL(iFVAL),
+        .iX_Cont(iX_Cont),
+        .iY_Cont(iY_Cont),
+        .iObjectDetected(oObjectDetected),
+        .oX_Cent(oX_Cent),
+        .oY_Cent(oY_Cent),
+        .oCent_Val(oCent_Val)
     );
 
 integer counter = 0;

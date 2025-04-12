@@ -311,7 +311,25 @@ CCD_Capture			u3	(
 						   );
 //D5M raw date convert to RGB data
 
-RAW2RGB_640X480		u4	(	
+wire        oMEAN_VAL;
+wire [11:0] oMEAN;
+
+color_mean_calibration iMEAN_CALC(
+							.D5M_PXCLK(D5M_PIXLCLK),
+							.iRST_N(DLY_RST_1),
+							.iEN(1'b1),
+							.iDATA_VAL(mCCD_DVAL),  
+							.iDATA(mCCD_DATA),
+							.iX_Cont(X_Cont),
+							.iY_Cont(Y_Cont),
+							.iFVAL(rCCD_FVAL),
+							.iCOLOR_SW(SW[8]),
+							.iCAL_SW(SW[7]),
+							.oMEAN_VAL(oMEAN_VAL),
+							.oMEAN(oMEAN)
+							);
+
+RAW2RGB_640X480	u4	(	
 							.iCLK(D5M_PIXLCLK),
 							.iRST(DLY_RST_1),
 							.iDATA(mCCD_DATA),

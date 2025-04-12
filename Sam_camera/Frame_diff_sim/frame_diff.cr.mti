@@ -1,0 +1,22 @@
+I:/ECE554/FinalProject/ECE554-Capstone-Project/ECE554-Capstone-Project/Sam_camera/Frame_diff_sim/color_mean_calibration_tb.sv {1 {vlog -work work -vopt -sv -stats=none I:/ECE554/FinalProject/ECE554-Capstone-Project/ECE554-Capstone-Project/Sam_camera/Frame_diff_sim/color_mean_calibration_tb.sv
+Questa Intel Starter FPGA Edition-64 vlog 2023.3 Compiler 2023.07 Jul 17 2023
+-- Compiling module color_mean_calibration_tb
+
+Top level modules:
+	color_mean_calibration_tb
+
+} {} {}} I:/ECE554/FinalProject/ECE554-Capstone-Project/ECE554-Capstone-Project/Sam_camera/Frame_diff_sim/STORE_FRAME.sv {1 {vlog -work work -vopt -sv -stats=none I:/ECE554/FinalProject/ECE554-Capstone-Project/ECE554-Capstone-Project/Sam_camera/Frame_diff_sim/STORE_FRAME.sv
+Questa Intel Starter FPGA Edition-64 vlog 2023.3 Compiler 2023.07 Jul 17 2023
+-- Compiling module STORE_FRAME
+
+Top level modules:
+	STORE_FRAME
+
+} {} {}} I:/ECE554/FinalProject/ECE554-Capstone-Project/ECE554-Capstone-Project/Sam_camera/Frame_diff_sim/FIFO_FRAME_RED.v {1 {vlog -work work -vopt -stats=none I:/ECE554/FinalProject/ECE554-Capstone-Project/ECE554-Capstone-Project/Sam_camera/Frame_diff_sim/FIFO_FRAME_RED.v
+Questa Intel Starter FPGA Edition-64 vlog 2023.3 Compiler 2023.07 Jul 17 2023
+-- Compiling module FIFO_FRAME_RED
+
+Top level modules:
+	FIFO_FRAME_RED
+
+} {} {}}
