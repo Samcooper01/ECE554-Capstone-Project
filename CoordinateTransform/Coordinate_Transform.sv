@@ -8,13 +8,7 @@ module Coordinate_Transform #(
      input signed [9:0] y,
      input fill_LUT, clk, rst_n,
      output reg ready,
-     output [10:0] pan, tilt);
-
-    // Center x, y on grid for calculations (assumes bottom right is 0,0)
-    logic signed [10:0] x_adj;
-    logic signed [9:0] y_adj;
-    assign x_adj = x_res/2 - x;
-    assign y_adj = y - y_res/2;
+     output reg [10:0] pan, tilt);
 
     // LUT write control signals
     logic [10:0] pan_in;
@@ -23,6 +17,7 @@ module Coordinate_Transform #(
     reg [10:0] x_idx;
     reg [9:0] y_idx;
     reg filling;
+    
     // LUT instantiation
     LUT #(x_res, y_res) iLUT(
         .x(filling ? x_idx : x),
@@ -38,6 +33,17 @@ module Coordinate_Transform #(
 
     // LUT filling logic
 
+    // Center x, y on grid for calculations (assumes bottom right is 0,0)
+    logic signed [10:0] x_adj;
+    logic signed [9:0] y_adj;
+    assign x_adj = 10'd320 - x_idx;
+    assign y_adj = y_idx - 10'd240;
+
+
+    // Find # of us that is in the FOV (~FOV*11.111...)
+    logic signed[9:0]available_pan, available_tilt;
+    assign available_pan = (pan_FOV * 14'd11111) / 10'd1000; 
+    assign available_tilt = (tilt_FOV * 14'd11111) / 10'd1000;
     always @(posedge clk or negedge rst_n) begin
         if (!rst_n) begin
             ready <= 1;
@@ -50,18 +56,15 @@ module Coordinate_Transform #(
             x_idx <= 0;
             y_idx <= 0;
         end else if (filling) begin
-            if (y_idx < y_res) begin
-                if (x_idx < x_res) begin
-                    // Perform LUT computation and write
-                    pan_we <= 1;
-                    tilt_we <= 1;
-                    pan_in <= (x_idx * pan_FOV) / x_res - (pan_FOV / 2);
-                    tilt_in <= (y_idx * tilt_FOV) / y_res - (tilt_FOV / 2);
-                    x_idx <= x_idx + 1;
-                end else begin
-                    x_idx <= 0;
-                    y_idx <= y_idx + 1;
-                end
+              if (x_idx < x_res) begin
+                  // Fixed-point calculation of pan_in and tilt_in
+                  pan_we <= 1;
+                  pan_in <= (x_adj * available_pan * 9'd205) >>> 5'd17 + available_pan; 
+                  x_idx <= x_idx + 1;
+              end else if (y_idx < y_res) begin
+                  tilt_we <= 1;
+	   	  tilt_in <= (y_adj * available_tilt  * 15'd10923) >>> 5'd20 + available_tilt; 
+                  y_idx <= y_idx + 1;
             end else begin
                 filling <= 0;
                 ready <= 1;
@@ -72,4 +75,7 @@ module Coordinate_Transform #(
         end
     end
 endmodule
+
+
+
 

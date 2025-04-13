@@ -6,7 +6,7 @@ module LUT #(
 
     input signed[10:0]x;
     input signed[9:0]y;
-    output[10:0] pan, tilt;
+    output reg[10:0] pan, tilt;
 
     input pan_we, tilt_we;
     input[10:0] tilt_in, pan_in;
@@ -22,13 +22,15 @@ module LUT #(
             pan_data[x] <= pan_in;
     end
 
-    assign pan = pan_data[x] + 10'd1000;
+    
 
     always_ff @(posedge clk) begin
         if(tilt_we)
             tilt_data[y] <= tilt_in;
     end
 
-    assign tilt = tilt_data[y] + 10'd1000;
-
+    always_ff @(posedge clk) begin
+      tilt <= tilt_data[y] + 10'd1000;
+      pan <= pan_data[x] + 10'd1000;
+    end
 endmodule
