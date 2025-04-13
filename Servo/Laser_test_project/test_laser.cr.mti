@@ -1,0 +1,79 @@
+I:/ECE554/ECE554-Capstone-Project/Servo/Quartus/pan_tilt.sv {0 {vlog -work work -vopt -sv -stats=none {I:\ECE554\ECE554-Capstone-Project\Servo\Quartus\pan_tilt.sv}
+Questa Intel Starter FPGA Edition-64 vlog 2023.3 Compiler 2023.07 Jul 17 2023
+-- Compiling module pan_tilt
+** Error: I:\ECE554\ECE554-Capstone-Project\Servo\Quartus\pan_tilt.sv(137): (vlog-2110) Illegal reference to net "HEX0".
+** Error: I:\ECE554\ECE554-Capstone-Project\Servo\Quartus\pan_tilt.sv(138): (vlog-2110) Illegal reference to net "HEX0".
+** Error: I:\ECE554\ECE554-Capstone-Project\Servo\Quartus\pan_tilt.sv(139): (vlog-2110) Illegal reference to net "HEX0".
+** Error: I:\ECE554\ECE554-Capstone-Project\Servo\Quartus\pan_tilt.sv(140): (vlog-2110) Illegal reference to net "HEX0".
+** Error: I:\ECE554\ECE554-Capstone-Project\Servo\Quartus\pan_tilt.sv(141): (vlog-2110) Illegal reference to net "HEX0".
+** Error: I:\ECE554\ECE554-Capstone-Project\Servo\Quartus\pan_tilt.sv(142): (vlog-2110) Illegal reference to net "HEX0".
+** Error: I:\ECE554\ECE554-Capstone-Project\Servo\Quartus\pan_tilt.sv(143): (vlog-2110) Illegal reference to net "HEX0".
+** Error: I:\ECE554\ECE554-Capstone-Project\Servo\Quartus\pan_tilt.sv(144): (vlog-2110) Illegal reference to net "HEX0".
+** Error: I:\ECE554\ECE554-Capstone-Project\Servo\Quartus\pan_tilt.sv(145): (vlog-2110) Illegal reference to net "HEX0".
+** Error: I:\ECE554\ECE554-Capstone-Project\Servo\Quartus\pan_tilt.sv(146): (vlog-2110) Illegal reference to net "HEX0".
+** Error: I:\ECE554\ECE554-Capstone-Project\Servo\Quartus\pan_tilt.sv(147): (vlog-2110) Illegal reference to net "HEX0".
+** Error: I:\ECE554\ECE554-Capstone-Project\Servo\Quartus\pan_tilt.sv(148): (vlog-2110) Illegal reference to net "HEX0".
+** Error: I:\ECE554\ECE554-Capstone-Project\Servo\Quartus\pan_tilt.sv(149): (vlog-2110) Illegal reference to net "HEX0".
+** Error: I:\ECE554\ECE554-Capstone-Project\Servo\Quartus\pan_tilt.sv(150): (vlog-2110) Illegal reference to net "HEX0".
+** Error: I:\ECE554\ECE554-Capstone-Project\Servo\Quartus\pan_tilt.sv(151): (vlog-2110) Illegal reference to net "HEX0".
+** Error: I:\ECE554\ECE554-Capstone-Project\Servo\Quartus\pan_tilt.sv(152): (vlog-2110) Illegal reference to net "HEX0".
+** Error: I:\ECE554\ECE554-Capstone-Project\Servo\Quartus\pan_tilt.sv(158): (vlog-2110) Illegal reference to net "HEX1".
+** Error: I:\ECE554\ECE554-Capstone-Project\Servo\Quartus\pan_tilt.sv(159): (vlog-2110) Illegal reference to net "HEX1".
+** Error: I:\ECE554\ECE554-Capstone-Project\Servo\Quartus\pan_tilt.sv(160): (vlog-2110) Illegal reference to net "HEX1".
+** Error: I:\ECE554\ECE554-Capstone-Project\Servo\Quartus\pan_tilt.sv(161): (vlog-2110) Illegal reference to net "HEX1".
+** Error: I:\ECE554\ECE554-Capstone-Project\Servo\Quartus\pan_tilt.sv(162): (vlog-2110) Illegal reference to net "HEX1".
+** Error: I:\ECE554\ECE554-Capstone-Project\Servo\Quartus\pan_tilt.sv(163): (vlog-2110) Illegal reference to net "HEX1".
+** Error: I:\ECE554\ECE554-Capstone-Project\Servo\Quartus\pan_tilt.sv(164): (vlog-2110) Illegal reference to net "HEX1".
+** Error: I:\ECE554\ECE554-Capstone-Project\Servo\Quartus\pan_tilt.sv(165): (vlog-2110) Illegal reference to net "HEX1".
+** Error: I:\ECE554\ECE554-Capstone-Project\Servo\Quartus\pan_tilt.sv(166): (vlog-2110) Illegal reference to net "HEX1".
+** Error: I:\ECE554\ECE554-Capstone-Project\Servo\Quartus\pan_tilt.sv(167): (vlog-2110) Illegal reference to net "HEX1".
+** Error: I:\ECE554\ECE554-Capstone-Project\Servo\Quartus\pan_tilt.sv(168): (vlog-2110) Illegal reference to net "HEX1".
+** Error: I:\ECE554\ECE554-Capstone-Project\Servo\Quartus\pan_tilt.sv(169): (vlog-2110) Illegal reference to net "HEX1".
+** Error: I:\ECE554\ECE554-Capstone-Project\Servo\Quartus\pan_tilt.sv(170): (vlog-2110) Illegal reference to net "HEX1".
+** Error: I:\ECE554\ECE554-Capstone-Project\Servo\Quartus\pan_tilt.sv(171): (vlog-2110) Illegal reference to net "HEX1".
+** Error: I:\ECE554\ECE554-Capstone-Project\Servo\Quartus\pan_tilt.sv(172): (vlog-2110) Illegal reference to net "HEX1".
+** Error: I:\ECE554\ECE554-Capstone-Project\Servo\Quartus\pan_tilt.sv(173): (vlog-2110) Illegal reference to net "HEX1".
+** Error: I:\ECE554\ECE554-Capstone-Project\Servo\Quartus\pan_tilt.sv(179): (vlog-2110) Illegal reference to net "HEX2".
+** Error: I:\ECE554\ECE554-Capstone-Project\Servo\Quartus\pan_tilt.sv(180): (vlog-2110) Illegal reference to net "HEX2".
+** Error: I:\ECE554\ECE554-Capstone-Project\Servo\Quartus\pan_tilt.sv(181): (vlog-2110) Illegal reference to net "HEX2".
+** Error: I:\ECE554\ECE554-Capstone-Project\Servo\Quartus\pan_tilt.sv(182): (vlog-2110) Illegal reference to net "HEX2".
+** Error: I:\ECE554\ECE554-Capstone-Project\Servo\Quartus\pan_tilt.sv(184): (vlog-2110) Illegal reference to net "HEX3".
+** Error: I:\ECE554\ECE554-Capstone-Project\Servo\Quartus\pan_tilt.sv(185): (vlog-2110) Illegal reference to net "HEX4".
+** Error: I:\ECE554\ECE554-Capstone-Project\Servo\Quartus\pan_tilt.sv(186): (vlog-2110) Illegal reference to net "HEX5".
+
+} {4.0 43.0} {}} I:/ECE554/ECE554-Capstone-Project/Servo/Laser_test_project/pan_tilt_tb.sv {1 {vlog -work work -vopt -sv -stats=none {I:\ECE554\ECE554-Capstone-Project\Servo\Laser_test_project\pan_tilt_tb.sv}
+Questa Intel Starter FPGA Edition-64 vlog 2023.3 Compiler 2023.07 Jul 17 2023
+-- Compiling module pan_tilt_tb
+
+Top level modules:
+	pan_tilt_tb
+
+} {} {}} I:/ECE554/ECE554-Capstone-Project/Servo/Driver/counter.sv {1 {vlog -work work -vopt -sv -stats=none I:/ECE554/ECE554-Capstone-Project/Servo/Driver/counter.sv
+Questa Intel Starter FPGA Edition-64 vlog 2023.3 Compiler 2023.07 Jul 17 2023
+-- Compiling module counter
+
+Top level modules:
+	counter
+
+} {} {}} I:/ECE554/ECE554-Capstone-Project/CoordinateTransform/Coordinate_Transform.sv {1 {vlog -work work -vopt -sv -stats=none {I:\ECE554\ECE554-Capstone-Project\CoordinateTransform\Coordinate_Transform.sv}
+Questa Intel Starter FPGA Edition-64 vlog 2023.3 Compiler 2023.07 Jul 17 2023
+-- Compiling module Coordinate_Transform
+
+Top level modules:
+	Coordinate_Transform
+
+} {} {}} I:/ECE554/ECE554-Capstone-Project/Servo/Driver/servo.sv {1 {vlog -work work -vopt -sv -stats=none I:/ECE554/ECE554-Capstone-Project/Servo/Driver/servo.sv
+Questa Intel Starter FPGA Edition-64 vlog 2023.3 Compiler 2023.07 Jul 17 2023
+-- Compiling module servo
+
+Top level modules:
+	servo
+
+} {} {}} I:/ECE554/ECE554-Capstone-Project/CoordinateTransform/LUT.sv {1 {vlog -work work -vopt -sv -stats=none I:/ECE554/ECE554-Capstone-Project/CoordinateTransform/LUT.sv
+Questa Intel Starter FPGA Edition-64 vlog 2023.3 Compiler 2023.07 Jul 17 2023
+-- Compiling module LUT
+
+Top level modules:
+	LUT
+
+} {} {}}
