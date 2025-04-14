@@ -6,10 +6,10 @@ module state_machine # (
     input           clk,
     input           rst_n,
     input           on_screen,              // set when the paper airplaine is on screen calculated by the object tracker
-    input   [10:0]  tracked_coordinates_x,  // coordinates of the tracked paper airplane
-    input   [10:0]  tracked_coordinates_y,
-    output  [10:0]  driven_coordinates_x,   // coordinates given to the servo pipeline
-    output  [10:0]  driven_coordinates_y,
+    input   [9:0]  tracked_coordinates_x,  // coordinates of the tracked paper airplane
+    input   [8:0]  tracked_coordinates_y,
+    output  [9:0]  driven_coordinates_x,   // coordinates given to the servo pipeline
+    output  [8:0]  driven_coordinates_y,
     output          fire                    // turn this on to fire laser
 );
 
