@@ -22,7 +22,7 @@ module Coordinate_transform_v2 #(
     logic signed [20:0] x_mult, y_mult;
     logic signed [31:0] x_div, y_div;
   always_ff @(posedge clk) begin
-    x_adj <= x - 10'd320;
+    x_adj <= 10'd320 - x;
     y_adj <= y - 10'd240;
     x_mult <= x_adj * available_pan;
     y_mult <= y_adj * available_tilt;
