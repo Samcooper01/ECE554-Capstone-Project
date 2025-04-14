@@ -4,10 +4,10 @@ module state_machine_tb ();
 logic           clk;
 logic           rst_n;
 logic           on_screen;
-logic  [10:0]   tracked_coordinates_x;
-logic  [10:0]   tracked_coordinates_y;
-logic  [10:0]   driven_coordinates_x;
-logic  [10:0]   driven_coordinates_y;
+logic  [9:0]   tracked_coordinates_x;
+logic  [8:0]   tracked_coordinates_y;
+logic  [9:0]   driven_coordinates_x;
+logic  [8:0]   driven_coordinates_y;
 logic           fire;
 
 // DUT

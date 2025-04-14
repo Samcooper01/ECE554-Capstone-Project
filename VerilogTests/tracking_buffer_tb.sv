@@ -3,7 +3,7 @@ module tracking_buffer_tb();
 // Signals
 logic clk;
 logic rst_n;
-logic oObjectDetected;
+logic oCent_Val;
 logic on_screen;
 
 // DUT
@@ -13,26 +13,26 @@ tracking_buffer # (
 ) DUT (
     .clk(clk),
     .rst_n(rst_n),
-    .oObjectDetected(oObjectDetected),
+    .oCent_Val(oCent_Val),
     .on_screen(on_screen)
 );
 
 initial begin
     clk = 0;
     rst_n = 0;
-    oObjectDetected = 0;
+    oCent_Val = 0;
     @(negedge clk);
     rst_n = 1;
     @(negedge clk);
     
-    oObjectDetected = 1;
+    oCent_Val = 1;
     repeat(100) @(negedge clk);
     if (on_screen !== 1) begin
         $display("Error 1: the object should always be on screen while detected");
         $stop();
     end
     @(negedge clk);
-    oObjectDetected = 0;
+    oCent_Val = 0;
     @(negedge clk);
     if (on_screen !== 1) begin
         $display("Error 2: the object is not on screen 1 cycle after being seen");
@@ -44,14 +44,14 @@ initial begin
         $stop();
     end
     @(negedge clk);
-    oObjectDetected = 1;
+    oCent_Val = 1;
     repeat(1000) @(negedge clk);
     if (on_screen !== 1) begin
         $display("Error 4: the timer did not stop");
         $stop();
     end
     @(negedge clk);
-    oObjectDetected = 0;
+    oCent_Val = 0;
     repeat(600) @(negedge clk);
     if (on_screen !== 1) begin
         $display("Error 5: the object is not on screen halfway though the second timer");
@@ -63,14 +63,14 @@ initial begin
         $stop();
     end
     @(negedge clk);
-    oObjectDetected = 1;
+    oCent_Val = 1;
     @(negedge clk);
     if (on_screen !== 1) begin
         $display("Error 7: the object should be back on the screen");
         $stop();
     end
     @(negedge clk);
-    oObjectDetected = 0;
+    oCent_Val = 0;
     @(negedge clk);
     repeat(600) @(negedge clk);
     if (on_screen !== 1) begin

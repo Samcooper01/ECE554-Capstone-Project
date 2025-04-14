@@ -1,8 +1,10 @@
 module servo (
     input clk, 
     input rst_n, 
-    input logic [7:0] angle,
-    output logic pwm_pin
+    //input logic [7:0] angle,
+    input logic [10:0] pulse_width,
+    output logic pwm_pin,
+	 output logic open
 ); 
 
     //determine how many 50MHz clock cycles are needed to generate a 1us pulse
@@ -27,7 +29,7 @@ module servo (
     );
 
     //calculate pulse width based on angle input
-    reg [15:0] pulse_width;             // units of us
+    /*reg [15:0] pulse_width;             // units of us
     logic [7:0] logical_angle;
 
     always_comb begin
@@ -40,17 +42,20 @@ module servo (
         end
 
         pulse_width = MIN_PULSE + ((logical_angle * 1000) / 180);
-    end
+    end*/
 
     //generate PWM signal
     always_ff @(posedge clk or negedge rst_n) begin 
         if (!rst_n) begin 
             pwm_pin <= 1'b0;
+				open <= 1'b0;
         end else begin 
-            if (counter <= pulse_width) begin
+            if (counter <= pulse_width + MIN_PULSE) begin
                 pwm_pin <= 1'b1;
+					 open <= 1'b0;
             end else begin 
                 pwm_pin <= 1'b0;
+					 open <= 1'b1;
             end
         end
     end

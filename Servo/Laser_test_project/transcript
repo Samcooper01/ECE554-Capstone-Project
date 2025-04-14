@@ -1,0 +1,271 @@
+# Compile of counter.sv was successful.
+# Compile of servo.sv was successful.
+# Compile of Coordinate_Transform.sv was successful.
+# Compile of LUT.sv was successful.
+# Compile of pan_tilt.sv failed with 43 errors.
+# Compile of Coordinate_transform_v2.sv was successful.
+# Compile of pan_tilt_tb.sv was successful.
+# 7 compiles, 1 failed with 43 errors.
+# Compile of pan_tilt.sv was successful.
+# Compile of pan_tilt_tb.sv was successful.
+vsim -voptargs=+acc work.pan_tilt_tb
+# vsim -voptargs="+acc" work.pan_tilt_tb 
+# Start time: 17:29:48 on Apr 10,2025
+# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
+# ** Warning: (vopt-10587) Some optimizations are turned off because the +acc switch is in effect. This will cause your simulation to run slowly. Please use -access/-debug to maintain needed visibility.
+# ** Warning: I:\ECE554\ECE554-Capstone-Project\Servo\Laser_test_project\pan_tilt_tb.sv(7): (vopt-2685) [TFMPC] - Too few port connections for 'iDUT'.  Expected 14, found 4.
+# ** Warning: I:\ECE554\ECE554-Capstone-Project\Servo\Laser_test_project\pan_tilt_tb.sv(7): (vopt-2718) [TFMPC] - Missing connection for port 'LEDR'.
+# ** Warning: I:\ECE554\ECE554-Capstone-Project\Servo\Laser_test_project\pan_tilt_tb.sv(7): (vopt-2718) [TFMPC] - Missing connection for port 'HEX5'.
+# ** Warning: I:\ECE554\ECE554-Capstone-Project\Servo\Laser_test_project\pan_tilt_tb.sv(7): (vopt-2718) [TFMPC] - Missing connection for port 'HEX4'.
+# ** Warning: I:\ECE554\ECE554-Capstone-Project\Servo\Laser_test_project\pan_tilt_tb.sv(7): (vopt-2718) [TFMPC] - Missing connection for port 'HEX3'.
+# ** Warning: I:\ECE554\ECE554-Capstone-Project\Servo\Laser_test_project\pan_tilt_tb.sv(7): (vopt-2718) [TFMPC] - Missing connection for port 'HEX2'.
+# ** Warning: I:\ECE554\ECE554-Capstone-Project\Servo\Laser_test_project\pan_tilt_tb.sv(7): (vopt-2718) [TFMPC] - Missing connection for port 'HEX1'.
+# ** Warning: I:\ECE554\ECE554-Capstone-Project\Servo\Laser_test_project\pan_tilt_tb.sv(7): (vopt-2718) [TFMPC] - Missing connection for port 'HEX0'.
+# ** Warning: I:\ECE554\ECE554-Capstone-Project\Servo\Laser_test_project\pan_tilt_tb.sv(7): (vopt-2718) [TFMPC] - Missing connection for port 'CLOCK4_50'.
+# ** Warning: I:\ECE554\ECE554-Capstone-Project\Servo\Laser_test_project\pan_tilt_tb.sv(7): (vopt-2718) [TFMPC] - Missing connection for port 'CLOCK3_50'.
+# ** Warning: I:\ECE554\ECE554-Capstone-Project\Servo\Laser_test_project\pan_tilt_tb.sv(7): (vopt-2718) [TFMPC] - Missing connection for port 'CLOCK2_50'.
+# ** Note: (vsim-12126) Error and warning message counts have been restored: Errors=0, Warnings=12.
+# Loading sv_std.std
+# Loading work.pan_tilt_tb(fast)
+# Loading work.pan_tilt(fast)
+# Loading work.servo(fast)
+# Loading work.counter(fast)
+# Loading work.Coordinate_transform_v2(fast)
+# Compile of pan_tilt_tb.sv was successful.
+add wave -position insertpoint sim:/pan_tilt_tb/iDUT/*
+add wave -position insertpoint sim:/pan_tilt_tb/iDUT/transform/*
+restart
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# ** Note: (vsim-8009) Loading existing optimized design _opt
+# ** Note: (vsim-12126) Error and warning message counts have been restored: Errors=0, Warnings=12.
+# Loading work.pan_tilt_tb(fast)
+# Loading work.pan_tilt(fast)
+# Loading work.servo(fast)
+# Loading work.counter(fast)
+# Loading work.Coordinate_transform_v2(fast)
+run
+run
+run
+run
+run
+# Compile of Coordinate_transform_v2.sv was successful.
+restart
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
+# ** Warning: (vopt-10587) Some optimizations are turned off because the +acc switch is in effect. This will cause your simulation to run slowly. Please use -access/-debug to maintain needed visibility.
+# ** Note: (vsim-12126) Error and warning message counts have been restored: Errors=0, Warnings=1.
+# Loading sv_std.std
+# Loading work.pan_tilt_tb(fast)
+# Loading work.pan_tilt(fast)
+# Loading work.servo(fast)
+# Loading work.counter(fast)
+# Loading work.Coordinate_transform_v2(fast)
+run -all
+restart
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# ** Note: (vsim-8009) Loading existing optimized design _opt
+# ** Note: (vsim-12126) Error and warning message counts have been restored: Errors=0, Warnings=1.
+# Loading work.pan_tilt_tb(fast)
+# Loading work.pan_tilt(fast)
+# Loading work.servo(fast)
+# Loading work.counter(fast)
+# Loading work.Coordinate_transform_v2(fast)
+run
+run
+restart
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# ** Note: (vsim-8009) Loading existing optimized design _opt
+# ** Note: (vsim-12126) Error and warning message counts have been restored: Errors=0, Warnings=1.
+# Loading work.pan_tilt_tb(fast)
+# Loading work.pan_tilt(fast)
+# Loading work.servo(fast)
+# Loading work.counter(fast)
+# Loading work.Coordinate_transform_v2(fast)
+# Compile of Coordinate_transform_v2.sv was successful.
+restart
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
+# ** Warning: (vopt-10587) Some optimizations are turned off because the +acc switch is in effect. This will cause your simulation to run slowly. Please use -access/-debug to maintain needed visibility.
+# ** Note: (vsim-12126) Error and warning message counts have been restored: Errors=0, Warnings=1.
+# Loading sv_std.std
+# Loading work.pan_tilt_tb(fast)
+# Loading work.pan_tilt(fast)
+# Loading work.servo(fast)
+# Loading work.counter(fast)
+# Loading work.Coordinate_transform_v2(fast)
+run
+run
+# Compile of Coordinate_transform_v2.sv was successful.
+restart
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
+# ** Warning: (vopt-10587) Some optimizations are turned off because the +acc switch is in effect. This will cause your simulation to run slowly. Please use -access/-debug to maintain needed visibility.
+# ** Note: (vsim-12126) Error and warning message counts have been restored: Errors=0, Warnings=1.
+# Loading sv_std.std
+# Loading work.pan_tilt_tb(fast)
+# Loading work.pan_tilt(fast)
+# Loading work.servo(fast)
+# Loading work.counter(fast)
+# Loading work.Coordinate_transform_v2(fast)
+run
+run
+# Compile of Coordinate_transform_v2.sv was successful.
+restart
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
+# ** Warning: (vopt-10587) Some optimizations are turned off because the +acc switch is in effect. This will cause your simulation to run slowly. Please use -access/-debug to maintain needed visibility.
+# ** Note: (vsim-12126) Error and warning message counts have been restored: Errors=0, Warnings=1.
+# Loading sv_std.std
+# Loading work.pan_tilt_tb(fast)
+# Loading work.pan_tilt(fast)
+# Loading work.servo(fast)
+# Loading work.counter(fast)
+# Loading work.Coordinate_transform_v2(fast)
+run
+run
+# Compile of Coordinate_transform_v2.sv was successful.
+restart
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
+# ** Warning: (vopt-10587) Some optimizations are turned off because the +acc switch is in effect. This will cause your simulation to run slowly. Please use -access/-debug to maintain needed visibility.
+# ** Note: (vsim-12126) Error and warning message counts have been restored: Errors=0, Warnings=1.
+# Loading sv_std.std
+# Loading work.pan_tilt_tb(fast)
+# Loading work.pan_tilt(fast)
+# Loading work.servo(fast)
+# Loading work.counter(fast)
+# Loading work.Coordinate_transform_v2(fast)
+run
+run
+# Compile of Coordinate_transform_v2.sv was successful.
+restart
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
+# ** Warning: (vopt-10587) Some optimizations are turned off because the +acc switch is in effect. This will cause your simulation to run slowly. Please use -access/-debug to maintain needed visibility.
+# ** Note: (vsim-12126) Error and warning message counts have been restored: Errors=0, Warnings=1.
+# Loading sv_std.std
+# Loading work.pan_tilt_tb(fast)
+# Loading work.pan_tilt(fast)
+# Loading work.servo(fast)
+# Loading work.counter(fast)
+# Loading work.Coordinate_transform_v2(fast)
+run
+# Compile of Coordinate_transform_v2.sv was successful.
+restart
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
+# ** Warning: (vopt-10587) Some optimizations are turned off because the +acc switch is in effect. This will cause your simulation to run slowly. Please use -access/-debug to maintain needed visibility.
+# ** Note: (vsim-12126) Error and warning message counts have been restored: Errors=0, Warnings=1.
+# Loading sv_std.std
+# Loading work.pan_tilt_tb(fast)
+# Loading work.pan_tilt(fast)
+# Loading work.servo(fast)
+# Loading work.counter(fast)
+# Loading work.Coordinate_transform_v2(fast)
+run
+run
+# Compile of Coordinate_transform_v2.sv was successful.
+restart
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
+# ** Warning: (vopt-10587) Some optimizations are turned off because the +acc switch is in effect. This will cause your simulation to run slowly. Please use -access/-debug to maintain needed visibility.
+# ** Note: (vsim-12126) Error and warning message counts have been restored: Errors=0, Warnings=1.
+# Loading sv_std.std
+# Loading work.pan_tilt_tb(fast)
+# Loading work.pan_tilt(fast)
+# Loading work.servo(fast)
+# Loading work.counter(fast)
+# Loading work.Coordinate_transform_v2(fast)
+run
+run
+# Compile of Coordinate_transform_v2.sv was successful.
+restart
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
+# ** Warning: (vopt-10587) Some optimizations are turned off because the +acc switch is in effect. This will cause your simulation to run slowly. Please use -access/-debug to maintain needed visibility.
+# ** Note: (vsim-12126) Error and warning message counts have been restored: Errors=0, Warnings=1.
+# Loading sv_std.std
+# Loading work.pan_tilt_tb(fast)
+# Loading work.pan_tilt(fast)
+# Loading work.servo(fast)
+# Loading work.counter(fast)
+# Loading work.Coordinate_transform_v2(fast)
+run -all
+restart
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# ** Note: (vsim-8009) Loading existing optimized design _opt
+# ** Note: (vsim-12126) Error and warning message counts have been restored: Errors=0, Warnings=1.
+# Loading work.pan_tilt_tb(fast)
+# Loading work.pan_tilt(fast)
+# Loading work.servo(fast)
+# Loading work.counter(fast)
+# Loading work.Coordinate_transform_v2(fast)
+run
+run
+# Compile of Coordinate_transform_v2.sv was successful.
+restart
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
+# ** Warning: (vopt-10587) Some optimizations are turned off because the +acc switch is in effect. This will cause your simulation to run slowly. Please use -access/-debug to maintain needed visibility.
+# ** Note: (vsim-12126) Error and warning message counts have been restored: Errors=0, Warnings=1.
+# Loading sv_std.std
+# Loading work.pan_tilt_tb(fast)
+# Loading work.pan_tilt(fast)
+# Loading work.servo(fast)
+# Loading work.counter(fast)
+# Loading work.Coordinate_transform_v2(fast)
+run
+run
+# Compile of Coordinate_transform_v2.sv was successful.
+restart
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
+# ** Warning: (vopt-10587) Some optimizations are turned off because the +acc switch is in effect. This will cause your simulation to run slowly. Please use -access/-debug to maintain needed visibility.
+# ** Note: (vsim-12126) Error and warning message counts have been restored: Errors=0, Warnings=1.
+# Loading sv_std.std
+# Loading work.pan_tilt_tb(fast)
+# Loading work.pan_tilt(fast)
+# Loading work.servo(fast)
+# Loading work.counter(fast)
+# Loading work.Coordinate_transform_v2(fast)
+run
+run
+# Compile of Coordinate_transform_v2.sv was successful.
+restart
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
+# ** Warning: (vopt-10587) Some optimizations are turned off because the +acc switch is in effect. This will cause your simulation to run slowly. Please use -access/-debug to maintain needed visibility.
+# ** Note: (vsim-12126) Error and warning message counts have been restored: Errors=0, Warnings=1.
+# Loading sv_std.std
+# Loading work.pan_tilt_tb(fast)
+# Loading work.pan_tilt(fast)
+# Loading work.servo(fast)
+# Loading work.counter(fast)
+# Loading work.Coordinate_transform_v2(fast)
+run
+run
+# Compile of counter.sv was successful.
+# Compile of servo.sv was successful.
+# Compile of Coordinate_Transform.sv was successful.
+# Compile of LUT.sv was successful.
+# Compile of pan_tilt.sv failed with 39 errors.
+# Compile of Coordinate_transform_v2.sv was successful.
+# Compile of pan_tilt_tb.sv was successful.
+# 7 compiles, 1 failed with 39 errors.
+restart
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
+# ** Warning: (vopt-10587) Some optimizations are turned off because the +acc switch is in effect. This will cause your simulation to run slowly. Please use -access/-debug to maintain needed visibility.
+# ** Warning: I:\ECE554\ECE554-Capstone-Project\Servo\Quartus\pan_tilt.sv(77): (vopt-2685) [TFMPC] - Too few port connections for 'SERVO_PAN'.  Expected 5, found 4.
+# ** Warning: I:\ECE554\ECE554-Capstone-Project\Servo\Quartus\pan_tilt.sv(77): (vopt-2718) [TFMPC] - Missing connection for port 'open'.
+# ** Warning: I:\ECE554\ECE554-Capstone-Project\Servo\Quartus\pan_tilt.sv(84): (vopt-2685) [TFMPC] - Too few port connections for 'SERVO_TILT'.  Expected 5, found 4.
+# ** Warning: I:\ECE554\ECE554-Capstone-Project\Servo\Quartus\pan_tilt.sv(84): (vopt-2718) [TFMPC] - Missing connection for port 'open'.
+# ** Note: (vsim-12126) Error and warning message counts have been restored: Errors=0, Warnings=5.
+# Loading sv_std.std
+# Loading work.pan_tilt_tb(fast)
+# Loading work.pan_tilt(fast)
+# Loading work.servo(fast)
+# Loading work.counter(fast)
+# Loading work.Coordinate_transform_v2(fast)
+run
+run
