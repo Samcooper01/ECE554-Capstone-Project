@@ -5,6 +5,22 @@ mSetup_ST.0000 0 0 0
 mSetup_ST.0001 1 0 1 
 mSetup_ST.0010 1 1 0 
 
+State Machine - |DE1_SoC_CAMERA|state_machine:state_machine|state
+Name state.IDLE state.LOCKED state.TRACKING 
+state.IDLE 0 0 0 
+state.TRACKING 1 0 1 
+state.LOCKED 1 1 0 
+
+State Machine - |DE1_SoC_CAMERA|state_machine:state_machine|timer:fire_timer|state
+Name state.RUN 
+state.IDLE 0 
+state.RUN 1 
+
+State Machine - |DE1_SoC_CAMERA|tracking_buffer:tracking_buffer|timer:fire_timer|state
+Name state.RUN 
+state.IDLE 0 
+state.RUN 1 
+
 State Machine - |DE1_SoC_CAMERA|MEAN_COORDS:iCOORDS|state
 Name state.IDLE state.CALC state.FRAME_BEGIN 
 state.IDLE 0 0 0 

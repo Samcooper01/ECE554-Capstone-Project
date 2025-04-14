@@ -269,7 +269,7 @@ assign	D5M_RESET_N	=	DLY_RST_1;
 
 assign   VGA_CTRL_CLK = VGA_CLK;
 
-assign	LEDR		=	Y_Cont;
+assign	LEDR[9:1]		=	Y_Cont[9:1];
 
 //fetch the high 8 bits
 assign  VGA_R = oVGA_R[9:2];
@@ -373,7 +373,7 @@ logic on_screen;
 
 
 tracking_buffer # (
-    .clock_frequency_mhz(clock_frequency_mhz),
+    .clock_frequency_mhz(clock_frequency_mhz)
 ) tracking_buffer (
     .clk(CLOCK_50),
     .rst_n(DLY_RST_2),
@@ -391,7 +391,7 @@ coordinate_latch coordinate_buffer (
 );
 
 state_machine #(
-    .clock_frequency_mhz(clock_frequency_mhz),
+    .clock_frequency_mhz(clock_frequency_mhz)
 ) state_machine (
     .clk(CLOCK_50),
     .rst_n(DLY_RST_2),
@@ -414,9 +414,8 @@ logic [10:0]pan_angle;
 logic [10:0]tilt_angle;
 
 assign LEDR[0] = ~DLY_RST_2;
-assign LEDR[1] = dir_sel;
-assign GPIO[0] = tilt_pwm; 
-assign GPIO[1] = pan_pwm;
+assign GPIO_0[0] = tilt_pwm; 
+assign GPIO_0[1] = pan_pwm;
 
 // instantiate servo module here
 servo SERVO_PAN(

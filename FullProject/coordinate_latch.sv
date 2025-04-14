@@ -14,7 +14,7 @@ logic [8:0] intermediate_y;
 // Latch Logic
 assign tracked_coordinates_x = intermediate_x;
 assign tracked_coordinates_y = intermediate_y;
-always @(oCent_Val, oX_Cent, oY_Cent, negedge rst_n) begin
+always @(oCent_Val, oX_Cent, oY_Cent, rst_n) begin
     if (!rst_n) begin
         intermediate_x = 320;
         intermediate_y = 240;
