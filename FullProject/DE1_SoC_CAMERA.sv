@@ -34,7 +34,10 @@
 //`define ENABLE_HPS
 //`define ENABLE_USB
 
-module DE1_SoC_CAMERA(
+module DE1_SoC_CAMERA # (
+    parameter clock_frequency_mhz = 50
+)
+(
 
       ///////// ADC /////////
       inout              ADC_CS_N,
@@ -355,10 +358,88 @@ MEAN_COORDS          iCOORDS (
                      .iY_Cont(Y_Cont),
 							.iFVAL(rCCD_FVAL),
                      .iObjectDetected(oObjectDetected),
-                     .oX_Cent(),
-                     .oY_Cent(),
-                     .oCent_Val()
+                     .oX_Cent(oX_Cent),
+                     .oY_Cent(oY_Cent),
+                     .oCent_Val(oCent_Val)
                      );
+
+// Main state machine and buffers
+logic [9:0] oX_Cent;
+logic [8:0] oY_Cent;
+logic oCent_Val;
+logic [9:0] tracked_coordinates_x;
+logic [8:0] tracked_coordinates_y;
+logic on_screen;
+
+
+tracking_buffer # (
+    .clock_frequency_mhz(clock_frequency_mhz),
+) tracking_buffer (
+    .clk(CLOCK_50),
+    .rst_n(DLY_RST_2),
+    .oCent_Val(oCent_Val),
+    .on_screen(on_screen)
+);
+
+coordinate_latch coordinate_buffer (
+    .rst_n(DLY_RST_2),
+    .oCent_Val(oCent_Val),
+    .oX_Cent(oX_Cent),
+    .oY_Cent(oY_Cent),
+    .tracked_coordinates_x(tracked_coordinates_x),
+    .tracked_coordinates_y(tracked_coordinates_y)
+);
+
+state_machine #(
+    .clock_frequency_mhz(clock_frequency_mhz),
+) state_machine (
+    .clk(CLOCK_50),
+    .rst_n(DLY_RST_2),
+    .on_screen(on_screen),
+    .tracked_coordinates_x(tracked_coordinates_x),
+    .tracked_coordinates_y(tracked_coordinates_y),
+    .driven_coordinates_x(),
+    .driven_coordinates_y(),
+    .fire()
+);
+
+// Servo Coordinate transform and firing
+logic [9:0] driven_coordinates_x;
+logic [8:0] driven_coordinates_y;
+
+logic pan_pwm; 
+logic tilt_pwm;
+
+logic [10:0]pan_angle;
+logic [10:0]tilt_angle;
+
+assign LEDR[0] = ~DLY_RST_2;
+assign LEDR[1] = dir_sel;
+assign GPIO[0] = tilt_pwm; 
+assign GPIO[1] = pan_pwm;
+
+// instantiate servo module here
+servo SERVO_PAN(
+	.clk(CLOCK_50), 
+	.rst_n(DLY_RST_2),
+	.pulse_width(pan_angle), 
+	.pwm_pin(pan_pwm),
+	.open()
+);
+
+servo SERVO_TILT(
+	.clk(CLOCK_50), 
+	.rst_n(DLY_RST_2),
+	.pulse_width(tilt_angle), 
+	.pwm_pin(tilt_pwm),
+	.open()
+);
+
+//Coordinate transform module
+Coordinate_transform_v2  transform(
+     .x(driven_coordinates_x),.y(driven_coordinates_y),
+     .clk(CLOCK_50), .rst_n(DLY_RST_2),
+     .pan(pan_angle), .tilt(tilt_angle));
 
 //Frame count display
 SEG7_LUT_6 			u5	(	
