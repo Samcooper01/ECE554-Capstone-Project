@@ -6,8 +6,8 @@ module Coordinate_transform_v2 #(
     //parameter x_res = 640,
     //parameter y_res = 480
     )
-    (input signed [10:0] x,
-     input signed [9:0] y,
+	(input signed [9:0] x,
+	 input signed [8:0] y,
      input clk, rst_n,
      output reg [10:0] pan, tilt);
 
