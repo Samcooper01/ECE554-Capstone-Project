@@ -398,8 +398,8 @@ state_machine #(
     .on_screen(on_screen),
     .tracked_coordinates_x(tracked_coordinates_x),
     .tracked_coordinates_y(tracked_coordinates_y),
-    .driven_coordinates_x(),
-    .driven_coordinates_y(),
+    .driven_coordinates_x(driven_coordinates_x),
+    .driven_coordinates_y(driven_coordinates_y),
     .fire()
 );
 
