@@ -88,7 +88,7 @@ assign	oDVAL	=	mDVAL;
 // assign oBlue	= 	({iY_Cont[0], iX_Cont[0]} == 2'b01) ? iDATA : '0;
 // assign oDVAL 	= 	iDVAL;
 
-assign isWithinThreshold = ((iX_Cont >= tracked_coordinates_x - 30 && iX_Cont <= tracked_coordinates_x + 30) && 
+assign isWithinThreshold = ((iX_Cont >= tracked_coordinates_x - 30 && iX_Cont <= tracked_coordinates_x + 30) &&
 	(iY_Cont >= tracked_coordinates_y - 30 && iY_Cont <= tracked_coordinates_y + 30));
 
 assign oRed 	= 	(isWithinThreshold) ? 12'hFFF : iDATA;
