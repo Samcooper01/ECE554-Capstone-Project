@@ -323,7 +323,7 @@ assign sCCD_G =      oObjectDetected & SW[1] ?    oGreen   : sCCD_G_RGB;
 assign sCCD_B =      oObjectDetected & SW[1] ?    oBlue    : sCCD_B_RGB;
 assign sCCD_DVAL =   oObjectDetected & SW[1] ?    oDVAL    : sCCD_DVAL_RGB;
 
-RAW2RGB_640X480		u4	(	
+RAW2RGB		u4	(	
 							.iCLK(D5M_PIXLCLK),
 							.iRST(DLY_RST_1),
 							.iDATA(mCCD_DATA),
