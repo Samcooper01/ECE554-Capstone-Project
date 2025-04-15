@@ -58,6 +58,8 @@ input	[11:0]	iDATA;
 input			iDVAL;
 input			iCLK;
 input			iRST;
+input	[9:0]	tracked_coordinates_x;
+input	[8:0]   tracked_coordinates_y;
 output	[11:0]	oRed;
 output	[11:0]	oGreen;
 output	[11:0]	oBlue;
@@ -70,6 +72,7 @@ reg		[11:0]	mCCD_R;
 reg		[11:0]	mCCD_G;
 reg		[11:0]	mCCD_B;
 reg				mDVAL;
+logic			isWithinThreshold;
 
 /*
 assign	oRed	=	mCCD_R[11:0];
@@ -83,9 +86,12 @@ assign	oDVAL	=	mDVAL;
 // assign oBlue	= 	({iY_Cont[0], iX_Cont[0]} == 2'b01) ? iDATA : '0;
 // assign oDVAL 	= 	iDVAL;
 
-assign oRed 	= 	iDATA;
-assign oGreen 	= 	iDATA;
-assign oBlue	= 	iDATA;
+assign isWithinThreshold = ((iX_Cont >= tracked_coordinates_x - 5 && iX_Cont <= tracked_coordinates_x + 5) && 
+	(iY_Cont >= tracked_coordinates_y - 5 && iY_Cont <= tracked_coordinates_y + 5));
+
+assign oRed 	= 	(isWithinThreshold) ? 12'hFFF : iDATA;
+assign oGreen 	= 	(isWithinThreshold) ? 12'hFFF : iDATA;
+assign oBlue	= 	(isWithinThreshold) ? 12'hFFF : iDATA;
 assign oDVAL 	= 	iDVAL;
 
 // Even row even col = G1
