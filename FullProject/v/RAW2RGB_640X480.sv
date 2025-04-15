@@ -78,9 +78,14 @@ assign	oBlue	=	mCCD_B[11:0];
 assign	oDVAL	=	mDVAL;
 */
 
-assign oRed 	= 	({iY_Cont[0], iX_Cont[0]} == 2'b10) ? iDATA : '0;
-assign oGreen 	= 	({iY_Cont[0], iX_Cont[0]} == 2'b00) ? iDATA : ({iY_Cont[0], iX_Cont[0]} == 2'b11) ? iDATA : '0;
-assign oBlue	= 	({iY_Cont[0], iX_Cont[0]} == 2'b01) ? iDATA : '0;
+// assign oRed 	= 	({iY_Cont[0], iX_Cont[0]} == 2'b10) ? iDATA : '0;
+// assign oGreen 	= 	({iY_Cont[0], iX_Cont[0]} == 2'b00) ? iDATA : ({iY_Cont[0], iX_Cont[0]} == 2'b11) ? iDATA : '0;
+// assign oBlue	= 	({iY_Cont[0], iX_Cont[0]} == 2'b01) ? iDATA : '0;
+// assign oDVAL 	= 	iDVAL;
+
+assign oRed 	= 	iDATA;
+assign oGreen 	= 	iDATA;
+assign oBlue	= 	iDATA;
 assign oDVAL 	= 	iDVAL;
 
 // Even row even col = G1
