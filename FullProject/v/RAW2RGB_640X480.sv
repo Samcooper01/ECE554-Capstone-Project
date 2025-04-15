@@ -49,7 +49,9 @@ module RAW2RGB_640X480(	oRed,
 						iDATA,
 						iDVAL,
 						iCLK,
-						iRST
+						iRST,
+						tracked_coordinates_x,
+						tracked_coordinates_y
 				);
 
 input	[10:0]	iX_Cont;
