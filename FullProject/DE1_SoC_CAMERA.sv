@@ -358,19 +358,44 @@ MEAN_COORDS          iCOORDS (
                      .iY_Cont(Y_Cont),
 							.iFVAL(rCCD_FVAL),
                      .iObjectDetected(oObjectDetected),
-                     .oX_Cent(oX_Cent),
-                     .oY_Cent(oY_Cent),
-                     .oCent_Val(oCent_Val)
+                     .oX_Cent(oX_Cent_actual),
+                     .oY_Cent(oY_Cent_actual),
+                     .oCent_Val(oCent_Val_actual)
+                     );
+
+//debugging coordinate tracking
+test_all_cords       itest (
+                     .iCLK(D5M_PIXLCLK),
+                     .iRST(DLY_RST_2),
+                     .Frame_Cont(Frame_Cont),
+                     .iFVAL(rCCD_FVAL),
+                     .oX_Cent(oX_Cent_debug),
+                     .oY_Cent(oY_Cent_debug),
+                     .oCent_Val(oCent_Val_debug)
                      );
 
 // Main state machine and buffers
 logic [9:0] oX_Cent;
 logic [8:0] oY_Cent;
-logic oCent_Val;
+logic       oCent_Val;
+
+
 logic [9:0] tracked_coordinates_x;
 logic [8:0] tracked_coordinates_y;
-logic on_screen;
+logic       on_screen;
 
+//from debug block
+logic [9:0] oX_Cent_debug;
+logic [8:0] oY_Cent_debug;
+logic       oCent_Val_debug;
+
+logic [9:0] oX_Cent_actual;
+logic [8:0] oY_Cent_actual;
+logic       oCent_Val_actual;
+
+assign oX_Cent    =  (SW[6]) ? oX_Cent_debug :  oX_Cent_actual;
+assign oY_Cent    =  (SW[6]) ? oY_Cent_debug :  oY_Cent_actual;
+assign oCent_Val  =  (SW[6]) ? oCent_Val_debug : oCent_Val_actual;
 
 tracking_buffer # (
     .clock_frequency_mhz(clock_frequency_mhz)
@@ -400,7 +425,7 @@ state_machine #(
     .tracked_coordinates_y(tracked_coordinates_y),
     .driven_coordinates_x(driven_coordinates_x),
     .driven_coordinates_y(driven_coordinates_y),
-    .fire()
+    .fire(GPIO_0[3])
 );
 
 // Servo Coordinate transform and firing
@@ -409,6 +434,7 @@ logic [8:0] driven_coordinates_y;
 
 logic pan_pwm; 
 logic tilt_pwm;
+logic tilt_ready, pan_ready;
 
 logic [10:0]pan_angle;
 logic [10:0]tilt_angle;
@@ -423,7 +449,7 @@ servo SERVO_PAN(
 	.rst_n(DLY_RST_2),
 	.pulse_width(pan_angle), 
 	.pwm_pin(pan_pwm),
-	.open()
+	.open(pan_ready)
 );
 
 servo SERVO_TILT(
@@ -431,14 +457,15 @@ servo SERVO_TILT(
 	.rst_n(DLY_RST_2),
 	.pulse_width(tilt_angle), 
 	.pwm_pin(tilt_pwm),
-	.open()
+	.open(tilt_ready)
 );
 
 //Coordinate transform module
 Coordinate_transform_v2  transform(
      .x(driven_coordinates_x),.y(driven_coordinates_y),
      .clk(CLOCK_50), .rst_n(DLY_RST_2),
-     .pan(pan_angle), .tilt(tilt_angle));
+     .pan(pan_angle), .tilt(tilt_angle),
+	  .pan_ready(pan_ready), .tilt_ready(tilt_ready));
 
 //Frame count display
 SEG7_LUT_6 			u5	(	

@@ -484,6 +484,10 @@
 					"strict" : false
 				},
 				{
+					"name" : "GPIO_0[3]",
+					"strict" : false
+				},
+				{
 					"name" : "D5M_SDATA",
 					"strict" : false
 				},
@@ -501,6 +505,10 @@
 				},
 				{
 					"name" : "CLOCK2_50",
+					"strict" : false
+				},
+				{
+					"name" : "SW[6]",
 					"strict" : false
 				},
 				{
