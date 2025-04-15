@@ -50,8 +50,8 @@ module RAW2RGB_640X480(	oRed,
 						iDVAL,
 						iCLK,
 						iRST,
-						tracked_coordinates_x,
-						tracked_coordinates_y
+						driven_coordinates_x,
+						driven_coordinates_y
 				);
 
 input	[10:0]	iX_Cont;
@@ -60,8 +60,8 @@ input	[11:0]	iDATA;
 input			iDVAL;
 input			iCLK;
 input			iRST;
-input	[9:0]	tracked_coordinates_x;
-input	[8:0]   tracked_coordinates_y;
+input	[9:0]	driven_coordinates_x;
+input	[8:0]   driven_coordinates_y;
 output	[11:0]	oRed;
 output	[11:0]	oGreen;
 output	[11:0]	oBlue;
@@ -88,8 +88,8 @@ assign	oDVAL	=	mDVAL;
 // assign oBlue	= 	({iY_Cont[0], iX_Cont[0]} == 2'b01) ? iDATA : '0;
 // assign oDVAL 	= 	iDVAL;
 
-assign isWithinThreshold = ((iX_Cont >= tracked_coordinates_x - 30 && iX_Cont <= tracked_coordinates_x + 30) &&
-	(iY_Cont >= tracked_coordinates_y - 30 && iY_Cont <= tracked_coordinates_y + 30));
+assign isWithinThreshold = ((iX_Cont >= driven_coordinates_x - 10 && iX_Cont <= driven_coordinates_x + 10) &&
+	(iY_Cont >= driven_coordinates_y - 10 && iY_Cont <= driven_coordinates_y + 10));
 
 assign oRed 	= 	(isWithinThreshold) ? 12'hFFF : iDATA;
 assign oGreen 	= 	(isWithinThreshold) ? 12'hFFF : iDATA;

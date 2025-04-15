@@ -334,8 +334,8 @@ RAW2RGB_640X480		u4	(
 							.oDVAL(sCCD_DVAL_RGB),
 							.iX_Cont(X_Cont),
 							.iY_Cont(Y_Cont),
-                     .tracked_coordinates_x(tracked_coordinates_x),
-                     .tracked_coordinates_y(tracked_coordinates_y)
+                     .driven_coordinates_x(driven_coordinates_x),
+                     .driven_coordinates_y(driven_coordinates_y)
 						   );
 							
 STORE_FRAME				iFRAME (
