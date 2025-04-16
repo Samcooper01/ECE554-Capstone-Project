@@ -1,0 +1,1 @@
+Warning (10268): Verilog HDL information at pan_tilt.sv(69): always construct contains both blocking and non-blocking assignments File: I:/ece554/ECE554-Capstone-Project/Servo/Quartus/pan_tilt.sv Line: 69

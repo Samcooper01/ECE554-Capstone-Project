@@ -37,11 +37,11 @@ always_ff @(posedge iCLK or negedge iRST) begin
                 oY_Cent <= '0;
             end
             else begin
-                oY_Cent <= oY_Cent + 1'b1;
+                oY_Cent <= oY_Cent + 16;
             end
         end
         else begin
-            oX_Cent <= oX_Cent + 1'b1;
+            oX_Cent <= oX_Cent + 16;
         end
     end
     else begin

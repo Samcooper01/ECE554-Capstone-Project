@@ -1,5 +1,5 @@
 Analysis & Synthesis report for pan_tilt
-Thu Apr  3 17:14:57 2025
+Mon Apr  7 16:02:28 2025
 Quartus Prime Version 23.1std.0 Build 991 11/28/2023 SC Lite Edition
 
 
@@ -16,22 +16,21 @@ Quartus Prime Version 23.1std.0 Build 991 11/28/2023 SC Lite Edition
   8. Analysis & Synthesis RAM Summary
   9. Analysis & Synthesis DSP Block Usage Summary
  10. Analysis & Synthesis IP Cores Summary
- 11. Registers Removed During Synthesis
- 12. General Register Statistics
- 13. Inverted Register Statistics
- 14. Source assignments for sld_signaltap:auto_signaltap_0
- 15. Parameter Settings for User Entity Instance: servo:SERVO_PAN|counter:CLOCK_GEN
- 16. Parameter Settings for User Entity Instance: servo:SERVO_TILT|counter:CLOCK_GEN
- 17. Parameter Settings for Inferred Entity Instance: sld_signaltap:auto_signaltap_0
- 18. Parameter Settings for Inferred Entity Instance: servo:SERVO_PAN|lpm_divide:Div0
- 19. Parameter Settings for Inferred Entity Instance: servo:SERVO_TILT|lpm_divide:Div0
- 20. Port Connectivity Checks: "servo:SERVO_TILT"
- 21. Port Connectivity Checks: "servo:SERVO_PAN"
- 22. Signal Tap Logic Analyzer Settings
- 23. Post-Synthesis Netlist Statistics for Top Partition
- 24. Elapsed Time Per Partition
- 25. Connections to In-System Debugging Instance "auto_signaltap_0"
- 26. Analysis & Synthesis Messages
+ 11. User-Specified and Inferred Latches
+ 12. Registers Removed During Synthesis
+ 13. General Register Statistics
+ 14. Inverted Register Statistics
+ 15. Source assignments for sld_signaltap:auto_signaltap_0
+ 16. Parameter Settings for User Entity Instance: servo:SERVO_PAN|counter:CLOCK_GEN
+ 17. Parameter Settings for User Entity Instance: servo:SERVO_TILT|counter:CLOCK_GEN
+ 18. Parameter Settings for Inferred Entity Instance: sld_signaltap:auto_signaltap_0
+ 19. Parameter Settings for Inferred Entity Instance: servo:SERVO_PAN|lpm_divide:Div0
+ 20. Parameter Settings for Inferred Entity Instance: servo:SERVO_TILT|lpm_divide:Div0
+ 21. Signal Tap Logic Analyzer Settings
+ 22. Post-Synthesis Netlist Statistics for Top Partition
+ 23. Elapsed Time Per Partition
+ 24. Connections to In-System Debugging Instance "auto_signaltap_0"
+ 25. Analysis & Synthesis Messages
 
 
 
@@ -58,7 +57,7 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                     ;
 +---------------------------------+------------------------------------------------+
-; Analysis & Synthesis Status     ; Successful - Thu Apr  3 17:14:57 2025          ;
+; Analysis & Synthesis Status     ; Successful - Mon Apr  7 16:02:23 2025          ;
 ; Quartus Prime Version           ; 23.1std.0 Build 991 11/28/2023 SC Lite Edition ;
 ; Revision Name                   ; pan_tilt                                       ;
 ; Top-level Entity Name           ; pan_tilt                                       ;
@@ -262,14 +261,14 @@ https://fpgasoftware.intel.com/eula.
 +---------------------------------------------+--------------------------+
 ; Resource                                    ; Usage                    ;
 +---------------------------------------------+--------------------------+
-; Estimate of Logic utilization (ALMs needed) ; 584                      ;
+; Estimate of Logic utilization (ALMs needed) ; 606                      ;
 ;                                             ;                          ;
-; Combinational ALUT usage for logic          ; 900                      ;
+; Combinational ALUT usage for logic          ; 941                      ;
 ;     -- 7 input functions                    ; 1                        ;
-;     -- 6 input functions                    ; 98                       ;
+;     -- 6 input functions                    ; 102                      ;
 ;     -- 5 input functions                    ; 65                       ;
-;     -- 4 input functions                    ; 147                      ;
-;     -- <=3 input functions                  ; 589                      ;
+;     -- 4 input functions                    ; 148                      ;
+;     -- <=3 input functions                  ; 625                      ;
 ;                                             ;                          ;
 ; Dedicated logic registers                   ; 581                      ;
 ;                                             ;                          ;
@@ -281,7 +280,7 @@ https://fpgasoftware.intel.com/eula.
 ;                                             ;                          ;
 ; Maximum fan-out node                        ; altera_internal_jtag~TDO ;
 ; Maximum fan-out                             ; 391                      ;
-; Total fan-out                               ; 6297                     ;
+; Total fan-out                               ; 6437                     ;
 ; Average fan-out                             ; 3.55                     ;
 +---------------------------------------------+--------------------------+
 
@@ -291,8 +290,8 @@ https://fpgasoftware.intel.com/eula.
 +-----------------------------------------------------------------------------------------------------------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+------------------------------------------------------+--------------+
 ; Compilation Hierarchy Node                                                                                                              ; Combinational ALUTs ; Dedicated Logic Registers ; Block Memory Bits ; DSP Blocks ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                                                                                                                                                                                                                                                                                  ; Entity Name                                          ; Library Name ;
 +-----------------------------------------------------------------------------------------------------------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+------------------------------------------------------+--------------+
-; |pan_tilt                                                                                                                               ; 900 (0)             ; 581 (0)                   ; 262144            ; 2          ; 106  ; 0            ; |pan_tilt                                                                                                                                                                                                                                                                                                                                            ; pan_tilt                                             ; work         ;
-;    |servo:SERVO_PAN|                                                                                                                    ; 276 (32)            ; 24 (1)                    ; 0                 ; 1          ; 0    ; 0            ; |pan_tilt|servo:SERVO_PAN                                                                                                                                                                                                                                                                                                                            ; servo                                                ; work         ;
+; |pan_tilt                                                                                                                               ; 941 (33)            ; 581 (0)                   ; 262144            ; 2          ; 106  ; 0            ; |pan_tilt                                                                                                                                                                                                                                                                                                                                            ; pan_tilt                                             ; work         ;
+;    |servo:SERVO_PAN|                                                                                                                    ; 284 (40)            ; 24 (1)                    ; 0                 ; 1          ; 0    ; 0            ; |pan_tilt|servo:SERVO_PAN                                                                                                                                                                                                                                                                                                                            ; servo                                                ; work         ;
 ;       |counter:CLOCK_GEN|                                                                                                               ; 27 (27)             ; 23 (23)                   ; 0                 ; 0          ; 0    ; 0            ; |pan_tilt|servo:SERVO_PAN|counter:CLOCK_GEN                                                                                                                                                                                                                                                                                                          ; counter                                              ; work         ;
 ;       |lpm_divide:Div0|                                                                                                                 ; 217 (0)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |pan_tilt|servo:SERVO_PAN|lpm_divide:Div0                                                                                                                                                                                                                                                                                                            ; lpm_divide                                           ; work         ;
 ;          |lpm_divide_qbm:auto_generated|                                                                                                ; 217 (0)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |pan_tilt|servo:SERVO_PAN|lpm_divide:Div0|lpm_divide_qbm:auto_generated                                                                                                                                                                                                                                                                              ; lpm_divide_qbm                                       ; work         ;
@@ -380,6 +379,24 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; Altera ; Signal Tap   ; N/A     ; N/A          ; Licensed     ; |pan_tilt|sld_hub:auto_hub|alt_sld_fab_with_jtag_input:\instrumentation_fabric_with_node_gen:fabric_gen_new_way:with_jtag_input_gen:instrumentation_fabric|alt_sld_fab:instrumentation_fabric|alt_sld_fab_alt_sld_fab:alt_sld_fab|alt_sld_fab_alt_sld_fab_splitter:splitter                                                   ;                 ;
 ; Altera ; Signal Tap   ; N/A     ; N/A          ; Licensed     ; |pan_tilt|sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_signaltap_implb:sld_signaltap_body|sld_ela_control:ela_control|sld_ela_trigger_flow_sel:\generated:ela_trigger_flow_mgr_entity|sld_ela_trigger_flow_sel_5o31:auto_generated|sld_reserved_pan_tilt_auto_signaltap_0_flow_mgr_e982:mgl_prim1 ;                 ;
 +--------+--------------+---------+--------------+--------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-----------------+
+
+
++---------------------------------------------------------------------------------------------------+
+; User-Specified and Inferred Latches                                                               ;
++----------------------------------------------------+---------------------+------------------------+
+; Latch Name                                         ; Latch Enable Signal ; Free of Timing Hazards ;
++----------------------------------------------------+---------------------+------------------------+
+; pan_angle[0]                                       ; pan_angle[2]        ; yes                    ;
+; pan_angle[7]                                       ; pan_angle[2]        ; yes                    ;
+; pan_angle[6]                                       ; pan_angle[2]        ; yes                    ;
+; pan_angle[4]                                       ; pan_angle[2]        ; yes                    ;
+; pan_angle[5]                                       ; pan_angle[2]        ; yes                    ;
+; pan_angle[3]                                       ; pan_angle[2]        ; yes                    ;
+; pan_angle[2]                                       ; pan_angle[2]        ; yes                    ;
+; pan_angle[1]                                       ; pan_angle[2]        ; yes                    ;
+; Number of user-specified and inferred latches = 8  ;                     ;                        ;
++----------------------------------------------------+---------------------+------------------------+
+Note: All latches listed above may not be present at the end of synthesis due to various synthesis optimizations.
 
 
 +--------------------------------------------------------------------------------------------------------------------+
@@ -601,36 +618,6 @@ Note: In order to hide this table in the UI and the text report file, please set
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
-+-----------------------------------------------+
-; Port Connectivity Checks: "servo:SERVO_TILT"  ;
-+-------------+-------+----------+--------------+
-; Port        ; Type  ; Severity ; Details      ;
-+-------------+-------+----------+--------------+
-; angle[4..3] ; Input ; Info     ; Stuck at VCC ;
-; angle[7]    ; Input ; Info     ; Stuck at GND ;
-; angle[6]    ; Input ; Info     ; Stuck at VCC ;
-; angle[5]    ; Input ; Info     ; Stuck at GND ;
-; angle[2]    ; Input ; Info     ; Stuck at GND ;
-; angle[1]    ; Input ; Info     ; Stuck at VCC ;
-; angle[0]    ; Input ; Info     ; Stuck at GND ;
-+-------------+-------+----------+--------------+
-
-
-+-----------------------------------------------+
-; Port Connectivity Checks: "servo:SERVO_PAN"   ;
-+-------------+-------+----------+--------------+
-; Port        ; Type  ; Severity ; Details      ;
-+-------------+-------+----------+--------------+
-; angle[4..3] ; Input ; Info     ; Stuck at VCC ;
-; angle[7]    ; Input ; Info     ; Stuck at GND ;
-; angle[6]    ; Input ; Info     ; Stuck at VCC ;
-; angle[5]    ; Input ; Info     ; Stuck at GND ;
-; angle[2]    ; Input ; Info     ; Stuck at GND ;
-; angle[1]    ; Input ; Info     ; Stuck at VCC ;
-; angle[0]    ; Input ; Info     ; Stuck at GND ;
-+-------------+-------+----------+--------------+
-
-
 +-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 ; Signal Tap Logic Analyzer Settings                                                                                                                                                                                                                                      ;
 +----------------+------------------+---------------------+------------------+--------------+----------+------------------------+----------------------+--------------------+-----------------------------+-----------------+------------------+--------------------------+
@@ -649,21 +636,21 @@ Note: In order to hide this table in the UI and the text report file, please set
 ;     CLR               ; 9                           ;
 ;     CLR SCLR          ; 16                          ;
 ; arriav_io_obuf        ; 36                          ;
-; arriav_lcell_comb     ; 528                         ;
-;     arith             ; 262                         ;
+; arriav_lcell_comb     ; 569                         ;
+;     arith             ; 278                         ;
 ;         0 data inputs ; 50                          ;
-;         1 data inputs ; 51                          ;
+;         1 data inputs ; 59                          ;
 ;         2 data inputs ; 9                           ;
-;         3 data inputs ; 98                          ;
+;         3 data inputs ; 106                         ;
 ;         4 data inputs ; 54                          ;
-;     normal            ; 248                         ;
+;     normal            ; 273                         ;
 ;         0 data inputs ; 2                           ;
 ;         1 data inputs ; 1                           ;
-;         2 data inputs ; 134                         ;
-;         3 data inputs ; 41                          ;
-;         4 data inputs ; 44                          ;
+;         2 data inputs ; 136                         ;
+;         3 data inputs ; 59                          ;
+;         4 data inputs ; 45                          ;
 ;         5 data inputs ; 3                           ;
-;         6 data inputs ; 23                          ;
+;         6 data inputs ; 27                          ;
 ;     shared            ; 18                          ;
 ;         0 data inputs ; 2                           ;
 ;         1 data inputs ; 16                          ;
@@ -671,7 +658,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 ; boundary_port         ; 108                         ;
 ;                       ;                             ;
 ; Max LUT depth         ; 23.70                       ;
-; Average LUT depth     ; 18.99                       ;
+; Average LUT depth     ; 17.92                       ;
 +-----------------------+-----------------------------+
 
 
@@ -734,7 +721,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 23.1std.0 Build 991 11/28/2023 SC Lite Edition
-    Info: Processing started: Thu Apr  3 17:14:13 2025
+    Info: Processing started: Mon Apr  7 16:01:40 2025
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off pan_tilt -c pan_tilt
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 14 of the 14 processors detected
@@ -746,7 +733,18 @@ Warning (12019): Can't analyze file -- file pan_tilt.v is missing
 Warning (12125): Using design file pan_tilt.sv, which is not specified as a design file for the current project, but contains definitions for 1 design units and 1 entities in project
     Info (12023): Found entity 1: pan_tilt File: I:/ece554/ECE554-Capstone-Project/Servo/Quartus/pan_tilt.sv Line: 6
 Info (12127): Elaborating entity "pan_tilt" for the top level hierarchy
+Warning (10230): Verilog HDL assignment warning at pan_tilt.sv(70): truncated value with size 32 to match size of target (8) File: I:/ece554/ECE554-Capstone-Project/Servo/Quartus/pan_tilt.sv Line: 70
+Warning (10230): Verilog HDL assignment warning at pan_tilt.sv(74): truncated value with size 32 to match size of target (8) File: I:/ece554/ECE554-Capstone-Project/Servo/Quartus/pan_tilt.sv Line: 74
+Warning (10240): Verilog HDL Always Construct warning at pan_tilt.sv(69): inferring latch(es) for variable "pan_angle", which holds its previous value in one or more paths through the always construct File: I:/ece554/ECE554-Capstone-Project/Servo/Quartus/pan_tilt.sv Line: 69
 Warning (10034): Output port "LEDR[9..1]" at pan_tilt.sv(26) has no driver File: I:/ece554/ECE554-Capstone-Project/Servo/Quartus/pan_tilt.sv Line: 26
+Info (10041): Inferred latch for "pan_angle[0]" at pan_tilt.sv(73) File: I:/ece554/ECE554-Capstone-Project/Servo/Quartus/pan_tilt.sv Line: 73
+Info (10041): Inferred latch for "pan_angle[1]" at pan_tilt.sv(73) File: I:/ece554/ECE554-Capstone-Project/Servo/Quartus/pan_tilt.sv Line: 73
+Info (10041): Inferred latch for "pan_angle[2]" at pan_tilt.sv(73) File: I:/ece554/ECE554-Capstone-Project/Servo/Quartus/pan_tilt.sv Line: 73
+Info (10041): Inferred latch for "pan_angle[3]" at pan_tilt.sv(73) File: I:/ece554/ECE554-Capstone-Project/Servo/Quartus/pan_tilt.sv Line: 73
+Info (10041): Inferred latch for "pan_angle[4]" at pan_tilt.sv(73) File: I:/ece554/ECE554-Capstone-Project/Servo/Quartus/pan_tilt.sv Line: 73
+Info (10041): Inferred latch for "pan_angle[5]" at pan_tilt.sv(73) File: I:/ece554/ECE554-Capstone-Project/Servo/Quartus/pan_tilt.sv Line: 73
+Info (10041): Inferred latch for "pan_angle[6]" at pan_tilt.sv(73) File: I:/ece554/ECE554-Capstone-Project/Servo/Quartus/pan_tilt.sv Line: 73
+Info (10041): Inferred latch for "pan_angle[7]" at pan_tilt.sv(73) File: I:/ece554/ECE554-Capstone-Project/Servo/Quartus/pan_tilt.sv Line: 73
 Info (12128): Elaborating entity "servo" for hierarchy "servo:SERVO_PAN" File: I:/ece554/ECE554-Capstone-Project/Servo/Quartus/pan_tilt.sv Line: 59
 Warning (10230): Verilog HDL assignment warning at servo.sv(42): truncated value with size 32 to match size of target (16) File: I:/ece554/ECE554-Capstone-Project/Servo/Driver/servo.sv Line: 42
 Info (12128): Elaborating entity "counter" for hierarchy "servo:SERVO_PAN|counter:CLOCK_GEN" File: I:/ece554/ECE554-Capstone-Project/Servo/Driver/servo.sv Line: 27
@@ -778,7 +776,7 @@ Info (12021): Found 1 design units, including 1 entities, in source file db/cmpr
     Info (12023): Found entity 1: cmpr_99c File: I:/ece554/ECE554-Capstone-Project/Servo/Quartus/db/cmpr_99c.tdf Line: 23
 Info (12033): Analysis and Synthesis generated Signal Tap or debug node instance "auto_signaltap_0"
 Info (11170): Starting IP generation for the debug fabric: alt_sld_fab.
-Info (11172): 2025.04.03.17:14:41 Progress: Loading sld76ff8c70/alt_sld_fab_wrapper_hw.tcl
+Info (11172): 2025.04.07.16:02:08 Progress: Loading sld76ff8c70/alt_sld_fab_wrapper_hw.tcl
 Info (11172): Alt_sld_fab.alt_sld_fab: SLD fabric agents which did not specify prefer_host were connected to JTAG
 Info (11172): Alt_sld_fab: Generating alt_sld_fab "alt_sld_fab" for QUARTUS_SYNTH
 Info (11172): Alt_sld_fab: "alt_sld_fab" instantiated alt_sld_fab "alt_sld_fab"
@@ -854,6 +852,22 @@ Warning (13039): The following bidirectional pins have no drivers
     Warning (13040): bidirectional pin "GPIO[33]" has no driver File: I:/ece554/ECE554-Capstone-Project/Servo/Quartus/pan_tilt.sv Line: 33
     Warning (13040): bidirectional pin "GPIO[34]" has no driver File: I:/ece554/ECE554-Capstone-Project/Servo/Quartus/pan_tilt.sv Line: 33
     Warning (13040): bidirectional pin "GPIO[35]" has no driver File: I:/ece554/ECE554-Capstone-Project/Servo/Quartus/pan_tilt.sv Line: 33
+Warning (13012): Latch pan_angle[0] has unsafe behavior File: I:/ece554/ECE554-Capstone-Project/Servo/Quartus/pan_tilt.sv Line: 73
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal KEY[3] File: I:/ece554/ECE554-Capstone-Project/Servo/Quartus/pan_tilt.sv Line: 23
+Warning (13012): Latch pan_angle[7] has unsafe behavior File: I:/ece554/ECE554-Capstone-Project/Servo/Quartus/pan_tilt.sv Line: 73
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal KEY[3] File: I:/ece554/ECE554-Capstone-Project/Servo/Quartus/pan_tilt.sv Line: 23
+Warning (13012): Latch pan_angle[6] has unsafe behavior File: I:/ece554/ECE554-Capstone-Project/Servo/Quartus/pan_tilt.sv Line: 73
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal KEY[3] File: I:/ece554/ECE554-Capstone-Project/Servo/Quartus/pan_tilt.sv Line: 23
+Warning (13012): Latch pan_angle[4] has unsafe behavior File: I:/ece554/ECE554-Capstone-Project/Servo/Quartus/pan_tilt.sv Line: 73
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal KEY[3] File: I:/ece554/ECE554-Capstone-Project/Servo/Quartus/pan_tilt.sv Line: 23
+Warning (13012): Latch pan_angle[5] has unsafe behavior File: I:/ece554/ECE554-Capstone-Project/Servo/Quartus/pan_tilt.sv Line: 73
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal KEY[3] File: I:/ece554/ECE554-Capstone-Project/Servo/Quartus/pan_tilt.sv Line: 23
+Warning (13012): Latch pan_angle[3] has unsafe behavior File: I:/ece554/ECE554-Capstone-Project/Servo/Quartus/pan_tilt.sv Line: 73
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal KEY[3] File: I:/ece554/ECE554-Capstone-Project/Servo/Quartus/pan_tilt.sv Line: 23
+Warning (13012): Latch pan_angle[2] has unsafe behavior File: I:/ece554/ECE554-Capstone-Project/Servo/Quartus/pan_tilt.sv Line: 73
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal KEY[3] File: I:/ece554/ECE554-Capstone-Project/Servo/Quartus/pan_tilt.sv Line: 23
+Warning (13012): Latch pan_angle[1] has unsafe behavior File: I:/ece554/ECE554-Capstone-Project/Servo/Quartus/pan_tilt.sv Line: 73
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal KEY[3] File: I:/ece554/ECE554-Capstone-Project/Servo/Quartus/pan_tilt.sv Line: 23
 Warning (13009): TRI or OPNDRN buffers permanently enabled
     Warning (13010): Node "GPIO[0]~synth" File: I:/ece554/ECE554-Capstone-Project/Servo/Quartus/pan_tilt.sv Line: 33
     Warning (13010): Node "GPIO[1]~synth" File: I:/ece554/ECE554-Capstone-Project/Servo/Quartus/pan_tilt.sv Line: 33
@@ -893,12 +907,12 @@ Warning (13024): Output pins are stuck at VCC or GND
     Warning (13410): Pin "HEX4[4]" is stuck at GND File: I:/ece554/ECE554-Capstone-Project/Servo/Quartus/pan_tilt.sv Line: 19
     Warning (13410): Pin "HEX4[5]" is stuck at GND File: I:/ece554/ECE554-Capstone-Project/Servo/Quartus/pan_tilt.sv Line: 19
     Warning (13410): Pin "HEX4[6]" is stuck at VCC File: I:/ece554/ECE554-Capstone-Project/Servo/Quartus/pan_tilt.sv Line: 19
-    Warning (13410): Pin "HEX5[0]" is stuck at VCC File: I:/ece554/ECE554-Capstone-Project/Servo/Quartus/pan_tilt.sv Line: 20
-    Warning (13410): Pin "HEX5[1]" is stuck at VCC File: I:/ece554/ECE554-Capstone-Project/Servo/Quartus/pan_tilt.sv Line: 20
-    Warning (13410): Pin "HEX5[2]" is stuck at VCC File: I:/ece554/ECE554-Capstone-Project/Servo/Quartus/pan_tilt.sv Line: 20
-    Warning (13410): Pin "HEX5[3]" is stuck at VCC File: I:/ece554/ECE554-Capstone-Project/Servo/Quartus/pan_tilt.sv Line: 20
-    Warning (13410): Pin "HEX5[4]" is stuck at VCC File: I:/ece554/ECE554-Capstone-Project/Servo/Quartus/pan_tilt.sv Line: 20
-    Warning (13410): Pin "HEX5[5]" is stuck at VCC File: I:/ece554/ECE554-Capstone-Project/Servo/Quartus/pan_tilt.sv Line: 20
+    Warning (13410): Pin "HEX5[0]" is stuck at GND File: I:/ece554/ECE554-Capstone-Project/Servo/Quartus/pan_tilt.sv Line: 20
+    Warning (13410): Pin "HEX5[1]" is stuck at GND File: I:/ece554/ECE554-Capstone-Project/Servo/Quartus/pan_tilt.sv Line: 20
+    Warning (13410): Pin "HEX5[2]" is stuck at GND File: I:/ece554/ECE554-Capstone-Project/Servo/Quartus/pan_tilt.sv Line: 20
+    Warning (13410): Pin "HEX5[3]" is stuck at GND File: I:/ece554/ECE554-Capstone-Project/Servo/Quartus/pan_tilt.sv Line: 20
+    Warning (13410): Pin "HEX5[4]" is stuck at GND File: I:/ece554/ECE554-Capstone-Project/Servo/Quartus/pan_tilt.sv Line: 20
+    Warning (13410): Pin "HEX5[5]" is stuck at GND File: I:/ece554/ECE554-Capstone-Project/Servo/Quartus/pan_tilt.sv Line: 20
     Warning (13410): Pin "HEX5[6]" is stuck at VCC File: I:/ece554/ECE554-Capstone-Project/Servo/Quartus/pan_tilt.sv Line: 20
     Warning (13410): Pin "LEDR[1]" is stuck at GND File: I:/ece554/ECE554-Capstone-Project/Servo/Quartus/pan_tilt.sv Line: 26
     Warning (13410): Pin "LEDR[2]" is stuck at GND File: I:/ece554/ECE554-Capstone-Project/Servo/Quartus/pan_tilt.sv Line: 26
@@ -913,13 +927,11 @@ Info (286031): Timing-Driven Synthesis is running on partition "Top"
 Info (35024): Successfully connected in-system debug instance "auto_signaltap_0" to all 36 required data inputs, trigger inputs, acquisition clocks, and dynamic pins
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 9 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Warning (21074): Design contains 16 input pin(s) that do not drive logic
+Warning (21074): Design contains 14 input pin(s) that do not drive logic
     Warning (15610): No output dependent on input pin "CLOCK2_50" File: I:/ece554/ECE554-Capstone-Project/Servo/Quartus/pan_tilt.sv Line: 9
     Warning (15610): No output dependent on input pin "CLOCK3_50" File: I:/ece554/ECE554-Capstone-Project/Servo/Quartus/pan_tilt.sv Line: 10
     Warning (15610): No output dependent on input pin "CLOCK4_50" File: I:/ece554/ECE554-Capstone-Project/Servo/Quartus/pan_tilt.sv Line: 11
     Warning (15610): No output dependent on input pin "KEY[1]" File: I:/ece554/ECE554-Capstone-Project/Servo/Quartus/pan_tilt.sv Line: 23
-    Warning (15610): No output dependent on input pin "KEY[2]" File: I:/ece554/ECE554-Capstone-Project/Servo/Quartus/pan_tilt.sv Line: 23
-    Warning (15610): No output dependent on input pin "KEY[3]" File: I:/ece554/ECE554-Capstone-Project/Servo/Quartus/pan_tilt.sv Line: 23
     Warning (15610): No output dependent on input pin "SW[0]" File: I:/ece554/ECE554-Capstone-Project/Servo/Quartus/pan_tilt.sv Line: 29
     Warning (15610): No output dependent on input pin "SW[1]" File: I:/ece554/ECE554-Capstone-Project/Servo/Quartus/pan_tilt.sv Line: 29
     Warning (15610): No output dependent on input pin "SW[2]" File: I:/ece554/ECE554-Capstone-Project/Servo/Quartus/pan_tilt.sv Line: 29
@@ -930,17 +942,17 @@ Warning (21074): Design contains 16 input pin(s) that do not drive logic
     Warning (15610): No output dependent on input pin "SW[7]" File: I:/ece554/ECE554-Capstone-Project/Servo/Quartus/pan_tilt.sv Line: 29
     Warning (15610): No output dependent on input pin "SW[8]" File: I:/ece554/ECE554-Capstone-Project/Servo/Quartus/pan_tilt.sv Line: 29
     Warning (15610): No output dependent on input pin "SW[9]" File: I:/ece554/ECE554-Capstone-Project/Servo/Quartus/pan_tilt.sv Line: 29
-Info (21057): Implemented 1420 device resources after synthesis - the final resource count might be different
+Info (21057): Implemented 1461 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 21 input pins
     Info (21059): Implemented 53 output pins
     Info (21060): Implemented 36 bidirectional pins
-    Info (21061): Implemented 1275 logic cells
+    Info (21061): Implemented 1316 logic cells
     Info (21064): Implemented 32 RAM segments
     Info (21062): Implemented 2 DSP elements
-Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 117 warnings
-    Info: Peak virtual memory: 4952 megabytes
-    Info: Processing ended: Thu Apr  3 17:14:57 2025
-    Info: Elapsed time: 00:00:44
-    Info: Total CPU time (on all processors): 00:00:32
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 134 warnings
+    Info: Peak virtual memory: 4953 megabytes
+    Info: Processing ended: Mon Apr  7 16:02:28 2025
+    Info: Elapsed time: 00:00:48
+    Info: Total CPU time (on all processors): 00:00:31
 
 

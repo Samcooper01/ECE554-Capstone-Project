@@ -1,5 +1,5 @@
 Flow report for DE1_SoC_CAMERA
-Tue Apr 15 13:03:30 2025
+Wed Apr 16 18:54:12 2025
 Quartus Prime Version 23.1std.0 Build 991 11/28/2023 SC Lite Edition
 
 
@@ -41,19 +41,19 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------------------------------------------------------------+
 ; Flow Summary                                                                     ;
 +---------------------------------+------------------------------------------------+
-; Flow Status                     ; Successful - Tue Apr 15 13:03:02 2025          ;
+; Flow Status                     ; Successful - Wed Apr 16 18:53:50 2025          ;
 ; Quartus Prime Version           ; 23.1std.0 Build 991 11/28/2023 SC Lite Edition ;
 ; Revision Name                   ; DE1_SoC_CAMERA                                 ;
 ; Top-level Entity Name           ; DE1_SoC_CAMERA                                 ;
 ; Family                          ; Cyclone V                                      ;
 ; Device                          ; 5CSEMA5F31C6                                   ;
 ; Timing Models                   ; Final                                          ;
-; Logic utilization (in ALMs)     ; 2,260 / 32,070 ( 7 % )                         ;
-; Total registers                 ; 2831                                           ;
+; Logic utilization (in ALMs)     ; 2,269 / 32,070 ( 7 % )                         ;
+; Total registers                 ; 2791                                           ;
 ; Total pins                      ; 226 / 457 ( 49 % )                             ;
 ; Total virtual pins              ; 0                                              ;
 ; Total block memory bits         ; 1,888,256 / 4,065,280 ( 46 % )                 ;
-; Total DSP Blocks                ; 4 / 87 ( 5 % )                                 ;
+; Total DSP Blocks                ; 2 / 87 ( 2 % )                                 ;
 ; Total HSSI RX PCSs              ; 0                                              ;
 ; Total HSSI PMA RX Deserializers ; 0                                              ;
 ; Total HSSI TX PCSs              ; 0                                              ;
@@ -68,7 +68,7 @@ https://fpgasoftware.intel.com/eula.
 +-------------------+---------------------+
 ; Option            ; Setting             ;
 +-------------------+---------------------+
-; Start date & time ; 04/15/2025 12:58:15 ;
+; Start date & time ; 04/16/2025 18:49:18 ;
 ; Main task         ; Compilation         ;
 ; Revision Name     ; DE1_SoC_CAMERA      ;
 +-------------------+---------------------+
@@ -79,7 +79,7 @@ https://fpgasoftware.intel.com/eula.
 +-------------------------------------+-------------------------------------------------+---------------+-------------+------------------+
 ; Assignment Name                     ; Value                                           ; Default Value ; Entity Name ; Section Id       ;
 +-------------------------------------+-------------------------------------------------+---------------+-------------+------------------+
-; COMPILER_SIGNATURE_ID               ; 91759833344.174473989520632                     ; --            ; --          ; --               ;
+; COMPILER_SIGNATURE_ID               ; 91759833344.174484735800440                     ; --            ; --          ; --               ;
 ; ENABLE_SIGNALTAP                    ; On                                              ; --            ; --          ; --               ;
 ; MAX_CORE_JUNCTION_TEMP              ; 85                                              ; --            ; --          ; --               ;
 ; MIN_CORE_JUNCTION_TEMP              ; 0                                               ; --            ; --          ; --               ;
@@ -130,11 +130,11 @@ https://fpgasoftware.intel.com/eula.
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
 ; Module Name          ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
-; Analysis & Synthesis ; 00:01:21     ; 1.0                     ; 5068 MB             ; 00:00:43                           ;
-; Fitter               ; 00:02:57     ; 1.1                     ; 7698 MB             ; 00:16:19                           ;
-; Assembler            ; 00:00:12     ; 1.0                     ; 4944 MB             ; 00:00:06                           ;
-; Timing Analyzer      ; 00:00:25     ; 1.9                     ; 5454 MB             ; 00:00:24                           ;
-; Total                ; 00:04:55     ; --                      ; --                  ; 00:17:32                           ;
+; Analysis & Synthesis ; 00:01:08     ; 1.0                     ; 5082 MB             ; 00:00:41                           ;
+; Fitter               ; 00:02:58     ; 1.1                     ; 7700 MB             ; 00:17:20                           ;
+; Assembler            ; 00:00:11     ; 1.0                     ; 4926 MB             ; 00:00:06                           ;
+; Timing Analyzer      ; 00:00:18     ; 2.1                     ; 5441 MB             ; 00:00:22                           ;
+; Total                ; 00:04:35     ; --                      ; --                  ; 00:18:29                           ;
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
 
 

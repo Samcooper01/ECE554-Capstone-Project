@@ -66,12 +66,18 @@ servo SERVO_TILT(
 );
 
 always @(*) begin
-	pan_angle = 8'd90; 
-	tilt_angle = 8'd90;
+	if (~KEY[2]) begin 
+		pan_angle = pan_angle + 1;
+		repeat(500) @(posedge CLOCK_50);
+	end
+	if (~KEY[3]) begin
+		pan_angle = pan_angle - 1;
+		repeat(500) @(posedge CLOCK_50);
+	end
 end
 
 always @(*) begin
-	HEX5 = 7'b1111111;
+	HEX5 = 7'b1000000;
     HEX4 = 7'b1000000; // 0;
     HEX3 = 7'b1000000; // 0; 
     HEX2 = 7'b1000000; // 0; 

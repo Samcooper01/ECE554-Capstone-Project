@@ -445,11 +445,21 @@ assign LEDR[0] = ~DLY_RST_2;
 assign GPIO_0[0] = tilt_pwm; 
 assign GPIO_0[1] = pan_pwm;
 
+logic [10:0] test_pan;
+logic [10:0] test_tilt;
+
+assign test_pan = (SW[2]) ? 11'd0 : 
+                  (SW[3]) ? 11'd1000 : pan_angle;
+
+assign test_tilt =   (SW[4]) ? 11'd0 :
+                     (SW[5]) ? 11'd500 : 
+                     (SW[7]) ? 11'd1000 : tilt_angle;
+
 // instantiate servo module here
 servo SERVO_PAN(
 	.clk(CLOCK_50), 
 	.rst_n(DLY_RST_2),
-	.pulse_width(pan_angle), 
+	.pulse_width(test_pan), 
 	.pwm_pin(pan_pwm),
 	.open(pan_ready)
 );
@@ -457,7 +467,7 @@ servo SERVO_PAN(
 servo SERVO_TILT(
 	.clk(CLOCK_50), 
 	.rst_n(DLY_RST_2),
-	.pulse_width(tilt_angle), 
+	.pulse_width(test_tilt), 
 	.pwm_pin(tilt_pwm),
 	.open(tilt_ready)
 );
