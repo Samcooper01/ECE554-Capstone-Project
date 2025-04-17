@@ -38,9 +38,10 @@ parameter pixel_box_width = 5;
 assign isWithinThreshold = ((iX_Cont >= driven_coordinates_x - pixel_box_width && iX_Cont <= driven_coordinates_x + pixel_box_width) &&
 	(iY_Cont >= driven_coordinates_y - pixel_box_width && iY_Cont <= driven_coordinates_y + pixel_box_width));
 
+// Draw a box around where the servo is attempting to aim, otherwise just output the raw pixel values
 assign	oRed	=	(isWithinThreshold) ? 12'hFFF : grayscale_pixel_value;
-assign	oGreen	=	(isWithinThreshold) ? 12'hFFF : grayscale_pixel_value;
-assign	oBlue	=	(isWithinThreshold) ? 12'hFFF : grayscale_pixel_value;
+assign	oGreen	=	(isWithinThreshold) ? 12'h000 : grayscale_pixel_value;
+assign	oBlue	=	(isWithinThreshold) ? 12'h000 : grayscale_pixel_value;
 assign	oDVAL	=	mDVAL;
 
 // Line buffer used for grayscale conversion
