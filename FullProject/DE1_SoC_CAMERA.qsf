@@ -956,12 +956,12 @@ set_instance_assignment -name POST_FIT_CONNECT_TO_SLD_NODE_ENTITY_PORT crc[0] -t
 set_instance_assignment -name POST_FIT_CONNECT_TO_SLD_NODE_ENTITY_PORT crc[6] -to auto_signaltap_0|gnd -section_id auto_signaltap_0
 set_instance_assignment -name POST_FIT_CONNECT_TO_SLD_NODE_ENTITY_PORT crc[20] -to auto_signaltap_0|vcc -section_id auto_signaltap_0
 set_instance_assignment -name POST_FIT_CONNECT_TO_SLD_NODE_ENTITY_PORT crc[21] -to auto_signaltap_0|gnd -section_id auto_signaltap_0
+set_global_assignment -name SYSTEMVERILOG_FILE v/RAW2BW.sv
 set_global_assignment -name SYSTEMVERILOG_FILE v/test_all_cords.sv
 set_global_assignment -name SYSTEMVERILOG_FILE v/MEAN_COORDS.sv
 set_global_assignment -name SYSTEMVERILOG_FILE v/STORE_FRAME.sv
 set_global_assignment -name VERILOG_FILE v/FIFO_FRAME_RED.v
 set_global_assignment -name QIP_FILE v/FIFO_FRAME_RED.qip
-set_global_assignment -name VERILOG_FILE v/Line_Buffer2.v
 set_global_assignment -name QIP_FILE v/Line_Buffer2.qip
 set_global_assignment -name SYSTEMVERILOG_FILE v/RAW2RGB_640X480.sv
 set_global_assignment -name VERILOG_FILE v/VGA_Controller.v

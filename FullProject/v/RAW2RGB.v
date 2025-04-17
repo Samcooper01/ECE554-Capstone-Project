@@ -49,7 +49,9 @@ module RAW2RGB(	oRed,
 				iDATA,
 				iDVAL,
 				iCLK,
-				iRST
+				iRST,
+				driven_coordinates_x,
+				driven_coordinates_y
 				);
 
 input	[10:0]	iX_Cont;
@@ -58,6 +60,8 @@ input	[11:0]	iDATA;
 input			iDVAL;
 input			iCLK;
 input			iRST;
+input   [9:0]   driven_coordinates_x;
+input   [8:0]   driven_coordinates_y;
 output	[11:0]	oRed;
 output	[11:0]	oGreen;
 output	[11:0]	oBlue;
@@ -70,11 +74,16 @@ reg		[11:0]	mCCD_R;
 reg		[12:0]	mCCD_G;
 reg		[11:0]	mCCD_B;
 reg				mDVAL;
+wire			isWithinThreshold;
 
 assign	oRed	=	mCCD_R[11:0];
 assign	oGreen	=	mCCD_G[12:1];
 assign	oBlue	=	mCCD_B[11:0];
 assign	oDVAL	=	mDVAL;
+
+parameter pixel_box_width = 5;
+assign isWithinThreshold = ((iX_Cont >= driven_coordinates_x - pixel_box_width && iX_Cont <= driven_coordinates_x + pixel_box_width) &&
+	(iY_Cont >= driven_coordinates_y - pixel_box_width && iY_Cont <= driven_coordinates_y + pixel_box_width));
 
 Line_Buffer1 	u0	(	.clken(iDVAL),
 						.clock(iCLK),
@@ -98,30 +107,9 @@ begin
 		mDATAd_0	<=	mDATA_0;
 		mDATAd_1	<=	mDATA_1;
 		mDVAL		<=	{iY_Cont[0]|iX_Cont[0]}	?	1'b0	:	iDVAL;
-		if({iY_Cont[0],iX_Cont[0]}==2'b10)
-		begin
-			mCCD_R	<=	mDATA_0;
-			mCCD_G	<=	mDATAd_0+mDATA_1;
-			mCCD_B	<=	mDATAd_1;
-		end	
-		else if({iY_Cont[0],iX_Cont[0]}==2'b11)
-		begin
-			mCCD_R	<=	mDATAd_0;
-			mCCD_G	<=	mDATA_0+mDATAd_1;
-			mCCD_B	<=	mDATA_1;
-		end
-		else if({iY_Cont[0],iX_Cont[0]}==2'b00)
-		begin
-			mCCD_R	<=	mDATA_1;
-			mCCD_G	<=	mDATA_0+mDATAd_1;
-			mCCD_B	<=	mDATAd_0;
-		end
-		else if({iY_Cont[0],iX_Cont[0]}==2'b01)
-		begin
-			mCCD_R	<=	mDATAd_1;
-			mCCD_G	<=	mDATAd_0+mDATA_1;
-			mCCD_B	<=	mDATA_0;
-		end
+		mCCD_R	<=	(isWithinThreshold) ? 12'hFFF : (mDATA_0 + mDATA_1 + mDATAd_0 + mDATAd_1) / 4;
+		mCCD_G	<=	(isWithinThreshold) ? 12'hFFF : (mDATA_0 + mDATA_1 + mDATAd_0 + mDATAd_1) / 4;
+		mCCD_B	<=	(isWithinThreshold) ? 12'hFFF : (mDATA_0 + mDATA_1 + mDATAd_0 + mDATAd_1) / 4;
 	end
 end
 

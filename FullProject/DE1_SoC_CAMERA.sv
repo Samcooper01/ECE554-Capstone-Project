@@ -323,8 +323,38 @@ assign sCCD_G =      oObjectDetected & SW[1] ?    oGreen   : sCCD_G_RGB;
 assign sCCD_B =      oObjectDetected & SW[1] ?    oBlue    : sCCD_B_RGB;
 assign sCCD_DVAL =   oObjectDetected & SW[1] ?    oDVAL    : sCCD_DVAL_RGB;
 
-RAW2RGB_640X480		u4	(	
-							.iCLK(D5M_PIXLCLK),
+// RAW2RGB_640X480		u4	(	
+// 							.iCLK(D5M_PIXLCLK),
+// 							.iRST(DLY_RST_1),
+// 							.iDATA(mCCD_DATA),
+// 							.iDVAL(mCCD_DVAL),
+// 							.oRed(sCCD_R_RGB),
+// 							.oGreen(sCCD_G_RGB),
+// 							.oBlue(sCCD_B_RGB),
+// 							.oDVAL(sCCD_DVAL_RGB),
+// 							.iX_Cont(X_Cont),
+// 							.iY_Cont(Y_Cont),
+//                      .driven_coordinates_x(driven_coordinates_x),
+//                      .driven_coordinates_y(driven_coordinates_y)
+// 						   );
+
+// RAW2RGB		         u4	(	
+// 							.iCLK(D5M_PIXLCLK),
+// 							.iRST(DLY_RST_1),
+// 							.iDATA(mCCD_DATA),
+// 							.iDVAL(mCCD_DVAL),
+// 							.oRed(sCCD_R_RGB),
+// 							.oGreen(sCCD_G_RGB),
+// 							.oBlue(sCCD_B_RGB),
+// 							.oDVAL(sCCD_DVAL_RGB),
+// 							.iX_Cont(X_Cont),
+// 							.iY_Cont(Y_Cont),
+//                      .driven_coordinates_x(driven_coordinates_x),
+//                      .driven_coordinates_y(driven_coordinates_y)
+// 						   );
+
+RAW2BW            u4 (
+                     .iCLK(D5M_PIXLCLK),
 							.iRST(DLY_RST_1),
 							.iDATA(mCCD_DATA),
 							.iDVAL(mCCD_DVAL),
@@ -336,7 +366,7 @@ RAW2RGB_640X480		u4	(
 							.iY_Cont(Y_Cont),
                      .driven_coordinates_x(driven_coordinates_x),
                      .driven_coordinates_y(driven_coordinates_y)
-						   );
+						);
 							
 STORE_FRAME				iFRAME (
 							.iCLK(D5M_PIXLCLK), 
@@ -498,7 +528,7 @@ Sdram_Control	   u7	(	//	HOST Side
 							.WR1_DATA({1'b0,sCCD_G[11:7],sCCD_B[11:2]}),
 							.WR1(sCCD_DVAL),
 							.WR1_ADDR(0),
-                     .WR1_MAX_ADDR(640*480),
+                     .WR1_MAX_ADDR(320*240),
 						   .WR1_LENGTH(8'h50),
 		               .WR1_LOAD(!DLY_RST_0),
 							.WR1_CLK(~D5M_PIXLCLK),
@@ -507,7 +537,7 @@ Sdram_Control	   u7	(	//	HOST Side
 							.WR2_DATA({1'b0,sCCD_G[6:2],sCCD_R[11:2]}),
 							.WR2(sCCD_DVAL),
 							.WR2_ADDR(23'h100000),
-							.WR2_MAX_ADDR(23'h100000+640*480),
+							.WR2_MAX_ADDR(23'h100000+320*240),
 							.WR2_LENGTH(8'h50),
 							.WR2_LOAD(!DLY_RST_0),				
 							.WR2_CLK(~D5M_PIXLCLK),
@@ -516,7 +546,7 @@ Sdram_Control	   u7	(	//	HOST Side
 						   .RD1_DATA(Read_DATA1),
 				        	.RD1(Read),
 				        	.RD1_ADDR(0),
-                     .RD1_MAX_ADDR(640*480),
+                     .RD1_MAX_ADDR(320*240),
 							.RD1_LENGTH(8'h50),
 							.RD1_LOAD(!DLY_RST_0),
 							.RD1_CLK(~VGA_CTRL_CLK),
@@ -525,7 +555,7 @@ Sdram_Control	   u7	(	//	HOST Side
 						   .RD2_DATA(Read_DATA2),
 							.RD2(Read),
 							.RD2_ADDR(23'h100000),
-                     .RD2_MAX_ADDR(23'h100000+640*480),
+                     .RD2_MAX_ADDR(23'h100000+320*240),
 							.RD2_LENGTH(8'h50),
                    	.RD2_LOAD(!DLY_RST_0),
 							.RD2_CLK(~VGA_CTRL_CLK),
