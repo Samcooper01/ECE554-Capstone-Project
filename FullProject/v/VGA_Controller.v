@@ -65,14 +65,14 @@ parameter	H_SYNC_CYC	=	96;
 parameter	H_SYNC_BACK	=	48;
 parameter	H_SYNC_ACT	=	320;	
 parameter	H_SYNC_FRONT=	16;
-parameter	H_SYNC_TOTAL=	480;
+parameter	H_SYNC_TOTAL=	800;
 
 //	Virtical Parameter		( Line )
 parameter	V_SYNC_CYC	=	2;
 parameter	V_SYNC_BACK	=	33;
 parameter	V_SYNC_ACT	=	240;	
 parameter	V_SYNC_FRONT=	10;
-parameter	V_SYNC_TOTAL=	285; 
+parameter	V_SYNC_TOTAL=	525; 
 
 
 //	Start Offset
