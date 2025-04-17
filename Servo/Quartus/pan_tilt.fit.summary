@@ -1,12 +1,12 @@
-Fitter Status : Successful - Thu Apr  3 17:17:04 2025
+Fitter Status : Successful - Mon Apr  7 16:04:30 2025
 Quartus Prime Version : 23.1std.0 Build 991 11/28/2023 SC Lite Edition
 Revision Name : pan_tilt
 Top-level Entity Name : pan_tilt
 Family : Cyclone V
 Device : 5CSEMA5F31C6
 Timing Models : Final
-Logic utilization (in ALMs) : 565 / 32,070 ( 2 % )
-Total registers : 611
+Logic utilization (in ALMs) : 586 / 32,070 ( 2 % )
+Total registers : 604
 Total pins : 106 / 457 ( 23 % )
 Total virtual pins : 0
 Total block memory bits : 262,144 / 4,065,280 ( 6 % )

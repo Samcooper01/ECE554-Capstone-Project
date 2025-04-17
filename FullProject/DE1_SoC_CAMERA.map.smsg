@@ -1,0 +1,1 @@
+Warning (10268): Verilog HDL information at coordinate_transform_v2.sv(20): always construct contains both blocking and non-blocking assignments File: I:/ece554/ECE554-Capstone-Project/FullProject/coordinate_transform_v2.sv Line: 20

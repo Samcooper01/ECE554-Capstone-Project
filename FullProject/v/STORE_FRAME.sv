@@ -15,8 +15,8 @@ module STORE_FRAME(iCLK, iRST, iDVAL, iDATA, iFrame_Cont, iX_Cont, iY_Cont, oObj
 
     // When an object is detected, turn it red. 
     assign oRed = oObjectDetected ? 12'hFFF : iDATA;
-    assign oGreen = oObjectDetected ? 12'h000 : iDATA;
-    assign oBlue = oObjectDetected ? 12'h000 : iDATA;
+    assign oGreen = oObjectDetected ? 12'hFFF : iDATA;
+    assign oBlue = oObjectDetected ? 12'hFFF : iDATA;
 
     assign oDVAL = iDVAL;
 
