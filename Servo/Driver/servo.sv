@@ -4,7 +4,7 @@ module servo (
     //input logic [7:0] angle,
     input logic [10:0] pulse_width,
     output logic pwm_pin,
-	 output logic open
+	output logic open
 ); 
 
     //determine how many 50MHz clock cycles are needed to generate a 1us pulse
@@ -48,14 +48,16 @@ module servo (
     always_ff @(posedge clk or negedge rst_n) begin 
         if (!rst_n) begin 
             pwm_pin <= 1'b0;
-				open <= 1'b0;
-        end else begin 
+			open <= 1'b0;
+        end 
+        else begin 
             if (counter <= pulse_width + MIN_PULSE) begin
                 pwm_pin <= 1'b1;
-					 open <= 1'b0;
-            end else begin 
+				open <= 1'b0;
+            end 
+            else begin 
                 pwm_pin <= 1'b0;
-					 open <= 1'b1;
+				open <= 1'b1;
             end
         end
     end
