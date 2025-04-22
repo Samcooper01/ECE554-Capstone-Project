@@ -1,9 +1,5 @@
 Flow report for DE1_SoC_CAMERA
-<<<<<<< HEAD
-Wed Apr 16 19:31:01 2025
-=======
-Wed Apr 16 18:54:12 2025
->>>>>>> 01dbf058460ed9d8d4d642652bb4b8617444848b
+Fri Apr 18 15:19:25 2025
 Quartus Prime Version 23.1std.0 Build 991 11/28/2023 SC Lite Edition
 
 
@@ -45,32 +41,19 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------------------------------------------------------------+
 ; Flow Summary                                                                     ;
 +---------------------------------+------------------------------------------------+
-<<<<<<< HEAD
-; Flow Status                     ; Successful - Wed Apr 16 19:30:37 2025          ;
-=======
-; Flow Status                     ; Successful - Wed Apr 16 18:53:50 2025          ;
->>>>>>> 01dbf058460ed9d8d4d642652bb4b8617444848b
+; Flow Status                     ; Successful - Fri Apr 18 15:19:10 2025          ;
 ; Quartus Prime Version           ; 23.1std.0 Build 991 11/28/2023 SC Lite Edition ;
 ; Revision Name                   ; DE1_SoC_CAMERA                                 ;
 ; Top-level Entity Name           ; DE1_SoC_CAMERA                                 ;
 ; Family                          ; Cyclone V                                      ;
 ; Device                          ; 5CSEMA5F31C6                                   ;
 ; Timing Models                   ; Final                                          ;
-<<<<<<< HEAD
-; Logic utilization (in ALMs)     ; 2,343 / 32,070 ( 7 % )                         ;
-; Total registers                 ; 2883                                           ;
+; Logic utilization (in ALMs)     ; 2,381 / 32,070 ( 7 % )                         ;
+; Total registers                 ; 2909                                           ;
 ; Total pins                      ; 226 / 457 ( 49 % )                             ;
 ; Total virtual pins              ; 0                                              ;
 ; Total block memory bits         ; 1,903,592 / 4,065,280 ( 47 % )                 ;
-; Total DSP Blocks                ; 4 / 87 ( 5 % )                                 ;
-=======
-; Logic utilization (in ALMs)     ; 2,269 / 32,070 ( 7 % )                         ;
-; Total registers                 ; 2791                                           ;
-; Total pins                      ; 226 / 457 ( 49 % )                             ;
-; Total virtual pins              ; 0                                              ;
-; Total block memory bits         ; 1,888,256 / 4,065,280 ( 46 % )                 ;
 ; Total DSP Blocks                ; 2 / 87 ( 2 % )                                 ;
->>>>>>> 01dbf058460ed9d8d4d642652bb4b8617444848b
 ; Total HSSI RX PCSs              ; 0                                              ;
 ; Total HSSI PMA RX Deserializers ; 0                                              ;
 ; Total HSSI TX PCSs              ; 0                                              ;
@@ -85,11 +68,7 @@ https://fpgasoftware.intel.com/eula.
 +-------------------+---------------------+
 ; Option            ; Setting             ;
 +-------------------+---------------------+
-<<<<<<< HEAD
-; Start date & time ; 04/16/2025 19:26:03 ;
-=======
-; Start date & time ; 04/16/2025 18:49:18 ;
->>>>>>> 01dbf058460ed9d8d4d642652bb4b8617444848b
+; Start date & time ; 04/18/2025 15:15:19 ;
 ; Main task         ; Compilation         ;
 ; Revision Name     ; DE1_SoC_CAMERA      ;
 +-------------------+---------------------+
@@ -100,11 +79,7 @@ https://fpgasoftware.intel.com/eula.
 +-------------------------------------+-------------------------------------------------+---------------+-------------+------------------+
 ; Assignment Name                     ; Value                                           ; Default Value ; Entity Name ; Section Id       ;
 +-------------------------------------+-------------------------------------------------+---------------+-------------+------------------+
-<<<<<<< HEAD
-; COMPILER_SIGNATURE_ID               ; 91759833344.174484956316764                     ; --            ; --          ; --               ;
-=======
-; COMPILER_SIGNATURE_ID               ; 91759833344.174484735800440                     ; --            ; --          ; --               ;
->>>>>>> 01dbf058460ed9d8d4d642652bb4b8617444848b
+; COMPILER_SIGNATURE_ID               ; 91759833344.174500731811680                     ; --            ; --          ; --               ;
 ; ENABLE_SIGNALTAP                    ; On                                              ; --            ; --          ; --               ;
 ; MAX_CORE_JUNCTION_TEMP              ; 85                                              ; --            ; --          ; --               ;
 ; MIN_CORE_JUNCTION_TEMP              ; 0                                               ; --            ; --          ; --               ;
@@ -155,19 +130,11 @@ https://fpgasoftware.intel.com/eula.
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
 ; Module Name          ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
-<<<<<<< HEAD
-; Analysis & Synthesis ; 00:01:13     ; 1.0                     ; 5070 MB             ; 00:00:41                           ;
-; Fitter               ; 00:02:48     ; 1.1                     ; 7714 MB             ; 00:15:48                           ;
-; Assembler            ; 00:00:13     ; 1.0                     ; 4924 MB             ; 00:00:07                           ;
-; Timing Analyzer      ; 00:00:22     ; 2.1                     ; 5455 MB             ; 00:00:23                           ;
-; Total                ; 00:04:36     ; --                      ; --                  ; 00:16:59                           ;
-=======
-; Analysis & Synthesis ; 00:01:08     ; 1.0                     ; 5082 MB             ; 00:00:41                           ;
-; Fitter               ; 00:02:58     ; 1.1                     ; 7700 MB             ; 00:17:20                           ;
-; Assembler            ; 00:00:11     ; 1.0                     ; 4926 MB             ; 00:00:06                           ;
-; Timing Analyzer      ; 00:00:18     ; 2.1                     ; 5441 MB             ; 00:00:22                           ;
-; Total                ; 00:04:35     ; --                      ; --                  ; 00:18:29                           ;
->>>>>>> 01dbf058460ed9d8d4d642652bb4b8617444848b
+; Analysis & Synthesis ; 00:00:40     ; 1.0                     ; 5083 MB             ; 00:00:37                           ;
+; Fitter               ; 00:02:48     ; 1.1                     ; 7702 MB             ; 00:17:10                           ;
+; Assembler            ; 00:00:08     ; 1.0                     ; 4931 MB             ; 00:00:06                           ;
+; Timing Analyzer      ; 00:00:14     ; 2.3                     ; 5457 MB             ; 00:00:22                           ;
+; Total                ; 00:03:50     ; --                      ; --                  ; 00:18:15                           ;
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
 
 
@@ -176,10 +143,10 @@ https://fpgasoftware.intel.com/eula.
 +----------------------+------------------+------------+------------+----------------+
 ; Module Name          ; Machine Hostname ; OS Name    ; OS Version ; Processor type ;
 +----------------------+------------------+------------+------------+----------------+
-; Analysis & Synthesis ; win-8115         ; Windows 10 ; 10.0       ; x86_64         ;
-; Fitter               ; win-8115         ; Windows 10 ; 10.0       ; x86_64         ;
-; Assembler            ; win-8115         ; Windows 10 ; 10.0       ; x86_64         ;
-; Timing Analyzer      ; win-8115         ; Windows 10 ; 10.0       ; x86_64         ;
+; Analysis & Synthesis ; win-8116         ; Windows 10 ; 10.0       ; x86_64         ;
+; Fitter               ; win-8116         ; Windows 10 ; 10.0       ; x86_64         ;
+; Assembler            ; win-8116         ; Windows 10 ; 10.0       ; x86_64         ;
+; Timing Analyzer      ; win-8116         ; Windows 10 ; 10.0       ; x86_64         ;
 +----------------------+------------------+------------+------------+----------------+
 
 

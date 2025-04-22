@@ -1,4 +1,4 @@
-module STORE_FRAME(iCLK, iRST, iDVAL, iDATA, iFrame_Cont, iX_Cont, iY_Cont, oObjectDetected, oRed, oGreen, oBlue, oDVAL);
+module STORE_FRAME_EVEN(iCLK, iRST, iDVAL, iDATA, iFrame_Cont, iX_Cont, iY_Cont, oObjectDetected, oRed, oGreen, oBlue, oDVAL);
     // Input / Outputs
     input iCLK;
     input iRST; 
@@ -38,7 +38,7 @@ module STORE_FRAME(iCLK, iRST, iDVAL, iDATA, iFrame_Cont, iX_Cont, iY_Cont, oObj
     end
 
     // Buffer the entire frame, every 4 pixels
-    FIFO_FRAME_RED frame_buffer (
+    FIFO_FRAME_RED_SMALL frame_buffer_even (
                     .aclr(~iRST),
                     .clock(iCLK),
                     .data(iDATA),
@@ -47,11 +47,11 @@ module STORE_FRAME(iCLK, iRST, iDVAL, iDATA, iFrame_Cont, iX_Cont, iY_Cont, oObj
                     .empty(empty),
                     .q(oDATA)
     );
-                   //even frame    valid pixel     red pixel
-    assign wrreq = ~iFrame_Cont[0] & iDVAL & ({iX_Cont[0],iY_Cont[0]} == 2'b10);
+                   //even frame    valid pixel     every other red pixel
+    assign wrreq = ~iFrame_Cont[0] & iDVAL & ({((iX_Cont - 10'd1) % 4 == 0),iY_Cont[0]} == 2'b10);
 
                     //odd frame
-    assign rdreq = iFrame_Cont[0] & iDVAL & ({iX_Cont[0],iY_Cont[0]} == 2'b10);
+    assign rdreq = iFrame_Cont[0] & iDVAL & ({((iX_Cont - 10'd1) % 4 == 0),iY_Cont[0]} == 2'b10);
 
     always_ff @(posedge iCLK or negedge iRST) begin
         if(~iRST) 

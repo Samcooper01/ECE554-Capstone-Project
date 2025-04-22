@@ -367,8 +367,22 @@ RAW2BW            u4 (
                      .driven_coordinates_x(driven_coordinates_x),
                      .driven_coordinates_y(driven_coordinates_y)
 						);
+
+logic [11:0] oRed_even, oGreen_even, oBlue_even;
+logic oDVAL_even, oObjectDetected_even;
+
+logic [11:0] oRed_odd, oGreen_odd, oBlue_odd;
+logic oDVAL_odd, oObjectDetected_odd;
+
+assign oObjectDetected =   (Frame_Cont[0]) ? oObjectDetected_even : oObjectDetected_odd;
+assign oRed =              (Frame_Cont[0]) ? oRed_even : oRed_odd;
+assign oGreen =            (Frame_Cont[0]) ? oGreen_even : oGreen_odd;
+assign oBlue =             (Frame_Cont[0]) ? oBlue_even : oBlue_odd;
+assign oDVAL =             (Frame_Cont[0]) ? oDVAL_even : oDVAL_odd;
+
+
 							
-STORE_FRAME				iFRAME (
+STORE_FRAME_EVEN		iFRAME_EVEN (
 							.iCLK(D5M_PIXLCLK), 
 							.iRST(DLY_RST_2), 
                      .iDVAL(mCCD_DVAL), 
@@ -376,11 +390,26 @@ STORE_FRAME				iFRAME (
                      .iFrame_Cont(Frame_Cont), 
                      .iX_Cont(X_Cont), 
                      .iY_Cont(Y_Cont), 
-                     .oObjectDetected(oObjectDetected), 
-                     .oRed(oRed), 
-                     .oGreen(oGreen), 
-                     .oBlue(oBlue), 
-                     .oDVAL(oDVAL)
+                     .oObjectDetected(oObjectDetected_even), 
+                     .oRed(oRed_even), 
+                     .oGreen(oGreen_even), 
+                     .oBlue(oBlue_even), 
+                     .oDVAL(oDVAL_even)
+                     );
+
+STORE_FRAME_ODD		 iFRAME_ODD (
+							.iCLK(D5M_PIXLCLK), 
+							.iRST(DLY_RST_2), 
+                     .iDVAL(mCCD_DVAL), 
+                     .iDATA(mCCD_DATA), 
+                     .iFrame_Cont(Frame_Cont), 
+                     .iX_Cont(X_Cont), 
+                     .iY_Cont(Y_Cont), 
+                     .oObjectDetected(oObjectDetected_odd), 
+                     .oRed(oRed_odd), 
+                     .oGreen(oGreen_odd), 
+                     .oBlue(oBlue_odd), 
+                     .oDVAL(oDVAL_odd)
                      );
 
 MEAN_COORDS          iCOORDS (
