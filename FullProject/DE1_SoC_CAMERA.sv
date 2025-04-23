@@ -458,6 +458,9 @@ assign oX_Cent    =  (SW[6]) ? oX_Cent_debug :  oX_Cent_actual;
 assign oY_Cent    =  (SW[6]) ? oY_Cent_debug :  oY_Cent_actual;
 assign oCent_Val  =  (SW[6]) ? oCent_Val_debug : oCent_Val_actual;
 
+logic [9:0] driven_coordinates_x;
+logic [8:0] driven_coordinates_y;
+
 tracking_buffer # (
     .clock_frequency_mhz(clock_frequency_mhz)
 ) tracking_buffer (
@@ -489,10 +492,24 @@ state_machine #(
     .fire(GPIO_0[3])
 );
 
-// Servo Coordinate transform and firing
-logic [9:0] driven_coordinates_x;
-logic [8:0] driven_coordinates_y;
+// Add predictive tracking to state machine output
+logic [9:0] predicted_coordinates_x;
+logic [8:0] predicted_coordinates_y;
 
+predictive_tracking # (
+   .realitve_multiply(0)
+) predictive_tracking (
+   .clk(CLOCK_50),
+   .rst_n(DLY_RST_2),
+   .is_tracking(on_screen),
+   .raw_x(driven_coordinates_x),
+   .raw_y(driven_coordinates_y),
+   .coordinates_valid(oCent_Val),
+   .predict_x(predict_x),
+   .predict_y(predict_y)
+);
+
+// Servo Coordinate transform and firing
 logic pan_pwm; 
 logic tilt_pwm;
 logic tilt_ready, pan_ready;
@@ -533,7 +550,7 @@ servo SERVO_TILT(
 
 //Coordinate transform module
 Coordinate_transform_v2  transform(
-     .x(driven_coordinates_x),.y(driven_coordinates_y),
+     .x(predicted_coordinates_x),.y(predicted_coordinates_y),
      .clk(CLOCK_50), .rst_n(DLY_RST_2),
      .pan(pan_angle), .tilt(tilt_angle),
 	  .pan_ready(pan_ready), .tilt_ready(tilt_ready));
