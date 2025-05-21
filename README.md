@@ -56,5 +56,3 @@ Throughout this project, our team gained substantial expertise in:
 ## Recognition
 
 Due to our commitment and the project's technical excellence, our team received recognition from our professor for outstanding design and implementation, distinguishing us among numerous excellent projects presented by our peers.
-
----
