@@ -4,7 +4,6 @@
 
 [Award Article](https://engineering.wisc.edu/blog/student-innovation-and-alumni-experience-converge-at-ece-capstone-design-open-house/)
 
-[Code Repository](https://github.com/hmrdo/ECE554-Capstone-Project)  
 [Project Website](https://hmrdo.github.io/air-defense-project.github.io/)
 
 
